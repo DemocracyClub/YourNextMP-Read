@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   {% include head.html %}
 
   <body>
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+  <div class="header">
+    <div class="container">
+      <div class="header__nav">
+        <a href="/" class="header__nav__logo">YourNextMP</a>
+        <a href="" class="header__nav__logo">About</a>
+        <a href="" class="header__nav__logo">Constituencies</a>
+        <a href="" class="header__nav__logo">Numbers</a>
+      </div>
+      <div class="header__hero">
+          <h1>{{ page.hero }}</h1>
       </div>
     </div>
-
-    {% include footer.html %}
+  </div>
+  <div class="content">
+    <div class="container">
+        {{ content }}
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <p><a href="">Open data API</a> &middot; <a href="">About</a> &middot; <a href="https://github.com/mysociety/yournextmp-popit/issues">Issue tracker</a> &middot; <a href="">Privacy policy</a></p>
+      </div>
+      <div class="footer__bylines">
+        <p>Supported by <a href="https://fullfact.org">Full Fact</a>, <a href="http://unlockdemocracy.org.uk">Unlock Democracy</a>, and <a href="https://mysociety.org">mySociety</a>.</p>
+        <p>Built by <a href="https://democracyclub.org.uk/">Democracy Club</a>.</p>
+      </div>
+    </div>
+  </div>
 
   </body>
 
