@@ -4,3 +4,10 @@ title: {{ page.constituency.name }}
 ---
 <h1>{{ page.constituency.name }}</h1>
 
+Hello.
+{% assign constituency_id = page.constituency.id|replace:"","" %}
+{% assign constituency_people = site.data.people_constituency_2015_index[constituency_id] %}
+
+{{ constituency_id }}
+{{ constituency_people }}
+
