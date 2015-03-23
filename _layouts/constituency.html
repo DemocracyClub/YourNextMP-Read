@@ -3,51 +3,21 @@ layout: default
 ---
 
 {% assign constituency_id = page.constituency.id|replace:"","" %}
-{% assign constituency_people = site.data.people_constituency_2015_index[constituency_id] %}
+{% assign constituency = site.data.constituencies.id[constituency_id] %}
 
 <div class="candidates__known">
 <h3>Known candidates for the 2015 general election</h3>
 <ul class="candidate-list">
 {% for person in constituency.ynmp %}
     <li class="candidates-list__person">
-        {% if c.image %}
+        {% if person.image %}
         <a href="">
             <img class="person-avatar" src="{{ person.proxy_image }}/0/64"/>
         </a>
         {% else if person.gender|lower == 'female' %}
-          <img class="person-avatar" src="/candidates/img/blank-woman.png"/>
+          <img class="person-avatar" src="/images/blank-woman.png"/>
         {% else %}
-          <img class="person-avatar" src="/candidates/img/blank-man.png"/>
-        {% endif %}
-
-        <div class="person-name-and-party">
-          <a href="">{{ person.name }}</a>
-          {% if person.candidacies['ge2015'] %}
-            <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
-          {% else if person.candidacies['ge2010'] %}
-            <span class="party">{{ person.candidacies['ge2010'].party.name }}</span>
-          {% else %}
-            <span class="party">BUG: UNKNOWN YEAR</span>
-          {% endif %}
-        </div>
-    </li>
-{% endfor %}
-</ul>
-</div>
-
-<div class="candidates__known">
-<h3>Known candidates for the 2015 general election</h3>
-<ul class="candidate-list">
-{% for person in constituency.ynmp %}
-    <li class="candidates-list__person">
-        {% if c.image %}
-        <a href="">
-            <img class="person-avatar" src="{{ person.proxy_image }}/0/64"/>
-        </a>
-        {% else if person.gender|lower == 'female' %}
-          <img class="person-avatar" src="/candidates/img/blank-woman.png"/>
-        {% else %}
-          <img class="person-avatar" src="/candidates/img/blank-man.png"/>
+          <img class="person-avatar" src="/images/blank-man.png"/>
         {% endif %}
 
         <div class="person-name-and-party">
