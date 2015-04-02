@@ -16,42 +16,14 @@ module Jekyll
     end
   end
 
-  # class JSONPartyIndexPage < Page
-  #   def initialize(site, base, dir, party)
-  #     @site = site
-  #     @base = base
-  #     @dir = dir
-  #
-  #     @name = 'index.json'
-  #     self.process(@name)
-  #     self.read_yaml(File.join(base), 'parties.json')
-  #     self.data['party'] = party
-  #
-  #   end
-  # end
-  #
-  # class JSONPartyPage < Page
-  #   def initialize(site, base, dir, party)
-  #     @site = site
-  #     @base = base
-  #     @dir = dir
-  #
-  #     @name = 'data.json'
-  #     self.process(@name)
-  #     self.read_yaml(File.join(base, '_layouts'), 'party.json')
-  #     self.data['party'] = party
-  #     self.data['title'] = party['party_name']
-  #
-  #   end
-  # end
-
   class ConstituencyPageGenerator < Generator
     safe true
 
     def generate(site)
       if site.layouts.key? 'constituency'
         dir = 'constituencies/'
-        site.data['mapit-WMC-generation-22'].each do |constituency|
+        site.data['constituencies']['id'].each_with_index do |constituency, index|
+          puts constituency[0]
           site.pages << ConstituencyPage.new(site, site.source, File.join(dir, constituency[0]), constituency[1])
         end
       end

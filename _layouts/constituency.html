@@ -22,7 +22,7 @@ layout: default
         {% endif %}
 
         <div class="person-name-and-party">
-          <a href="">{{ person.name }}</a>
+          <a href="/person/{{ person.id }}">{{ person.name }}</a>
           {% if person.candidacies['ge2015'] %}
             <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
           {% else if person.candidacies['ge2010'] %}

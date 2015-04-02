@@ -1,0 +1,33 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2010": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65667", 
+                "name": "Birmingham, Erdington", 
+                "post_id": "65667"
+            }, 
+            "party": {
+                "id": "party:392", 
+                "name": "Christian Party \"Proclaiming Christ's Lordship\""
+            }, 
+            "year": 2010
+        }
+    }, 
+    "contact_details": [], 
+    "gender": "male", 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/6", 
+    "id": "6", 
+    "identifiers": [
+        {
+            "id": "547787ca737edc5252ce5fa7", 
+            "identifier": "23361", 
+            "scheme": "yournextmp-candidate"
+        }
+    ], 
+    "images": [], 
+    "links": [], 
+    "name": "Timothy Gray", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6"
+}

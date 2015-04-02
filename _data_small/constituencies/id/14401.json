@@ -1,0 +1,395 @@
+{
+    "mapit": {
+        "all_names": {}, 
+        "codes": {
+            "gss": "S14000004", 
+            "unit_id": "33066"
+        }, 
+        "country": "S", 
+        "country_name": "Scotland", 
+        "generation_high": 22, 
+        "generation_low": 2, 
+        "id": 14401, 
+        "name": "Angus", 
+        "parent_area": null, 
+        "type": "WMC", 
+        "type_name": "UK Parliament constituency"
+    }, 
+    "ynmp": [
+        {
+            "birth_date": "1986-05-14", 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:53", 
+                        "name": "Labour Party"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54ff2b35a61780f002e34e7b", 
+                    "type": "twitter", 
+                    "value": "gerardmcmahon86"
+                }
+            ], 
+            "email": "gerard4angus@gmail.com", 
+            "gender": "male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/5059", 
+            "id": "5059", 
+            "identifiers": [], 
+            "images": [], 
+            "links": [
+                {
+                    "id": "54ff2b35a61780f002e34e7a", 
+                    "note": "facebook page", 
+                    "url": "https://www.facebook.com/gerard4angus"
+                }, 
+                {
+                    "id": "54ff2b35a61780f002e34e79", 
+                    "note": "facebook personal", 
+                    "url": "https://www.facebook.com/gerard4angus"
+                }
+            ], 
+            "name": "Gerard McMahon", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/5059"
+        }, 
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2010": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:90", 
+                        "name": "Liberal Democrats"
+                    }, 
+                    "year": 2010
+                }, 
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:90", 
+                        "name": "Liberal Democrats"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54e1b069aafbb418305c6c54", 
+                    "type": "twitter", 
+                    "value": "ssamani"
+                }
+            ], 
+            "email": "contact@sanjaysamani.com", 
+            "gender": "male", 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/2289", 
+            "id": "2289", 
+            "identifiers": [
+                {
+                    "id": "54e1b069aafbb418305c6c4f", 
+                    "identifier": "2398", 
+                    "scheme": "yournextmp-candidate"
+                }
+            ], 
+            "image": "http://yournextmp.popit.mysociety.org/persons/2289/image/5481e8c4b150e238702c05f8", 
+            "images": [
+                {
+                    "created": "2014-12-05T17:17:56.593Z", 
+                    "id": "5481e8c4b150e238702c05f8", 
+                    "mime_type": "image/png", 
+                    "notes": "md5sum:faf59f7e41975040cfe3624b19b01f72", 
+                    "proxy_url": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F2289%2Fimage%2F5481e8c4b150e238702c05f8", 
+                    "source": "Via the official party PPC page, based on https://d3n8a8pro7vhmx.cloudfront.net/libdems/pages/6885/attachments/original/1416312080/key_sanjay_samani.jpg?1416312080", 
+                    "url": "http://yournextmp.popit.mysociety.org/persons/2289/image/5481e8c4b150e238702c05f8"
+                }
+            ], 
+            "links": [
+                {
+                    "id": "54e1b069aafbb418305c6c53", 
+                    "note": "party PPC page", 
+                    "url": "http://www.libdems.org.uk/sanjay_samani"
+                }, 
+                {
+                    "id": "54e1b069aafbb418305c6c52", 
+                    "note": "linkedin", 
+                    "url": "http://uk.linkedin.com/in/sanjaysamani/en"
+                }, 
+                {
+                    "id": "54e1b069aafbb418305c6c51", 
+                    "note": "facebook personal", 
+                    "url": "http://facebook.com/SanjaySamaniLibDem"
+                }, 
+                {
+                    "id": "54e1b069aafbb418305c6c50", 
+                    "note": "homepage", 
+                    "url": "http://sanjaysamani.com/"
+                }
+            ], 
+            "name": "Sanjay Samani", 
+            "other_names": [], 
+            "proxy_image": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F2289%2Fimage%2F5481e8c4b150e238702c05f8", 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/2289"
+        }, 
+        {
+            "birth_date": "1957-03-24", 
+            "candidacies": {
+                "ge2010": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:102", 
+                        "name": "Scottish National Party (SNP)"
+                    }, 
+                    "year": 2010
+                }, 
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:102", 
+                        "name": "Scottish National Party (SNP)"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54f3d45e855f20e057882d17", 
+                    "type": "twitter", 
+                    "value": "mikeweirsnp"
+                }
+            ], 
+            "email": "sandra84@live.co.uk", 
+            "gender": "male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/2288", 
+            "id": "2288", 
+            "identifiers": [
+                {
+                    "id": "54f3d45e855f20e057882d12", 
+                    "identifier": "2396", 
+                    "scheme": "yournextmp-candidate"
+                }, 
+                {
+                    "id": "54f3d45e855f20e057882d11", 
+                    "identifier": "uk.org.publicwhip/person/11312", 
+                    "scheme": "uk.org.publicwhip"
+                }
+            ], 
+            "image": "http://yournextmp.popit.mysociety.org/persons/2288/image/54f423301be737cc3e2afa58", 
+            "images": [
+                {
+                    "birth_date": null, 
+                    "created": "2015-03-02T08:45:36.606Z", 
+                    "death_date": null, 
+                    "dissolution_date": null, 
+                    "end_date": null, 
+                    "founding_date": null, 
+                    "id": "54f423301be737cc3e2afa58", 
+                    "justification_for_use": "Used on the PPC page: http://www.snp.org/people/mike-weir", 
+                    "local_path": "54/f4/54f423301be737cc3e2afa58", 
+                    "local_path_base": "54/f4/54f423301be737cc3e2afa58", 
+                    "mime_type": "image/jpeg", 
+                    "notes": "Approved from photo moderation queue", 
+                    "proxy_url": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F2288%2Fimage%2F54f423301be737cc3e2afa58", 
+                    "public_domain": "False", 
+                    "start_date": null, 
+                    "uploaded_by_user": "JPCarrington", 
+                    "url": "http://yournextmp.popit.mysociety.org/persons/2288/image/54f423301be737cc3e2afa58", 
+                    "use_allowed_by_owner": "False"
+                }
+            ], 
+            "links": [
+                {
+                    "id": "54f3d45e855f20e057882d16", 
+                    "note": "party PPC page", 
+                    "url": "http://www.snp.org/people/mike-weir"
+                }, 
+                {
+                    "id": "54f3d45e855f20e057882d15", 
+                    "note": "facebook personal", 
+                    "url": "https://www.facebook.com/pages/Mike-Weir-MP/656168011164948"
+                }, 
+                {
+                    "id": "54f3d45e855f20e057882d14", 
+                    "note": "homepage", 
+                    "url": "http://angussnp.org/"
+                }, 
+                {
+                    "id": "54f3d45e855f20e057882d13", 
+                    "note": "wikipedia", 
+                    "url": "https://en.wikipedia.org/wiki/Mike_Weir_%28politician%29"
+                }
+            ], 
+            "name": "Michael Weir", 
+            "other_names": [], 
+            "proxy_image": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F2288%2Fimage%2F54f423301be737cc3e2afa58", 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/2288"
+        }, 
+        {
+            "birth_date": "1972-05-09", 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:52", 
+                        "name": "Conservative Party"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54fdb63139f840253731b778", 
+                    "type": "twitter", 
+                    "value": "wannforangus"
+                }
+            ], 
+            "email": "info@wannforangus.co.uk", 
+            "gender": "male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/4906", 
+            "id": "4906", 
+            "identifiers": [], 
+            "image": "http://yournextmp.popit.mysociety.org/persons/4906/image/54fdb39762e9fa253748e795", 
+            "images": [
+                {
+                    "birth_date": null, 
+                    "created": "2015-03-09T14:52:07.449Z", 
+                    "death_date": null, 
+                    "dissolution_date": null, 
+                    "end_date": null, 
+                    "founding_date": null, 
+                    "id": "54fdb39762e9fa253748e795", 
+                    "local_path": "54/fd/54fdb39762e9fa253748e795", 
+                    "local_path_base": "54/fd/54fdb39762e9fa253748e795", 
+                    "mime_type": "image/png", 
+                    "notes": "Manually uploaded from the command line", 
+                    "proxy_url": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F4906%2Fimage%2F54fdb39762e9fa253748e795", 
+                    "start_date": null, 
+                    "url": "http://yournextmp.popit.mysociety.org/persons/4906/image/54fdb39762e9fa253748e795"
+                }
+            ], 
+            "links": [
+                {
+                    "id": "54fdb63139f840253731b777", 
+                    "note": "party PPC page", 
+                    "url": "https://www.conservatives.com/OurTeam/Prospective_Parliamentary_Candidates/Wann_Derek.aspx"
+                }, 
+                {
+                    "id": "54fdb63139f840253731b776", 
+                    "note": "linkedin", 
+                    "url": "http://uk.linkedin.com/pub/derek-wann/23/901/795/en"
+                }, 
+                {
+                    "id": "54fdb63139f840253731b775", 
+                    "note": "facebook personal", 
+                    "url": "https://www.facebook.com/wannforangus"
+                }, 
+                {
+                    "id": "54fdb63139f840253731b774", 
+                    "note": "homepage", 
+                    "url": "http://www.wannforangus.co.uk/"
+                }
+            ], 
+            "name": "Derek Wann", 
+            "other_names": [], 
+            "proxy_image": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F4906%2Fimage%2F54fdb39762e9fa253748e795", 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/4906"
+        }, 
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:130", 
+                        "name": "Scottish Green Party"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [], 
+            "email": "david.mumford@scottishgreens.org.uk", 
+            "gender": "male", 
+            "honorific_prefix": "Mr", 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/6729", 
+            "id": "6729", 
+            "identifiers": [], 
+            "images": [], 
+            "links": [
+                {
+                    "id": "55005470e1cff2c41b00213e", 
+                    "note": "party PPC page", 
+                    "url": "http://www.dundeegreens.org.uk/people/david-mumford/"
+                }
+            ], 
+            "name": "David Mumford", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6729"
+        }, 
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14401", 
+                        "name": "Angus", 
+                        "post_id": "14401"
+                    }, 
+                    "party": {
+                        "id": "party:85", 
+                        "name": "UK Independence Party (UKIP)"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [], 
+            "email": "calum.walker@ukiplocal.org", 
+            "gender": "Male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "id": "6836", 
+            "identifiers": [], 
+            "images": [], 
+            "links": [], 
+            "name": "Calum Walker", 
+            "other_names": []
+        }
+    ]
+}
