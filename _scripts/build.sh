@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 if [ ! -f _downloads/electionmentions.export.json ]; then
