@@ -8,7 +8,8 @@ layout: default
 <div class="candidates__known">
 <h3>Known candidates for the 2015 general election</h3>
 <ul class="candidate-list">
-{% for person in constituency.ynmp %}
+{% for person_id in constituency.ynmp %}
+    {% assign person = site.data.people.id[person_id] %}
     <li class="candidates-list__person">
         {% if person.image %}
         <a href="">

@@ -15,11 +15,9 @@ constituency_data = {constituency_id: {'mapit': mapit_data,
 # Build YNMP data
 ynmp_export = json.load(open(ynmp_export_path))
 
-for person in ynmp_export['persons']:
-    # Remove stuff we don't need
-    del person['versions']
-
+def build_person_candidacies(person):
     candidacies = {}
+
     for ge_year in ['2010', '2015']:
         if person['standing_in'] and person['party_memberships'] and \
                 ge_year in person['standing_in'] and \
@@ -32,14 +30,15 @@ for person in ynmp_export['persons']:
 
             candidacies['ge{}'.format(ge_year)] = candidacy
 
-    person['candidacies'] = candidacies
-    del person['standing_in']
-    del person['party_memberships']
+    return candidacies
 
-    if 'ge2015' in person['candidacies']:
-        constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
+for person in ynmp_export['persons']:
+    candidacies = build_person_candidacies(person)
+
+    if 'ge2015' in candidacies:
+        constituency_id = candidacies['ge2015']['constituency']['post_id']
    
-        constituency_data[constituency_id]['ynmp'].append(person)
+        constituency_data[constituency_id]['ynmp'].append(person['id'])
 
 # Build EM data
 election_mentions_export = json.load(open(em_export_path))
