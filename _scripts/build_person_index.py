@@ -29,7 +29,6 @@ def years_ago(earlier_date, later_date):
     >>> years_ago(date(1982, 1, 1), date(2016, 2, 29))
     34
     """
-    print repr(earlier_date)
     try:
         later_date_in_earlier_year = date(
             earlier_date.year, later_date.month, later_date.day

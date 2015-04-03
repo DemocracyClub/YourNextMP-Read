@@ -23,7 +23,6 @@ module Jekyll
       @base = base
       @dir = dir
       
-      puts constituency['mapit']['name']
       @name = 'index.html'
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'constituency.html')
