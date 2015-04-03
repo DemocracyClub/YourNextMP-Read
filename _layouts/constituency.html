@@ -56,8 +56,11 @@ layout: default
 <ul class="candidate-list">
 {% for mention in page.constituency.em %}
   <li class="candidates-list__person">
-    <blockquote cite="{{ mention.url }}">{{ mention.title }}</>
-    <footer><a href="{{ mention.url }}">{{ mention.source }}</a> {{ mention.date|date: "%c" }}</footer>
+    <blockquote cite="{{ mention.url }}">{{ mention.title }}
+      <footer>
+        <a href="{{ mention.url }}">{{ mention.source }}</a> 
+        {{ mention.date|date: "%D" }}
+      </footer>
     </blockquote>
   </li>
 {% endfor %}
