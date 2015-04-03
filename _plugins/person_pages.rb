@@ -21,12 +21,14 @@ module Jekyll
     def generate(site)
       if site.layouts.key? 'person'
         dir = 'person/'
-        site.data['people'].each_with_index do |person, index|
-          if ENV['BUILD_LIMIT'].to_i <= index
-            puts person
-            puts index
-            site.pages << PersonPage.new(site, site.source, File.join(dir, person[0]), person[1])
-          end
+        site.data['people']['id'].each_with_index do |person, index|
+
+          # Make the page with just the ID
+          site.pages << PersonPage.new(site, site.source, File.join(dir, person[0]), person[1])
+
+          # Make the page with the slug as wel
+          slug = Utils.slugify(person[1]['name'])
+          site.pages << PersonPage.new(site, site.source, File.join(dir, person[0], slug), person[1])
         end
       end
     end
