@@ -27,3 +27,34 @@ layout: default
 </ul>
 </div>
 
+
+<h3>CVs uploaded</h3>
+<ul class="candidate-list">
+{% for cv in page.constituency.cv %}
+  {% assign person = site.data.people.id[cv.person_id] %}
+  <li class="candidates-list__person">
+    <figure>
+      <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+        <img src="{{ cv.thumb.url }}">
+      </a>
+      <figcaption>
+        {{ person.name }} ({{ person.candidacies.ge2015.party.name }})
+      </figcaption>
+    </figure>
+  </li>
+{% endfor %}
+
+
+<h3>Press mentions of candidates in {{ page.constituency.mapit.name }}</h3>
+<ul class="candidate-list">
+{% for mention in page.constituency.em %}
+  <li class="candidates-list__person">
+    <blockquote cite="{{ mention.url }}">{{ mention.title }}</>
+    <footer><a href="{{ mention.url }}">{{ mention.source }}</a> {{ mention.date|date: "%c" }}</footer>
+    </blockquote>
+  </li>
+{% endfor %}
+
+
+</ul>
+
