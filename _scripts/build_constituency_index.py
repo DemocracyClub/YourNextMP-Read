@@ -3,16 +3,18 @@ import sys
 
 ynmp_export_path = sys.argv[1]
 mapit_export_path = sys.argv[2]
+em_export_path = sys.argv[3]
 
-ynmp_export = json.load(open(ynmp_export_path))
 mapit_export_path = json.load(open(mapit_export_path))
 
 # Build constituency data, starting with mapit
 constituency_data = {constituency_id: {'mapit': mapit_data,
-                                       'ynmp': []}
+                                       'ynmp': [],}
                      for constituency_id, mapit_data in mapit_export_path.items()}
 
 # Build YNMP data
+ynmp_export = json.load(open(ynmp_export_path))
+
 for person in ynmp_export['persons']:
     # Remove stuff we don't need
     del person['versions']
@@ -38,6 +40,12 @@ for person in ynmp_export['persons']:
         constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
    
         constituency_data[constituency_id]['ynmp'].append(person)
+
+# Build EM data
+election_mentions_export = json.load(open(em_export_path))
+
+for constituency_id, links in election_mentions_export.items():
+   constituency_data[constituency_id]['em'] = links 
  
 for constituency_id, data in constituency_data.items(): 
     json.dump(data,
