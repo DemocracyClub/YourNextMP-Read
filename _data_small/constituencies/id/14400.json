@@ -1,0 +1,277 @@
+{
+    "mapit": {
+        "all_names": {}, 
+        "codes": {
+            "gss": "S14000003", 
+            "unit_id": "33927"
+        }, 
+        "country": "S", 
+        "country_name": "Scotland", 
+        "generation_high": 22, 
+        "generation_low": 2, 
+        "id": 14400, 
+        "name": "Airdrie and Shotts", 
+        "parent_area": null, 
+        "type": "WMC", 
+        "type_name": "UK Parliament constituency"
+    }, 
+    "ynmp": [
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2010": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:90", 
+                        "name": "Liberal Democrats"
+                    }, 
+                    "year": 2010
+                }, 
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:90", 
+                        "name": "Liberal Democrats"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [], 
+            "email": "jamour@aol.com", 
+            "gender": "male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/3470", 
+            "id": "3470", 
+            "identifiers": [
+                {
+                    "id": "54f7ea3b6662976478f7d712", 
+                    "identifier": "14138", 
+                    "scheme": "yournextmp-candidate"
+                }
+            ], 
+            "images": [], 
+            "links": [], 
+            "name": "John Love", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/3470"
+        }, 
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:102", 
+                        "name": "Scottish National Party (SNP)"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54fc32659950f16618277c0c", 
+                    "type": "twitter", 
+                    "value": "NeilGray3"
+                }
+            ], 
+            "email": null, 
+            "gender": "male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/6031", 
+            "id": "6031", 
+            "identifiers": [], 
+            "image": "http://yournextmp.popit.mysociety.org/persons/6031/image/54fc326409c0bb66180a6299", 
+            "images": [
+                {
+                    "birth_date": null, 
+                    "created": "2015-03-08T11:28:36.789Z", 
+                    "death_date": null, 
+                    "dissolution_date": null, 
+                    "end_date": null, 
+                    "founding_date": null, 
+                    "id": "54fc326409c0bb66180a6299", 
+                    "local_path": "54/fc/54fc326409c0bb66180a6299", 
+                    "local_path_base": "54/fc/54fc326409c0bb66180a6299", 
+                    "mime_type": "image/jpeg", 
+                    "moderator_why_allowed": "profile-photo", 
+                    "notes": "Approved from photo moderation queue", 
+                    "proxy_url": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F6031%2Fimage%2F54fc326409c0bb66180a6299", 
+                    "start_date": null, 
+                    "uploaded_by_user": "JPCarrington", 
+                    "url": "http://yournextmp.popit.mysociety.org/persons/6031/image/54fc326409c0bb66180a6299", 
+                    "user_justification_for_use": "Featured on PPC page here: http://www.snp.org/people/neil-gray", 
+                    "user_why_allowed": "other"
+                }
+            ], 
+            "links": [
+                {
+                    "id": "54fc32659950f16618277c0b", 
+                    "note": "party PPC page", 
+                    "url": "http://www.snp.org/people/neil-gray"
+                }, 
+                {
+                    "id": "54fc32659950f16618277c0a", 
+                    "note": "facebook personal", 
+                    "url": "https://www.facebook.com/NeilGraySNP"
+                }
+            ], 
+            "name": "Neil Gray", 
+            "other_names": [], 
+            "proxy_image": "http://yournextmp.popit.mysociety.org/image-proxy/http%3A%2F%2Fyournextmp.popit.mysociety.org%2Fpersons%2F6031%2Fimage%2F54fc326409c0bb66180a6299", 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6031"
+        }, 
+        {
+            "birth_date": null, 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:52", 
+                        "name": "Conservative Party"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [], 
+            "email": null, 
+            "gender": null, 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/6569", 
+            "id": "6569", 
+            "identifiers": [], 
+            "images": [], 
+            "links": [], 
+            "name": "Eric Holford", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6569"
+        }, 
+        {
+            "birth_date": "1984-06-24", 
+            "candidacies": {
+                "ge2010": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:53", 
+                        "name": "Labour Party"
+                    }, 
+                    "year": 2010
+                }, 
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:53", 
+                        "name": "Labour Party"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [
+                {
+                    "id": "54e12195f8751c7576e5d267", 
+                    "type": "twitter", 
+                    "value": "pamela_nash"
+                }
+            ], 
+            "email": "votepamelanash@googlemail.com", 
+            "gender": "female", 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/2073", 
+            "id": "2073", 
+            "identifiers": [
+                {
+                    "id": "54e12195f8751c7576e5d263", 
+                    "identifier": "13462", 
+                    "scheme": "yournextmp-candidate"
+                }, 
+                {
+                    "id": "54e12195f8751c7576e5d262", 
+                    "identifier": "uk.org.publicwhip/person/24737", 
+                    "scheme": "uk.org.publicwhip"
+                }
+            ], 
+            "images": [], 
+            "links": [
+                {
+                    "id": "54e12195f8751c7576e5d266", 
+                    "note": "linkedin", 
+                    "url": "http://uk.linkedin.com/pub/pamela-nash/7/aa5/338/en"
+                }, 
+                {
+                    "id": "54e12195f8751c7576e5d265", 
+                    "note": "homepage", 
+                    "url": "http://pamelanash.com/"
+                }, 
+                {
+                    "id": "54e12195f8751c7576e5d264", 
+                    "note": "wikipedia", 
+                    "url": "https://en.wikipedia.org/wiki/Pamela_Nash"
+                }
+            ], 
+            "name": "Pamela Nash", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/2073"
+        }, 
+        {
+            "birth_date": "1991-04-08", 
+            "candidacies": {
+                "ge2015": {
+                    "constituency": {
+                        "mapit_url": "http://mapit.mysociety.org/area/14400", 
+                        "name": "Airdrie and Shotts", 
+                        "post_id": "14400"
+                    }, 
+                    "party": {
+                        "id": "party:85", 
+                        "name": "UK Independence Party (UKIP)"
+                    }, 
+                    "year": 2015
+                }
+            }, 
+            "contact_details": [], 
+            "email": "ukipairdrieshotts@yahoo.com", 
+            "gender": "Male", 
+            "honorific_prefix": null, 
+            "honorific_suffix": null, 
+            "html_url": "http://yournextmp.popit.mysociety.org/persons/6443", 
+            "id": "6443", 
+            "identifiers": [], 
+            "images": [], 
+            "links": [
+                {
+                    "id": "550614799b45541362c26890", 
+                    "note": "facebook page", 
+                    "url": "https://www.facebook.com/UKIPAirdrieShotts?fref=ts"
+                }
+            ], 
+            "name": "Matthew Williams ", 
+            "other_names": [], 
+            "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6443"
+        }
+    ]
+}

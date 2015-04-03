@@ -2,9 +2,6 @@
 layout: default
 ---
 
-{% assign constituency_id = page.constituency.id|replace:"","" %}
-{% assign constituency = site.data.constituencies.id[constituency_id] %}
-
 <div class="candidates__known">
 <h3>Known candidates for the 2015 general election</h3>
 <ul class="candidate-list">
@@ -22,14 +19,8 @@ layout: default
         {% endif %}
 
         <div class="person-name-and-party">
-          <a href="">{{ person.name }}</a>
-          {% if person.candidacies['ge2015'] %}
-            <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
-          {% else if person.candidacies['ge2010'] %}
-            <span class="party">{{ person.candidacies['ge2010'].party.name }}</span>
-          {% else %}
-            <span class="party">BUG: UNKNOWN YEAR</span>
-          {% endif %}
+          <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
+          <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
     </li>
 {% endfor %}

@@ -1,0 +1,34 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2010": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/66072", 
+                "name": "Birmingham, Hodge Hill", 
+                "post_id": "66072"
+            }, 
+            "party": {
+                "id": "party:106", 
+                "name": "British National Party"
+            }, 
+            "year": 2010
+        }
+    }, 
+    "contact_details": [], 
+    "email": "lumby_richard@yahoo.co.uk", 
+    "gender": "male", 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/7", 
+    "id": "7", 
+    "identifiers": [
+        {
+            "id": "547787cc737edc5252ce5fae", 
+            "identifier": "23358", 
+            "scheme": "yournextmp-candidate"
+        }
+    ], 
+    "images": [], 
+    "links": [], 
+    "name": "Richard Lumby", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/7"
+}

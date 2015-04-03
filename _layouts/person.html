@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+
+<div class="person__details">
+    
+  <h2>Personal details:</h2>
+
+  <dl>
+    <dt>Name</dt>
+    <dd>{{page.person.name}}</dd>
+    
+    
+    {% if page.person.email %}
+    <dt>Email</dt>
+    <dd><a href="mailto:{{ page.person.email }}">{{ page.person.email }}</a></dd>
+    {% endif %}
+    <dt>Party</dt>
+    <dd>{{page.person.candidacies.ge2015.party.name}}</dd>
+  </dl>
+
+  <h2>Constituencies:</h2>
+
+  <dl>
+    <dt>Contesting in 2015</dt>
+    <dd><span class="constituency-value-standing-link">
+        <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">{{page.person.candidacies.ge2015.constituency.name}}</a></span> 
+        <span class="party">{{page.person.candidacies.ge2015.party.name}}</span></dd>
+
+    <dt>Contesting in 2010</dt>
+    {% if page.person.candidacies.ge2010 %}
+    <dd><span class="constituency-value-standing-link">
+        <a href="/constituency/{{page.person.candidacies.ge2010.constituency.post_id}}/{{page.person.candidacies.ge2010.constituency.name|slugify}}">{{page.person.candidacies.ge2010.constituency.name}}</a></span> 
+        <span class="party">{{page.person.candidacies.ge2010.party.name}}</span></dd>
+    {% else %}
+    <dd><span class="constituency-not-standing">Did not stand in 2010</span></dd>
+    {% endif %}
+  </dl>
+
+  <h2>Links and social media:</h2>
+
+  <dl>
+    {% if page.person.contact_details.twitter %}
+    <dt>Twitter</dt>
+    <dd><a rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}">@{{page.person.contact_details.twitter.value}}</a></dd>
+    {% endif %}
+  
+    {% if page.person.links.facebook_personal %}
+    <dt>Facebook</dt>
+    <dd><a rel="nofollow" href="page.person.links.facebook_personal.url">{{page.person.links.facebook_personal.url}}</a> <small>(personal profile)</small></dd>
+    {% endif %}
+
+    {% if page.person.links.homepage %}
+    <dt>Homepage</dt>
+    <dd><a rel="nofollow" href="{{page.person.links.homepage.url}}">{{page.person.links.homepage.url}}</a></dd>
+    {% endif %}
+
+    {% if page.person.links.wikipedia %}
+    <dt>Wikipedia page</dt>
+    <dd><a rel="nofollow" href="{{page.person.links.wikipedia.url}}">{{page.person.links.wikipedia.url}}</a></dd>
+    {% endif %}
+    
+    {% if page.person.links.linkedin %}
+    <dt>LinkedIn page</dt>
+    <dd><a rel="nofollow" href="{{page.person.links.linkedin.url}}">{{page.person.links.linkedin.url}}</a></dd>
+    {% endif %}
+
+    {% if page.person.links.party_PPC_page %}
+    <dt>Party PPC page</dt>
+    <dd><a rel="nofollow" href="{{page.person.links.party_PPC_page.url}}">{{page.person.links.party_PPC_page.url}}</a></dd>
+    {% endif %}
+    
+  </dl>
+
+  <h2>Demographics:</h2>
+
+  <dl>
+    {% if page.person.gender %}
+    <dt>Gender</dt>
+    <dd>{{page.person.gender|capitalize}}</dd>
+    {% endif %}
+    {% if page.person.age %}
+    <dt>Age</dt>
+{% comment %}
+      TODO Add 'th' or 'nd' here
+{% endcomment %}
+    <dd>{{page.person.age}} <small class="dob">(Date of birth: {{page.person.birth_date|date: "%-d %B %Y" }})</small></dd>
+    {% endif %}
+</dl>
+  
+
+</div>

@@ -1,0 +1,34 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2010": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65989", 
+                "name": "Birmingham, Ladywood", 
+                "post_id": "65989"
+            }, 
+            "party": {
+                "id": "party:85", 
+                "name": "UK Independence Party (UKIP)"
+            }, 
+            "year": 2010
+        }
+    }, 
+    "contact_details": [], 
+    "email": null, 
+    "gender": "male", 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/10", 
+    "id": "10", 
+    "identifiers": [
+        {
+            "id": "54778654737edc5252ce58b6", 
+            "identifier": "23356", 
+            "scheme": "yournextmp-candidate"
+        }
+    ], 
+    "images": [], 
+    "links": [], 
+    "name": "Christopher Booth", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/10"
+}
