@@ -30,6 +30,9 @@ layout: default
 
 <h3>CVs uploaded</h3>
 <ul class="candidate-list">
+
+{% if page.constituency contains 'cv' %}
+
 {% for cv in page.constituency.cv %}
   {% assign person = site.data.people.id[cv.person_id] %}
   <li class="candidates-list__person">
@@ -43,6 +46,10 @@ layout: default
     </figure>
   </li>
 {% endfor %}
+{% else %}
+<p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet!</p>
+<p><a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}">Ask them to upload their CV</a></p>
+{% endif %}
 
 
 <h3>Press mentions of candidates in {{ page.constituency.mapit.name }}</h3>
