@@ -38,7 +38,7 @@ module Jekyll
 
     def generate(site)
       if site.layouts.key? 'constituency'
-        dir = 'constituencies/'
+        dir = 'constituency/'
         site.data['constituencies']['id'].each_with_index do |constituency, index|
 
           # Make the page with just the ID

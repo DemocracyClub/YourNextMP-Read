@@ -6,7 +6,7 @@ hero: "Constituencies"
 {% for constituency_hash in site.data.constituencies.id %}
   {% assign mapit_id = constituency_hash[0] %}
   {% assign constituency = constituency_hash[1] %}
-  <li><a href="/constituencies/{{mapit_id}}/{{constituency['mapit']['name']| slugify}}">
+  <li><a href="/constituency/{{mapit_id}}/{{constituency['mapit']['name']| slugify}}">
       {{constituency['mapit']['name'] }}
   </a></li>
 {% endfor %}
