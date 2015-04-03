@@ -1,0 +1,91 @@
+{
+    "em": [
+        {
+            "date": "2015-04-02T09:15:07.156000", 
+            "source": "labourlist.org", 
+            "title": "Does the media understand that politics doesn\u2019t just happen in the House of Commons and on TV \u2013 and does it matter?", 
+            "url": "http://labourlist.org/2015/04/does-the-media-understand-that-politics-doesnt-just-happen-in-the-house-of-commons-and-on-tv-and-does-it-matter/"
+        }, 
+        {
+            "date": "2015-04-02T05:00:09", 
+            "source": "www.theguardian.com", 
+            "title": "Party leaders' TV debate: rundown of the players and their likely plans", 
+            "url": "http://www.theguardian.com/politics/2015/apr/02/party-leaders-tv-debate-rundown-of-the-players-and-likely-plans"
+        }, 
+        {
+            "date": "2015-04-02T00:00:00", 
+            "source": "www.conservativehome.com", 
+            "title": "The Election Battleground 7) West Midlands", 
+            "url": "http://www.conservativehome.com/parliament/2015/04/the-election-battleground-7-west-midlands.html"
+        }, 
+        {
+            "date": "2015-04-01T12:57:17", 
+            "source": "www.blackburncitizen.co.uk", 
+            "title": "Jack Straw asks: Did Special Branch spy on me?", 
+            "url": "http://www.blackburncitizen.co.uk/news/12864758.Jack_Straw_asks__Did_Special_Branch_spy_on_me_/"
+        }, 
+        {
+            "date": "2015-04-01T00:00:00", 
+            "source": "www.telegraph.co.uk", 
+            "title": "A female James Bond? Ed Miliband wants to kill popular entertainment", 
+            "url": "http://www.telegraph.co.uk/men/the-filter/11508641/A-female-James-Bond-Ed-Miliband-wants-to-kill-popular-entertainment.html"
+        }, 
+        {
+            "date": "2015-04-01T00:00:00", 
+            "source": "www.telegraph.co.uk", 
+            "title": "If politicians want to engage women voters, try treating us the same as men", 
+            "url": "http://www.telegraph.co.uk/news/general-election-2015/11508887/If-politicians-want-to-engage-women-voters-try-treating-us-the-same-as-men.html"
+        }, 
+        {
+            "date": "2015-03-31T06:41:00", 
+            "source": "www.wharf.co.uk", 
+            "title": "I will carry on the fight for Docklands bomb compensation if I become prime minister", 
+            "url": "http://www.wharf.co.uk/news/local-news/carry-fight-docklands-bomb-compensation-8951556"
+        }, 
+        {
+            "date": "2015-03-29T00:05:00", 
+            "source": "www.theguardian.com", 
+            "title": "Can campaign battle break the Tory-Labour deadlock?", 
+            "url": "http://www.theguardian.com/politics/2015/mar/29/labour-tories-two-very-different-campaigns-uk-election-2015"
+        }, 
+        {
+            "date": "2015-03-29T00:00:00", 
+            "source": "www.independent.co.uk", 
+            "title": "Election 2015: Political parties' top women unite for family focused debate", 
+            "url": "http://www.independent.co.uk/news/uk/politics/generalelection/election-2015-political-parties-top-women-unite-for-family-focused-debate-10141448.html"
+        }, 
+        {
+            "date": "2015-03-28T00:00:00", 
+            "source": "www.independent.co.uk", 
+            "title": "Donald Macintyre's Sketch: To the top of the UK's tallest structure? Hell, yes!", 
+            "url": "http://www.independent.co.uk/news/uk/politics/donald-macintyres-sketch-to-the-top-of-the-uks-tallest-structure-hell-yes-10140688.html"
+        }
+    ], 
+    "mapit": {
+        "all_names": {}, 
+        "codes": {
+            "gss": "E14000615", 
+            "unit_id": "25066"
+        }, 
+        "country": "E", 
+        "country_name": "England", 
+        "generation_high": 22, 
+        "generation_low": 13, 
+        "id": 65913, 
+        "name": "Camberwell and Peckham", 
+        "parent_area": null, 
+        "type": "WMC", 
+        "type_name": "UK Parliament constituency"
+    }, 
+    "ynmp": [
+        "5708", 
+        "3885", 
+        "4170", 
+        "5259", 
+        "5417", 
+        "6211", 
+        "4808", 
+        "6460", 
+        "6829"
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2015": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65913", 
+                "name": "Camberwell and Peckham", 
+                "post_id": "65913"
+            }, 
+            "party": {
+                "id": "party:85", 
+                "name": "UK Independence Party (UKIP)"
+            }, 
+            "year": 2015
+        }
+    }, 
+    "contact_details": {
+        "twitter": {
+            "id": "550f41e4258c121a23cc3b7a", 
+            "type": "twitter", 
+            "value": "davidkurten"
+        }
+    }, 
+    "email": "david.kurten@ukiplocal.org", 
+    "gender": "male", 
+    "honorific_prefix": null, 
+    "honorific_suffix": null, 
+    "id": "6829", 
+    "identifiers": [], 
+    "images": [], 
+    "links": {
+        "homepage": {
+            "id": "550f41e4258c121a23cc3b79", 
+            "note": "homepage", 
+            "url": "http://www.davidkurten.net/"
+        }
+    }, 
+    "name": "David Kurten", 
+    "other_names": []
+}

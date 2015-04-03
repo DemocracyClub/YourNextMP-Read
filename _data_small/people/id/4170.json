@@ -1,0 +1,45 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2015": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65913", 
+                "name": "Camberwell and Peckham", 
+                "post_id": "65913"
+            }, 
+            "party": {
+                "id": "party:52", 
+                "name": "Conservative Party"
+            }, 
+            "year": 2015
+        }
+    }, 
+    "contact_details": {
+        "twitter": {
+            "id": "54d791d8545e72c70ba13b42", 
+            "type": "twitter", 
+            "value": "NaomiNewstead"
+        }
+    }, 
+    "email": "naomi.newstead@londonconservatives.com", 
+    "gender": "female", 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/4170", 
+    "id": "4170", 
+    "identifiers": [], 
+    "images": [], 
+    "links": {
+        "homepage": {
+            "id": "54d791d8545e72c70ba13b40", 
+            "note": "homepage", 
+            "url": "http://www.naominewstead.org.uk/"
+        }, 
+        "party_PPC_page": {
+            "id": "54d791d8545e72c70ba13b41", 
+            "note": "party PPC page", 
+            "url": "https://www.conservatives.com/OurTeam/Prospective_Parliamentary_Candidates/Newstead_Naomi.aspx"
+        }
+    }, 
+    "name": "Naomi Newstead", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/4170"
+}
