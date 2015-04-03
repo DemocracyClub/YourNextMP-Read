@@ -10,8 +10,8 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'constituency.html')
       self.data['constituency'] = constituency
-      self.data['title'] = "Candidates (PPCs) for #{constituency['name']} in the UK 2015 General Election"
-      self.data['hero'] = "Candidates for #{constituency['name']}"
+      self.data['title'] = "Candidates (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election"
+      self.data['hero'] = "Candidates for #{constituency['mapit']['name']}"
 
     end
   end
@@ -27,8 +27,8 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'constituency.html')
       self.data['constituency'] = constituency
-      self.data['title'] = "Candidates (PPCs) for #{constituency['name']} in the UK 2015 General Election"
-      self.data['hero'] = "Candidates for #{constituency['name']}"
+      self.data['title'] = "Candidates (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election"
+      self.data['hero'] = "Candidates for #{constituency['mapit']['name']}"
     end
   end
   
