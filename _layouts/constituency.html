@@ -75,6 +75,29 @@ layout: default
 {% endif %}
 
 
+<h3>Leaflets sent to {{ page.constituency.mapit.name }}</h3>
+{% if page.constituency contains 'el' %}
+{% for leaflet in page.constituency.el %}
+  <figure>
+    <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+      <img src="{{ leaflet.first_page_thumb }}">
+    </a>
+    {% if leaflet.publisher_person %}
+    <figcaption>
+      Sent by {{ leaflet.person.name }}
+    </figcaption>
+    {% endif %}
+  </figure>
+{% endfor %}
+{% else %}
+<p>
+  No one has uploaded any leaflet in {{ page.constituency.mapit.name }} yet.
+  Photograph and upload any you get at 
+  <a href="https://electionleaflets.org">ElectionLeaflets.org</a>
+</p>
+{% endif %}
+
+
 
 
 <h3>Press mentions of candidates in {{ page.constituency.mapit.name }}</h3>
