@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="candidates__known">
-<h3>Known candidates for the 2015 general election</h3>
 <ul class="candidate-list">
 {% for person_id in page.constituency.ynmp %}
     {% assign person = site.data.people.id[person_id] %}
@@ -21,6 +20,29 @@ layout: default
         <div class="person-name-and-party">
           <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
+        </div>
+
+        <div class="links">
+            <ul>
+            {% if person.links['homepage'] %}
+            <li><a href='{{ person.links['homepage'].url }}'>Homepage</a></li>
+            {% endif %}
+            {% if person.links['party_PPC_page'] %}
+            <li><a href='{{ person.links['party_PPC_page'].url }}'>Party page</a></li>
+            {% endif %}
+            {% if person.links['wikipedia'] %}
+            <li><a href='{{ person.links['wikipedia'].url }}'>Wikipedia page</a></li>
+            {% endif %}
+            {% if person.links['facebook_page'] %}
+            <li><a href='{{ person.links['facebook_page'].url }}'>Facebook campaign page</a></li>
+            {% endif %}
+            {% if person.links['facebook_profile'] %}
+            <li><a href='{{ person.links['facebook_profile'].url }}'>Facebook profile</a></li>
+            {% endif %}
+            {% if person.contact_details['twitter'] %}
+            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'>Twitter</a></li>
+            {% endif %}
+            </ul>
         </div>
     </li>
 {% endfor %}
