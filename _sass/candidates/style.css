@@ -6813,12 +6813,14 @@ body,
 
 .candidates-list__person .person-name-and-party .party, .person__details .party {
   color: #b8aba1;
-  margin-left: 0.2em; }
-  .candidates-list__person .person-name-and-party .party:before, .person__details .party:before {
+  margin-left: 0.2em;
+  display: block;
+  /*&:before {
     display: inline;
     content: "–";
-    color: #d9d2cc;
-    margin-right: 0.4em; }
+    color: darken($color-cream, 5%);
+    margin-right: 0.4em;
+  }*/ }
 
 .person__details h2, .person__versions h2 {
   line-height: 1.2em;
@@ -6851,6 +6853,75 @@ body,
 
 .candidate-list {
   margin: 1.5em 0; }
+  @media only screen {
+    .candidate-list {
+      display: block;
+      padding: 0;
+      margin: 0 -0.625rem; }
+      .candidate-list:before, .candidate-list:after {
+        content: " ";
+        display: table; }
+      .candidate-list:after {
+        clear: both; }
+      .candidate-list > li {
+        display: block;
+        height: auto;
+        float: left;
+        padding: 0 0.625rem 1.25rem; }
+      .candidate-list > li {
+        width: 100%;
+        padding: 0 0.625rem 1.25rem;
+        list-style: none; }
+        .candidate-list > li:nth-of-type(1n) {
+          clear: none; }
+        .candidate-list > li:nth-of-type(1n+1) {
+          clear: both; } }
+  @media only screen and (min-width: 40.063em) {
+    .candidate-list {
+      display: block;
+      padding: 0;
+      margin: 0 -0.625rem; }
+      .candidate-list:before, .candidate-list:after {
+        content: " ";
+        display: table; }
+      .candidate-list:after {
+        clear: both; }
+      .candidate-list > li {
+        display: block;
+        height: auto;
+        float: left;
+        padding: 0 0.625rem 1.25rem; }
+      .candidate-list > li {
+        width: 50%;
+        padding: 0 0.625rem 1.25rem;
+        list-style: none; }
+        .candidate-list > li:nth-of-type(1n) {
+          clear: none; }
+        .candidate-list > li:nth-of-type(2n+1) {
+          clear: both; } }
+  @media only screen and (min-width: 64.063em) {
+    .candidate-list {
+      display: block;
+      padding: 0;
+      margin: 0 -0.625rem; }
+      .candidate-list:before, .candidate-list:after {
+        content: " ";
+        display: table; }
+      .candidate-list:after {
+        clear: both; }
+      .candidate-list > li {
+        display: block;
+        height: auto;
+        float: left;
+        padding: 0 0.625rem 1.25rem; }
+      .candidate-list > li {
+        width: 33.33333%;
+        padding: 0 0.625rem 1.25rem;
+        list-style: none; }
+        .candidate-list > li:nth-of-type(1n) {
+          clear: none; }
+        .candidate-list > li:nth-of-type(3n+1) {
+          clear: both; } }
   .candidate-list li p {
     margin: 5px 0 0 0; }
 

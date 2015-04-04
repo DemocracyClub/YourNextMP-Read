@@ -1,13 +1,14 @@
 %candidate-party {
   color: darken($color-cream, 20%);
   margin-left: 0.2em;
+  display: block;
 
-  &:before {
+  /*&:before {
     display: inline;
     content: "–";
     color: darken($color-cream, 5%);
     margin-right: 0.4em;
-  }
+  }*/
 }
 
 %person-section-heading {
@@ -48,6 +49,18 @@
 
 .candidate-list {
   margin: 1.5em 0;
+
+  @media #{$small-up} {
+    @include block-grid(1);
+  }
+
+  @media #{$medium-up} {
+    @include block-grid(2);
+  }
+
+  @media #{$large-up} {
+    @include block-grid(3);
+  }
 
   li p {
     margin: 5px 0 0 0;
