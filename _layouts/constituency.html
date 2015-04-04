@@ -20,6 +20,7 @@ layout: default
         <div class="person-name-and-party">
           <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
+        </div>
 
         <div class="person-links">
             <ul>
@@ -45,7 +46,6 @@ layout: default
             <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i></a></li>
             {% endif %}
             </ul>
-        </div>
         </div>
     </li>
 {% endfor %}

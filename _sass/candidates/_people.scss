@@ -1,14 +1,6 @@
 %candidate-party {
   color: darken($color-cream, 20%);
-  margin-left: 0.2em;
   display: block;
-
-  /*&:before {
-    display: inline;
-    content: "–";
-    color: darken($color-cream, 5%);
-    margin-right: 0.4em;
-  }*/
 }
 
 %person-section-heading {
@@ -82,6 +74,7 @@
 
   .person-name-and-party {
     font-size: 1.2em;
+    margin-left: 5.5rem;
 
     .party {
       @extend %candidate-party;
@@ -89,17 +82,24 @@
   }
 
   .person-links {
+    margin-left: 5.5rem;
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
 
       li {
-        float: left;
         display: inline;
 
-        i.fa {
-            padding: 0.5rem;
+        a {
+          &:visited {
+            color: $primary-color; 
+          }
+
+          i.fa {
+            padding-right: 0.5rem;
+          }
         }
       }
     }

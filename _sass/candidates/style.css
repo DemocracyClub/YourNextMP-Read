@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -6813,14 +6812,7 @@ body,
 
 .candidates-list__person .person-name-and-party .party, .person__details .party, .cvs-list__cv .cv__person-name-and-party .party {
   color: #b8aba1;
-  margin-left: 0.2em;
-  display: block;
-  /*&:before {
-    display: inline;
-    content: "–";
-    color: darken($color-cream, 5%);
-    margin-right: 0.4em;
-  }*/ }
+  display: block; }
 
 .person__details h2, .person__versions h2 {
   line-height: 1.2em;
@@ -6940,16 +6932,20 @@ body,
     margin-right: 1.5em;
     background-color: #ddd; }
   .candidates-list__person .person-name-and-party {
-    font-size: 1.2em; }
-  .candidates-list__person .person-links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    .candidates-list__person .person-links ul li {
-      float: left;
-      display: inline; }
-      .candidates-list__person .person-links ul li i.fa {
-        padding: 0.5rem; }
+    font-size: 1.2em;
+    margin-left: 5.5rem; }
+  .candidates-list__person .person-links {
+    margin-left: 5.5rem; }
+    .candidates-list__person .person-links ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .candidates-list__person .person-links ul li {
+        display: inline; }
+        .candidates-list__person .person-links ul li a:visited {
+          color: #029db9; }
+        .candidates-list__person .person-links ul li a i.fa {
+          padding-right: 0.5rem; }
 
 .candidates__known {
   margin-bottom: 3em; }
