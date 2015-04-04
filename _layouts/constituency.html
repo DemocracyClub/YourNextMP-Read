@@ -128,12 +128,10 @@ layout: default
 {% endif %}
 
 
-
-
 <h3>Press mentions of candidates in {{ page.constituency.mapit.name }}</h3>
-<ul class="candidate-list">
+<ul class="mentions-list">
 {% for mention in page.constituency.em %}
-  <li class="candidates-list__person">
+  <li class="mentions-list__mention">
     <blockquote cite="{{ mention.url }}">{{ mention.title }}
       <footer>
         <a href="{{ mention.url }}">{{ mention.source }}</a> 
