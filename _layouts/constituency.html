@@ -48,8 +48,33 @@ layout: default
 {% endfor %}
 {% else %}
 <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet!</p>
-<p><a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}">Ask them to upload their CV</a></p>
+<p>
+  <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}">
+  Ask them to upload their CV</a>
+</p>
 {% endif %}
+
+
+
+<h3>Public events your candidates in {{ page.constituency.mapit.name }}</h3>
+{% if page.constituency contains 'meet' %}
+{% for event in page.constituency.meet %}
+  <h4>{{ event.summaryDisplay }}</h4>
+  <time datetime="{{ event.start.rfc2882timezone }}">
+    {{ event.start.timestamp|date: "%R" }}, 
+    {{ event.start.timestamp|date: "%D" }}
+  </time>
+  {{ event.description|markdownify }}
+{% endfor %}
+{% else %}
+<p>
+  We don't know about any events here yet.
+  Can you add any you know about to 
+  <a href="http://meetyournextmp.com/area/{{ page.constituency.mapit.id }}">MeetYourNextMP.com</a>?
+</p>
+{% endif %}
+
+
 
 
 <h3>Press mentions of candidates in {{ page.constituency.mapit.name }}</h3>

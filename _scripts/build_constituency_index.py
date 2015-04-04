@@ -1,10 +1,12 @@
 import json
 import sys
+import time
 
 ynmp_export_path = sys.argv[1]
 mapit_export_path = sys.argv[2]
 em_export_path = sys.argv[3]
 cv_export_path = sys.argv[4]
+meet_export_path = sys.argv[5]
 
 mapit_export_path = json.load(open(mapit_export_path))
 
@@ -60,6 +62,20 @@ for cv in cv_export:
     cv_list = constituency_data[constituency_id].get('cv', [])
     cv_list.append(cv)
     constituency_data[constituency_id]['cv'] = cv_list
+
+# Build Meet data
+meet_export = json.load(open(meet_export_path))
+
+for event in meet_export['data']:
+    if event['deleted']:
+        continue
+    if event['start']['timestamp'] < time.time():
+        continue
+    constituency_ids = event['mapitids']
+    for constituency_id in constituency_ids:
+        event_list = constituency_data[constituency_id].get('meet', [])
+        event_list.append(event)
+        constituency_data[constituency_id]['meet'] = event_list
 
 
 

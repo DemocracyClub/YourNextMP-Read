@@ -4,7 +4,8 @@ import json
 
 
 SAMPLE_CONSTITUENCIES = [
-    "65913"
+    "65913",
+    "65558",
 ]
 
 for constituency_id in SAMPLE_CONSTITUENCIES:
