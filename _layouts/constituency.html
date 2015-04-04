@@ -22,7 +22,7 @@ layout: default
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
 
-        <div class="links">
+        <div class="person-links">
             <ul>
             {% if person.links['homepage'] %}
             <li><a href='{{ person.links['homepage'].url }}'>Homepage</a></li>
@@ -53,16 +53,17 @@ layout: default
 <h3>CVs uploaded</h3>
 
 {% if page.constituency contains 'cv' %}
-<ul class="candidate-list">
+<ul class="cvs-list">
 {% for cv in page.constituency.cv %}
   {% assign person = site.data.people.id[cv.person_id] %}
-  <li class="candidates-list__person">
+  <li class="cvs-list__cv">
     <figure>
       <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
         <img src="{{ cv.thumb.url }}">
       </a>
-      <figcaption>
-        {{ person.name }} ({{ person.candidacies.ge2015.party.name }})
+      <figcaption class="cv__person-name-and-party">
+        <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
+        <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
       </figcaption>
     </figure>
   </li>
