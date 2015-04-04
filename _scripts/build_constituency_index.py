@@ -7,6 +7,7 @@ mapit_export_path = sys.argv[2]
 em_export_path = sys.argv[3]
 cv_export_path = sys.argv[4]
 meet_export_path = sys.argv[5]
+el_export_path = sys.argv[6]
 
 mapit_export_path = json.load(open(mapit_export_path))
 
@@ -63,6 +64,7 @@ for cv in cv_export:
     cv_list.append(cv)
     constituency_data[constituency_id]['cv'] = cv_list
 
+
 # Build Meet data
 meet_export = json.load(open(meet_export_path))
 
@@ -78,6 +80,12 @@ for event in meet_export['data']:
         constituency_data[constituency_id]['meet'] = event_list
 
 
+# Build EL data
+el_export = json.load(open(el_export_path))
+
+for constituency_id, leaflets in el_export.items():
+    if leaflets:
+        constituency_data[constituency_id]['el'] = leaflets
 
 
 for constituency_id, data in constituency_data.items(): 
