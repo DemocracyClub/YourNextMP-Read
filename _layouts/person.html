@@ -48,7 +48,12 @@ layout: default
   
     {% if page.person.links.facebook_personal %}
     <dt>Facebook</dt>
-    <dd><a rel="nofollow" href="page.person.links.facebook_personal.url">{{page.person.links.facebook_personal.url}}</a> <small>(personal profile)</small></dd>
+    <dd><a rel="nofollow" href="{{ page.person.links.facebook_personal.url }}">{{page.person.links.facebook_personal.url}}</a> <small>(personal profile)</small></dd>
+    {% endif %}
+    
+    {% if page.person.links.facebook_page %}
+    <dt>Facebook</dt>
+    <dd><a rel="nofollow" href="{{ page.person.links.facebook_page.url }}">{{page.person.links.facebook_page.url}}</a> <small>(campaign page)</small></dd>
     {% endif %}
 
     {% if page.person.links.homepage %}

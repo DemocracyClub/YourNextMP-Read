@@ -6948,6 +6948,8 @@ body,
     .candidates-list__person .person-links ul li {
       float: left;
       display: inline; }
+      .candidates-list__person .person-links ul li i.fa {
+        padding: 0.5rem; }
 
 .candidates__known {
   margin-bottom: 3em; }
