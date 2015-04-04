@@ -1,0 +1,42 @@
+{
+    "birth_date": null, 
+    "candidacies": {
+        "ge2015": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65558", 
+                "name": "Chichester", 
+                "post_id": "65558"
+            }, 
+            "party": {
+                "id": "party:1969", 
+                "name": "Patria"
+            }, 
+            "year": 2015
+        }
+    }, 
+    "contact_details": {
+        "twitter": {
+            "id": "54f37910855f20e057880427", 
+            "type": "twitter", 
+            "value": "draemerson"
+        }
+    }, 
+    "email": "contact@patria-uk.org", 
+    "gender": "Male", 
+    "honorific_prefix": "Dr", 
+    "honorific_suffix": null, 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/6208", 
+    "id": "6208", 
+    "identifiers": [], 
+    "images": [], 
+    "links": {
+        "homepage": {
+            "id": "54f37910855f20e057880426", 
+            "note": "homepage", 
+            "url": "http://www.patria-uk.org/"
+        }
+    }, 
+    "name": "Andrew Emerson", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/6208"
+}

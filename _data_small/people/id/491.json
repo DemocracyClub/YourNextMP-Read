@@ -1,0 +1,76 @@
+{
+    "age": 58, 
+    "birth_date": "1957-01-15", 
+    "candidacies": {
+        "ge2010": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65558", 
+                "name": "Chichester", 
+                "post_id": "65558"
+            }, 
+            "party": {
+                "id": "party:52", 
+                "name": "Conservative Party"
+            }, 
+            "year": 2010
+        }, 
+        "ge2015": {
+            "constituency": {
+                "mapit_url": "http://mapit.mysociety.org/area/65558", 
+                "name": "Chichester", 
+                "post_id": "65558"
+            }, 
+            "party": {
+                "id": "party:52", 
+                "name": "Conservative Party"
+            }, 
+            "year": 2015
+        }
+    }, 
+    "contact_details": {
+        "twitter": {
+            "id": "551c6c4c5f0161973ba3e64b", 
+            "type": "twitter", 
+            "value": "Chichesterca"
+        }
+    }, 
+    "email": "office@chichesterconservatives.com", 
+    "gender": "male", 
+    "honorific_prefix": null, 
+    "honorific_suffix": null, 
+    "html_url": "http://yournextmp.popit.mysociety.org/persons/491", 
+    "id": "491", 
+    "identifiers": [
+        {
+            "id": "551c6c4c5f0161973ba3e647", 
+            "identifier": "4467", 
+            "scheme": "yournextmp-candidate"
+        }, 
+        {
+            "id": "551c6c4c5f0161973ba3e646", 
+            "identifier": "uk.org.publicwhip/person/10613", 
+            "scheme": "uk.org.publicwhip"
+        }
+    ], 
+    "images": [], 
+    "links": {
+        "homepage": {
+            "id": "551c6c4c5f0161973ba3e649", 
+            "note": "homepage", 
+            "url": "http://www.andrewtyrie.com/"
+        }, 
+        "party_PPC_page": {
+            "id": "551c6c4c5f0161973ba3e64a", 
+            "note": "party PPC page", 
+            "url": "https://www.conservatives.com/OurTeam/Members_of_Parliament/Tyrie_Andrew.aspx"
+        }, 
+        "wikipedia": {
+            "id": "551c6c4c5f0161973ba3e648", 
+            "note": "wikipedia", 
+            "url": "https://en.wikipedia.org/wiki/Andrew_Tyrie"
+        }
+    }, 
+    "name": "Andrew Tyrie", 
+    "other_names": [], 
+    "url": "http://yournextmp.popit.mysociety.org/api/v0.1/persons/491"
+}
