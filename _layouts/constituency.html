@@ -25,25 +25,25 @@ layout: default
         <div class="person-links">
             <ul>
             {% if person.links['homepage'] %}
-            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i></a></li>
+            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
             {% endif %}
             {% if person.links['party_PPC_page'] %}
-            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i></a></li>
+            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i> Party page</a></li>
             {% endif %}
             {% if person.links['wikipedia'] %}
-            <li><a href='{{ person.links['wikipedia'].url }}'></a></li>
+            <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i> Wikipedia article</a></li>
             {% endif %}
             {% if person.links['facebook_page'] %}
-            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i> Facebook page</a></li>
             {% endif %}
             {% if person.links['facebook_profile'] %}
-            <li><a href='{{ person.links['facebook_profile'].url }}'><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href='{{ person.links['facebook_profile'].url }}'><i class="fa fa-facebook-square"></i> Facebook profile</a></li>
             {% endif %}
             {% if person.links['linkedin'] %}
-            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i></a></li>
+            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i> Linkedin profile</a></li>
             {% endif %}
             {% if person.contact_details['twitter'] %}
-            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i></a></li>
+            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i> Twitter account</a></li>
             {% endif %}
             </ul>
         </div>
@@ -84,29 +84,6 @@ layout: default
     </p>
     {% endif %}
     </div>
-
-    <div class="meet-block data-block">
-    <h3>Public events with your candidates in {{ page.constituency.mapit.name }}</h3>
-    {% if page.constituency contains 'meet' %}
-    <ul class="meet-list">
-    {% for event in page.constituency.meet %}
-      <li class="meet-list__event">
-          <time class="event-date" datetime="{{ event.start.rfc2882timezone }}">
-            {{ event.start.timestamp|date: "%D" }}
-          </time>
-          <a class="event-title" href='{{ event.siteurl }}'>{{ event.summaryDisplay }}</a>
-          <span class="event-time">{{ event.start.timestamp|date: "%R" }}</span>
-      </li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    <p>
-      We don't know about any events here yet.
-      Can you add any you know about to 
-      <a href="http://meetyournextmp.com/area/{{ page.constituency.mapit.id }}">MeetYourNextMP.com</a>?
-    </p>
-    {% endif %}
-    </div>
 </div>
 
 <div class="small-12 large-6 columns">
@@ -140,7 +117,36 @@ layout: default
     </p>
     {% endif %}
     </div>
+</div>
+</div>
 
+<div class="row">
+<div class="small-12 large-6 columns">
+    <div class="meet-block data-block">
+    <h3>Public events with your candidates in {{ page.constituency.mapit.name }}</h3>
+    {% if page.constituency contains 'meet' %}
+    <ul class="meet-list">
+    {% for event in page.constituency.meet %}
+      <li class="meet-list__event">
+          <time class="event-date" datetime="{{ event.start.rfc2882timezone }}">
+            {{ event.start.timestamp|date: "%D" }}
+          </time>
+          <a class="event-title" href='{{ event.siteurl }}'>{{ event.summaryDisplay }}</a>
+          <span class="event-time">{{ event.start.timestamp|date: "%R" }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>
+      We don't know about any events here yet.
+      Can you add any you know about to 
+      <a href="http://meetyournextmp.com/area/{{ page.constituency.mapit.id }}">MeetYourNextMP.com</a>?
+    </p>
+    {% endif %}
+    </div>
+</div>
+
+<div class="small-12 large-6 columns">
     <div class="mentions-block data-block">
     <h3>Press mentions of {{ page.constituency.mapit.name }}</h3>
 

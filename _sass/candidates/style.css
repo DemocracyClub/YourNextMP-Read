@@ -6917,6 +6917,9 @@ body,
   .candidate-list li p {
     margin: 5px 0 0 0; }
 
+@font-face {
+  font-family: 'wikipedia-icon';
+  src: url(/images/wikipedia-icon.woff); }
 .candidates-list__person {
   list-style-type: none;
   margin-bottom: 1em; }
@@ -6940,12 +6943,16 @@ body,
       list-style: none;
       margin: 0;
       padding: 0; }
-      .candidates-list__person .person-links ul li {
-        display: inline; }
-        .candidates-list__person .person-links ul li a:visited {
-          color: #029db9; }
-        .candidates-list__person .person-links ul li a i.fa {
-          padding-right: 0.5rem; }
+      .candidates-list__person .person-links ul li a:visited {
+        color: #029db9; }
+      .candidates-list__person .person-links ul li a i.fa {
+        padding-right: 0.5rem; }
+      .candidates-list__person .person-links ul li a i.wikipedia-icon:before {
+        font-family: 'wikipedia-icon';
+        content: '\e600'; }
+      .candidates-list__person .person-links ul li a i.wikipedia-icon {
+        font-style: normal;
+        padding-right: 0.5rem; }
 
 .candidates__known {
   margin-bottom: 3em; }
