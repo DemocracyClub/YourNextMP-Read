@@ -7,15 +7,17 @@ layout: default
 {% for person_id in page.constituency.ynmp %}
     {% assign person = site.data.people.id[person_id] %}
     <li class="candidates-list__person">
+        <a href="/person/{{ person.id}}/{{person.name|slugify }}">
         {% if person.image %}
-        <a href="">
             <img class="person-avatar" src="{{ person.proxy_image }}/0/64"/>
-        </a>
-        {% else if person.gender|lower == 'female' %}
-          <img class="person-avatar" src="/images/blank-woman.png"/>
+        {% elsif person.gender == 'female' %}
+            <img class="person-avatar" src="/images/blank-woman.png"/>
+        {% elsif person.gender == 'male' %}
+            <img class="person-avatar" src="/images/blank-man.png"/>
         {% else %}
-          <img class="person-avatar" src="/images/blank-man.png"/>
+            <img class="person-avatar" src="/images/blank-man.png"/>
         {% endif %}
+        </a>
 
         <div class="person-name-and-party">
           <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>

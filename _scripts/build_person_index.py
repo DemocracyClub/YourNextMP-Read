@@ -70,7 +70,10 @@ for person in ynmp_export['persons']:
     if 'birth_date' in person and person['birth_date']:
         dob = datetime.strptime(person['birth_date'], '%Y-%m-%d').date()
         person['age'] = years_ago(dob, date.today())
-    
+   
+    if person['gender']:
+        person['gender'] = person['gender'].lower()
+ 
     person['candidacies'] = candidacies
     del person['standing_in']
     del person['party_memberships']
