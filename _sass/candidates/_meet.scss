@@ -1,0 +1,20 @@
+.meet-list {
+  margin: 1.5em 0;
+}
+
+.meet-list__event {
+  list-style-type: none;
+  margin-bottom: 0.5em;
+  @include clearfix;
+  
+  .event-date {
+    font-size: 0.8em;
+  }
+
+  .event-title {
+  }
+
+  .event-time {
+  }
+}
+
