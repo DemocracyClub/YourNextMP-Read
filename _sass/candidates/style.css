@@ -7107,6 +7107,11 @@ img.party-detail__image {
   width: 7em;
   height: auto; }
 
+.data-block {
+  margin-bottom: 3em; }
+  .data-block p.info {
+    color: #555; }
+
 .cvs-list {
   margin: 1.5em 0; }
   @media only screen {
@@ -7300,4 +7305,18 @@ figure {
   .mentions-list__mention .mention-source {
     color: #b8aba1; }
   .mentions-list__mention .mention-time {
+    font-size: 0.8em; }
+
+.meet-list {
+  margin: 1.5em 0; }
+
+.meet-list__event {
+  list-style-type: none;
+  margin-bottom: 0.5em; }
+  .meet-list__event:before, .meet-list__event:after {
+    content: " ";
+    display: table; }
+  .meet-list__event:after {
+    clear: both; }
+  .meet-list__event .event-date {
     font-size: 0.8em; }
