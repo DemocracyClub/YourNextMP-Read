@@ -129,7 +129,7 @@ layout: default
     {% for event in page.constituency.meet %}
       <li class="meet-list__event">
           <time class="event-date" datetime="{{ event.start.rfc2882timezone }}">
-            {{ event.start.timestamp|date: "%D" }}
+            {{ event.start.timestamp|date: "%d/%m/%Y" }}
           </time>
           <a class="event-title" href='{{ event.siteurl }}'>{{ event.summaryDisplay }}</a>
           <span class="event-time">{{ event.start.timestamp|date: "%R" }}</span>
@@ -155,7 +155,7 @@ layout: default
     <ul class="mentions-list">
     {% for mention in page.constituency.em %}
       <li class="mentions-list__mention">
-        <time class='mention-time'>{{ mention.date|date: "%D" }}</time>
+        <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
         <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
         <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
       </li>
