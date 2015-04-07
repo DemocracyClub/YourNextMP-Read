@@ -1,0 +1,2 @@
+curl "https://yournextmp.com/numbers/?format=json" -o - | python -m json.tool > _data/ynmp_numbers.json
+curl "https://yournextmp.com/numbers/?format=json" -o - | python -m json.tool > _data_small/ynmp_numbers.json
