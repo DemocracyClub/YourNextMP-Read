@@ -23,6 +23,10 @@
   margin-bottom: 1em;
   @include clearfix;
 
+  figure {
+    margin: 0;
+  }
+
   .cv__person-name-and-party {
     font-size: 1.2em;
 

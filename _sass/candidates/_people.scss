@@ -59,6 +59,11 @@
   }
 }
 
+@font-face {
+  font-family: 'wikipedia-icon';
+  src: url(/images/wikipedia-icon.woff);
+}
+
 .candidates-list__person {
   list-style-type: none;
   margin-bottom: 1em;
@@ -66,8 +71,8 @@
 
   .person-avatar {
     float: left;
-    width: auto;
-    height: 4em;
+    width: 4em;
+    height: auto;
     margin-right: 1.5em;
     background-color: #ddd;
   }
@@ -90,7 +95,6 @@
       padding: 0;
 
       li {
-        display: inline;
 
         a {
           &:visited {
@@ -98,6 +102,16 @@
           }
 
           i.fa {
+            padding-right: 0.5rem;
+          }
+
+          i.wikipedia-icon:before {
+            font-family: 'wikipedia-icon';
+            content: '\e600';
+          }
+
+          i.wikipedia-icon {
+            font-style: normal;
             padding-right: 0.5rem;
           }
         }

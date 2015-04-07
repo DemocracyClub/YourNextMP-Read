@@ -1,35 +1,21 @@
 .mentions-list {
   margin: 1.5em 0;
-
-  @media #{$small-up} {
-    @include block-grid(1);
-  }
-
-  @media #{$medium-up} {
-    @include block-grid(2);
-  }
-
-  @media #{$large-up} {
-    @include block-grid(3);
-  }
-
-  li p {
-    margin: 5px 0 0 0;
-  }
 }
 
 .mentions-list__mention {
   list-style-type: none;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   @include clearfix;
 
-  .mention__person-name-and-party {
-    font-size: 1.2em;
+  .mention-title {
+  }
 
-    .party {
-      @extend %candidate-party;
-      margin-left: 0.0em;
-    }
+  .mention-source {
+    color: darken($color-cream, 20%);
+  }
+
+  .mention-time {
+    font-size: 0.8em;
   }
 }
 
