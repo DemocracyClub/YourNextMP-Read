@@ -21,6 +21,10 @@ if [ ! -f _downloads/el.export.json ]; then
     ./_scripts/get_el.sh
 fi
 
+if [ ! -f ynmp_numbers.json ]; then
+    ./_scripts/get_ynmp_numbers.sh
+fi
+
 data_files=(
     _downloads/ynmp.popit.mysociety.org.export.json
     _data/mapit-WMC-generation-22.json
