@@ -67,10 +67,11 @@ for person in ynmp_export['persons']:
         person['links'], key='note')
     
     # Calculate age in advance.  Will obvioulsy get out of date!
-    if 'birth_date' in person and person['birth_date']:
+    # len catch is to catch case where only year is in field
+    if 'birth_date' in person and person['birth_date'] and len(person['birth_date']) > 7 :
         dob = datetime.strptime(person['birth_date'], '%Y-%m-%d').date()
         person['age'] = years_ago(dob, date.today())
-   
+
     if person['gender']:
         person['gender'] = person['gender'].lower()
  
