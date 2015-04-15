@@ -79,6 +79,8 @@ for event in meet_export['data']:
         event_list.append(event)
         constituency_data[constituency_id]['meet'] = event_list
 
+for constituency_id, count in meet_export['areasPastEvents'].items():
+    constituency_data[constituency_id]['meetPastEventsCount'] = count
 
 # Build EL data
 el_export = json.load(open(el_export_path))
