@@ -90,7 +90,16 @@ layout: default
 {% comment %}
       TODO Add 'th' or 'nd' here
 {% endcomment %}
-    <dd>{{page.person.age}} <small class="dob">(Date of birth: {{page.person.birth_date|date: "%-d %B %Y" }})</small></dd>
+    <dd>
+        {{page.person.age}}
+        <small class="dob">
+            {% if page.person.birth_date.size > 4 %}
+                (Date of birth: {{page.person.birth_date|date: "%-d %B %Y" }})
+            {% else %}
+                (Year of birth: {{ page.person.birth_date }})
+            {% endif %}
+        </small>
+    </dd>
     {% endif %}
 </dl>
   
