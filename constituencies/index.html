@@ -5,7 +5,7 @@ hero: All Constituencies for the 2015 General Election
 
 
 <div class="home">
-{% for constituency_hash in site.data.constituencies.id  %}
+{% for constituency_hash in site.constituencies_sorted  %}
   {% assign mapit_id = constituency_hash[0] %}
   {% assign constituency = constituency_hash[1] %}
   <li><a href="/constituency/{{mapit_id}}/{{constituency['mapit']['name']| slugify}}">

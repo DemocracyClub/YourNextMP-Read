@@ -21,3 +21,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+jekyll_sort:
+  - src: constituencies
+    direction: down
+    dest: constituencies_sorted
