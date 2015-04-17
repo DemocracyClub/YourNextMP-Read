@@ -11,6 +11,11 @@ el_export_path = sys.argv[6]
 
 mapit_export_path = json.load(open(mapit_export_path))
 
+try:
+    mapit_centres = json.loads(open("_data/mapit-centres.json").read())
+except IOError:
+    mapit_centres = {}
+
 PERSON_CONSTITUENCIES = {}
 
 # Build constituency data, starting with mapit
@@ -38,8 +43,45 @@ def build_person_candidacies(person):
 
     return candidacies
 
+def get_constituency_distance(constituency_id):
+    max_lat = mapit_centres[constituency_id]['max_lat']
+    min_lat = mapit_centres[constituency_id]['min_lat']
+    min_lon = mapit_centres[constituency_id]['min_lon']
+    max_lon = mapit_centres[constituency_id]['max_lon']
+
+    def calc_dist(x,y):
+        return abs(x - y) * 111
+
+    lon_dis = calc_dist(max_lon, min_lon)
+    lat_dis = calc_dist(max_lat, min_lat)
+    return max(lon_dis, lat_dis) * 3
+
+
+def is_in_area(event, constituency_id):
+
+    distance = get_constituency_distance(constituency_id)
+
+    if 'venue' in event and 'lat' in event['venue']:
+        if not event['venue']['lat']:
+            return distance
+        if not mapit_centres.get(constituency_id):
+            return distance
+
+        venue = (
+            float(event['venue']['lat']),
+            float(event['venue']['lng'])
+        )
+
+        con_location = (
+            mapit_centres[constituency_id]['centre_lat'],
+            mapit_centres[constituency_id]['centre_lon'],
+        )
+
+        from geopy.distance import vincenty
+        return vincenty(venue, con_location).kilometers < distance
+
 for person in ynmp_export['persons']:
-    
+
     candidacies = build_person_candidacies(person)
 
     if 'ge2015' in candidacies:
@@ -51,8 +93,8 @@ for person in ynmp_export['persons']:
 election_mentions_export = json.load(open(em_export_path))
 
 for constituency_id, links in election_mentions_export.items():
-   constituency_data[constituency_id]['em'] = links 
- 
+   constituency_data[constituency_id]['em'] = links
+
 
 # Build CV data
 cv_export = json.load(open(cv_export_path))
@@ -74,7 +116,14 @@ for event in meet_export['data']:
     if event['start']['timestamp'] < time.time():
         continue
     constituency_ids = event['mapitids']
+
     for constituency_id in constituency_ids:
+        if is_in_area(event, constituency_id) == False:
+            print "Skipping {0} as it's too far away".format(
+                event['siteurl']
+            )
+            continue
+
         event_list = constituency_data[constituency_id].get('meet', [])
         event_list.append(event)
         constituency_data[constituency_id]['meet'] = event_list
@@ -90,7 +139,7 @@ for constituency_id, leaflets in el_export.items():
         constituency_data[constituency_id]['el'] = leaflets
 
 
-for constituency_id, data in constituency_data.items(): 
+for constituency_id, data in constituency_data.items():
     json.dump(data,
               open('_data/constituencies/id/{}.json'.format(constituency_id), 'w+'),
               indent=4,
