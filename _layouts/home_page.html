@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="/feeds/changes.xml">
+
+    {% include head.html %}
+    <title>YourNextMP - 2015 UK general election candidates</title>
+</head>
+
+<body class="finder">
+  <div class="header">
+    <div class="container">
+      {% include nav.html %}
+      <div class="header__hero">
+        <h1>Who's on <em>your</em> ballot paper?</h1>
+        <p class="lead">Get to know the candidates in your&nbsp;constituency</p>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+
+<div class="finder__forms">
+
+  <form id="form-postcode" action="/postcode/" method="get" >
+    <p><label for="id_postcode">Enter your postcode:</label> <input id="id_postcode" maxlength="20" name="postcode" type="text" /></p>
+    <input type="submit" class="button" value="Show candidates" />
+    <a class="show-other-form" href="/constituencies/">Or select a constituency</a>
+  </form>
+
+</div>
+
+</div><!-- close .container so we can go full width with .finder__description -->
+
+<div class="finder__description">
+  <div class="container">
+    <p>
+      YourNextMP.com brings together all of
+      <a href="https://democracyclub.org.uk">Democracy Club</a>'s sites in to
+      one place, giving you a full picture of your candidates and your
+      constituency.
+    </p>
+    <p>YourNextMP is the most comprehensive transparently sourced and
+      well-structured database of General Election 2015 candidate data.
+      <a href="/help/api">Get the data now</a>, or
+      <a href="/tasks/">help by contributing new candidate
+      details.</a>
+    </p>
+  </div>
+</div>
+
+  </div>
+  <div class="footer">
+      {% include footer.html %}
+  </div>
+
+  <script type="application/javascript" src="{{ "/js/all.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-660910-28', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</body>
+</html>
