@@ -11,7 +11,18 @@
       <div class="container">
         {% include nav.html %}
         <div class="header__hero">
-            <h1>{{ page.hero }}</h1>
+          {% if page.person %}
+          <div class="person__hero">
+            {% if page.person.image %}
+            <img class="person-avatar" src="{{ page.person.image }}"/>
+            {% endif %}
+            <h1>{{ page.person.name }}</h1>
+              <p>Candidate for <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">{{page.person.candidacies.ge2015.constituency.name}}</a> in 2015</p>
+          </div>
+          {% else %}
+          <h1>{{ page.hero }}</h1>
+          {% endif %}
+
         </div>
       </div>
     </div>
