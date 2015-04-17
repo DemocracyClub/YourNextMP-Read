@@ -100,7 +100,24 @@ layout: default
         </small>
     </dd>
     {% endif %}
-</dl>
+  </dl>
 
+</div>
+
+<div class="person__actions">
+
+  <div class="person__actions__action person__actions__edit">
+    <h2>Improve this data!</h2>
+    <p>Our database is built by people like you.</p>
+    <p>Please do add extra details about this candidate – it only takes a moment.</p>
+    <a href="https://edit.yournextmp.com/person/{{ page.person.id }}/update" class="button">Edit candidate</a>
+  </div>
+
+  <div class="person__actions__action person__actions__data">
+    <h2>Use this data!</h2>
+    <p>Open data JSON API, licensed CC-BY-SA 4.0:</p>
+    <p><input type="text" value="https://yournextmp.popit.mysociety.org/api/v0.1/persons/{{ page.person.id }}" onclick="this.select();"></p>
+    <p>More details about getting <a href="/help/api/">the data</a> and <a href="/help/about/">its license.</a></p>
+  </div>
 
 </div>
