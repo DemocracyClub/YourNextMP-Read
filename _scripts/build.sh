@@ -21,7 +21,7 @@ if [ ! -f _downloads/el.export.json ]; then
     ./_scripts/get_el.sh
 fi
 
-if [ ! -f ynmp_numbers.json ]; then
+if [ ! -f _data/ynmp_numbers.json ]; then
     ./_scripts/get_ynmp_numbers.sh
 fi
 
