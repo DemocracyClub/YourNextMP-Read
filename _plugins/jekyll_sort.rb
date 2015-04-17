@@ -42,7 +42,13 @@ module Jekyll
       end
 
       if !config['constituencies']
-        config['constituencies'] = site.site_payload["site"]["data"]["constituencies"]["id"]
+        constituencyData = []
+        site.site_payload["site"]["data"]["constituencies"]["id"].each { |constituency|
+          constituencyHash = constituency[1]
+          constituencyHash['name'] = constituencyHash['mapit']['name']
+          constituencyData.push(constituencyHash)
+        }
+        config['constituencies'] = constituencyData
       end
 
       sort_jobs = config['jekyll_sort']
