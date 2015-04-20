@@ -67,6 +67,9 @@ for person in ynmp_export['persons']:
               if images:
                   person['party_emblem'] = images[0]
 
+    if 'images' in person and person['images']:
+        person['image_data'] = person['images'][0]
+
     person['contact_details'] = list_to_dict(
         person['contact_details'], key='type')
 
