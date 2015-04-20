@@ -4,3 +4,4 @@ MarkupSafe==0.23
 Unidecode==0.04.17
 requests==2.6.0
 gunicorn
+geopy
