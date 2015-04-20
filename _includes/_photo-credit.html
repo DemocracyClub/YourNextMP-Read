@@ -1,0 +1,32 @@
+{% assign image=include.image_data %}
+{% assign contributor=image.uploaded_by_user %}
+{% assign user_reason=image.user_why_allowed %}
+{% assign mod_reason=image.moderator_why_allowed %}
+{% assign user_comment=image.user_justification_for_use %}
+
+  {% if contributor %}
+    This photo was uploaded by the user &lsquo;{{ contributor }}&rsquo;.
+  {% endif %}
+  {% if user_reason and user_reason != 'other'  %}
+    Their justification for its use on the site was that
+    {% include _photo-expand-reason.html reason=user_reason %}.
+  {% endif %}
+
+  {% if user_comment %}
+    They commented: &ldquo;{{ user_comment }}&rdquo;.
+  {% endif %}
+  {% if mod_reason != user_reason %}
+    The volunteer moderator who reviewed this photo picked a
+    different justification for its use on the site, which was
+    that
+    {% include _photo-expand-reason.html reason=mod_reason %}.
+  {% endif %}
+
+  {% if image.notes != 'Approved from photo moderation queue' %}
+    {% if image.source %}
+      The source of the image was &ldquo;{{ image.source }}&rdquo;.
+    {% endif %}
+    {% if image.notes and image.notes != 'md5sum:'  %}
+      Notes about this image: &ldquo;{{ image.notes }}&rdquo;.
+    {% endif %}
+  {% endif %}

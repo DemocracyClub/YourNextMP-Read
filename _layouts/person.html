@@ -102,6 +102,11 @@ layout: default
     {% endif %}
   </dl>
 
+  <h2>Photo Credit:</h2>
+  <p class="person__photo-credit">
+  {% include _photo-credit.html image_data=page.person.image_data %}
+  </p>
+
 </div>
 
 <div class="person__actions">
