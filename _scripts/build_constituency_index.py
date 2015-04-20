@@ -86,7 +86,9 @@ for person in ynmp_export['persons']:
 
     if 'ge2015' in candidacies:
         constituency_id = candidacies['ge2015']['constituency']['post_id']
-        constituency_data[constituency_id]['ynmp'].append(person['id'])
+        last_name = person['name'].split(' ')[-1]
+        constituency_data[constituency_id]['ynmp'].append(
+            (person['id'], last_name))
         PERSON_CONSTITUENCIES[person['id']] = constituency_id
 
 # Build EM data
@@ -140,6 +142,9 @@ for constituency_id, leaflets in el_export.items():
 
 
 for constituency_id, data in constituency_data.items():
+    # Sort people by last name
+    data['ynmp'] = [
+        person[0] for person in sorted(data['ynmp'], key=lambda key: key[1])]
     json.dump(data,
               open('_data/constituencies/id/{}.json'.format(constituency_id), 'w+'),
               indent=4,
