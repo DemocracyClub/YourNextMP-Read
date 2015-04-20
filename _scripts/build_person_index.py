@@ -20,7 +20,7 @@ def list_to_dict(data_list, key):
 def years_ago(earlier_date, later_date):
     """
     Taken from https://github.com/mysociety/yournextmp-popit/
-    
+
     Calculate the number of years between two dates
     >>> years_ago(date(1976, 9, 13), date(2015, 1, 31))
     38
@@ -41,12 +41,14 @@ def years_ago(earlier_date, later_date):
     else:
         return (later_date.year - earlier_date.year) - 1
 
-
+party_dict = {}
+for party in ynmp_export['organizations']:
+    if party['classification'] == "Party":
+        party_dict[party['id']] = party
 
 for person in ynmp_export['persons']:
     # Remove stuff we don't need
     del person['versions']
-
     candidacies = {}
     for ge_year in ['2010', '2015']:
         if person['standing_in'] and person['party_memberships'] and \
@@ -59,7 +61,12 @@ for person in ynmp_export['persons']:
                          'year': int(ge_year),}
 
               candidacies['ge{}'.format(ge_year)] = candidacy
-    
+
+              party_id = person['party_memberships'][ge_year]['id']
+              images = party_dict[party_id]['images']
+              if images:
+                  person['party_emblem'] = images[0]
+
     person['contact_details'] = list_to_dict(
         person['contact_details'], key='type')
 
@@ -80,14 +87,14 @@ for person in ynmp_export['persons']:
 
     if person['gender']:
         person['gender'] = person['gender'].lower()
- 
+
     person['candidacies'] = candidacies
     del person['standing_in']
     del person['party_memberships']
 
     if 'ge2015' in person['candidacies']:
         #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
-        
+
         json.dump(person, open('_data/people/id/{}.json'.format(person['id']), 'w+'), indent=4, sort_keys=True)
 
 #json.dump(people_constituency_2015, open('_data/people_constituency_2015_index.json', 'w+'), indent=4, sort_keys=True)
