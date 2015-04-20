@@ -1,29 +1,11 @@
 #!/bin/bash
 
-
-if [ ! -f _downloads/electionmentions.export.json ]; then
-    ./_scripts/get_em.sh
-fi
-
-if [ ! -f _downloads/ynmp.popit.mysociety.org.export.json ]; then
-    ./_scripts/get_ynmp.sh
-fi
-
-if [ ! -f _downloads/cv.export.json ]; then
-    ./_scripts/get_cv.sh
-fi
-
-if [ ! -f _downloads/meet.export.json ]; then
-    ./_scripts/get_meet.sh
-fi
-
-if [ ! -f _downloads/el.export.json ]; then
-    ./_scripts/get_el.sh
-fi
-
-if [ ! -f _data/ynmp_numbers.json ]; then
-    ./_scripts/get_ynmp_numbers.sh
-fi
+./_scripts/get_cv.sh
+./_scripts/get_el.sh
+./_scripts/get_em.sh
+./_scripts/get_meet.sh
+./_scripts/get_ynmp.sh
+./_scripts/get_ynmp_numbers.sh
 
 data_files=(
     _downloads/ynmp.popit.mysociety.org.export.json
