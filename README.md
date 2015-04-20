@@ -10,6 +10,10 @@ This site combines the various outputs of
  * Jekyll >= 2.4.0 ([installation instructions](http://jekyllrb.com/docs/installation/))
  * Python 2.7 ([installation instructions](https://www.python.org/downloads/))
 
+You will also need the following Python packages installed:
+
+ * [geopy](https://pypi.python.org/pypi/geopy/)
+
 ## Installation
 
 ```
