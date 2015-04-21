@@ -17,7 +17,11 @@
             <img class="person-avatar" src="{{ page.person.image }}"/>
             {% endif %}
             <h1>{{ page.person.name }}</h1>
-              <p>Candidate for <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">{{page.person.candidacies.ge2015.constituency.name}}</a> in 2015</p>
+              <p>Candidate for
+                <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">
+                  {{page.person.candidacies.ge2015.constituency.name}}
+                </a> in 2015
+              </p>
           </div>
           {% else %}
           <h1>{{ page.hero }}</h1>
@@ -30,6 +34,9 @@
       <div class="container">
           {{ content }}
       </div>
+    </div>
+    <div class="footer">
+        {% include footer.html %}
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
