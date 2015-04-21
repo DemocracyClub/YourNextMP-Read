@@ -66,6 +66,8 @@ for person in ynmp_export['persons']:
               images = party_dict[party_id]['images']
               if images:
                   person['party_emblem'] = images[0]
+              else:
+                  person['party_emblem'] = None
 
     if 'images' in person and person['images']:
         person['image_data'] = person['images'][0]
