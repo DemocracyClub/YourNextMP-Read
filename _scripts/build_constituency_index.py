@@ -44,6 +44,8 @@ def build_person_candidacies(person):
     return candidacies
 
 def get_constituency_distance(constituency_id):
+    if not mapit_centres.get(constituency_id):
+        return False
     max_lat = mapit_centres[constituency_id]['max_lat']
     min_lat = mapit_centres[constituency_id]['min_lat']
     min_lon = mapit_centres[constituency_id]['min_lon']
@@ -60,11 +62,11 @@ def get_constituency_distance(constituency_id):
 def is_in_area(event, constituency_id):
 
     distance = get_constituency_distance(constituency_id)
+    if not distance:
+        return True
 
     if 'venue' in event and 'lat' in event['venue']:
         if not event['venue']['lat']:
-            return distance
-        if not mapit_centres.get(constituency_id):
             return distance
 
         venue = (
