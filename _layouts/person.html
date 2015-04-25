@@ -44,12 +44,14 @@ layout: default
     {% endif %}
   {% endif %}
   </p>
-  
+ 
+  {% if page.person.biography %} 
   <div class='person__bio'>
-    <span class='person__box__byline'>jacked from <a href='https://en.wikipedia.org/wiki/Andrew_Smith_%28politician%29'>Wikipedia</a></span>
+    <span class='person__box__byline'>jacked from <a href='{{ page.person.links.wikipedia.url }}'>Wikipedia</a></span>
     <h2>Biography</h2>
-    <p>Andrew David Smith (born 1 February 1951) is a British Labour Party politician who has been the Member of Parliament (MP) for Oxford East since 1987. He served in the Cabinet as Chief Secretary to the Treasury from 1999 to 2002 and then as Secretary of State for Work and Pensions from 2002 to 2004.</p>
+    <p>{{ page.person.biography }}</p>
   </div>
+  {% endif %}
 
   <div class='person__cv'>
   <span class='person__box__byline'>by <a href='https://cv.democracyclub.org.uk/'>Democracy Club CVs</a></span>
@@ -68,7 +70,7 @@ layout: default
     </p>
     <div style='clear:both;'></div>
   {% else %}
-    <p class='person__cv__text'>{{ page.person.name }} hasn't sent <a href='cv.democracyclub.org.uk'>Democracy Club CVs</a> {{ pronoun|downcase }} CV.</p>
+    <p class='person__cv__text'>{{ page.person.name }} hasn't sent <a href='cv.democracyclub.org.uk'>Democracy Club CVs</a> {{ possessive|downcase }} CV.</p>
 
     <a class='button' href='http://cv.democracyclub.org.uk/candidates/{{ page.person.candidacies.ge2015.constituency.mapit.id }}'>Ask {{ pronoun|downcase }} now</a>
   {% endif %}

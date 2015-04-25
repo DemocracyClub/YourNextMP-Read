@@ -1,5 +1,5 @@
 import json
-import sys
+import sys, os.path
 from collections import defaultdict
 from datetime import date, datetime
 
@@ -73,6 +73,7 @@ for constituency_id, leaflets in el_export.items():
 
 
 for person in ynmp_export['persons']:
+    
     # Remove stuff we don't need
     del person['versions']
     candidacies = {}
@@ -128,6 +129,12 @@ for person in ynmp_export['persons']:
 
     if person['id'] in person_leaflets:
         person['leaflets'] = person_leaflets[person['id']]
+
+    wiki_person_path = '_downloads/wikipedia/person_{}.json'.format(person['id'])
+    if os.path.exists(wiki_person_path):
+        wiki_person = json.load(open(wiki_person_path))
+        person['biography'] = wiki_person['first_para']
+
 
     if 'ge2015' in person['candidacies']:
         #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
