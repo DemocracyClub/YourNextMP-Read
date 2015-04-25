@@ -87,6 +87,14 @@ layout: default
   <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
   <h2><i class='fa fa-newspaper-o'></i> Press mentions</h2>
   <p>We don't know any articles about {{ page.person.name }} right now.</p>
+  <form method="post" action="https://www.electionmentions.com/article" class='form-inline'>
+    <div class="form-group">
+        <label for='url'>Article URL
+        <input type='text' name='url' value='' id='url' placeholder='Enter url here...' class="form-control"/>
+        </label>
+        <input type='submit' value='add article' class="button"/>
+    </div>
+  </form>
   </div>
 
   <h2>Demographics:</h2>
