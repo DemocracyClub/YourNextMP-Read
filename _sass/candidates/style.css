@@ -6536,6 +6536,35 @@ th.hide-for-touch {
 pre {
   font-family: Consolas, Monaco, "Liberation Mono", Courier, monospace; }
 
+.row h3 {
+  border-bottom: 1px solid #B8ABA1; }
+
+.magellan_container {
+  background: #f5f5f5; }
+
+.magellan_menu [data-magellan-expedition] {
+  background: #f5f5f5; }
+  .magellan_menu [data-magellan-expedition] a {
+    color: #8c8c8c; }
+.magellan_menu .fixed {
+  background: #09a691;
+  margin: 0;
+  padding: 0; }
+  .magellan_menu .fixed dl.sub-nav {
+    line-height: 2em;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 62.5rem;
+    background: #09a691;
+    color: #fff; }
+    .magellan_menu .fixed dl.sub-nav .active a, .magellan_menu .fixed dl.sub-nav a {
+      color: #fff;
+      font-weight: bold;
+      background: none !important; }
+
 .header {
   background: #09a691;
   color: #fff; }
@@ -6544,7 +6573,8 @@ pre {
   .header a:hover, .header a:focus {
     display: inline-block;
     border-bottom: 1px solid #84d2c8;
-    margin-bottom: -1px; }
+    margin-bottom: -1px;
+    text-decoration: none; }
   .header h1 {
     line-height: 1.2em; }
   .header .lead {
@@ -6930,8 +6960,8 @@ body,
     clear: both; }
   .candidates-list__person .person-avatar {
     float: left;
-    width: auto;
-    height: 4em;
+    width: 4em;
+    height: auto;
     margin-right: 1.5em;
     background-color: #ddd; }
   .candidates-list__person .person-name-and-party {
@@ -6977,7 +7007,11 @@ body,
       height: 5em;
       margin-right: 1.5em; } }
 .person__hero h1 {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-top: 0; }
+  @media only screen and (min-width: 40.063em) {
+    .person__hero h1 {
+      font-size: 2.75rem; } }
 .person__hero h1 + p {
   color: #b5e4de; }
 
@@ -6987,8 +7021,6 @@ body,
   font-size: inherit;
   color: #b8aba1;
   margin-left: 0.2em; }
-.person__details .dob {
-  margin-left: 0.6em; }
 .person__details a[href^="http"] {
   word-wrap: break-word; }
 
