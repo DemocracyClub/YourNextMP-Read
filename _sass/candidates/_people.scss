@@ -279,6 +279,18 @@ i.wikipedia-icon {
         margin: 0 0 0.5rem 0;
     }
 }
+    
+.person__box__byline {
+    float:right;
+    font-style:italic;
+    color:#999;
+    font-size: 0.8rem;
+
+    a:link, a:visited {
+        color: #999;
+        text-decoration: underline;
+    }
+}
 
 .person__cv {
     padding: 1rem;
@@ -296,6 +308,11 @@ i.wikipedia-icon {
 
     .person__cv__text {
     }
+        
+    .button {
+        margin: 0 0 0 0;
+    }
+
 }
 
 .person__leaflets {
@@ -305,5 +322,23 @@ i.wikipedia-icon {
 
     img {
         height: 10em;
+    }
+
+    .button {
+        margin: 0 0 0 0;
+    }
+}
+
+.person__mentions {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .button {
+        margin: 0 0 0 0;
     }
 }

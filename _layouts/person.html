@@ -9,6 +9,14 @@ layout: default
   {% assign possessive='Their' %}
 {% endif %}
 
+{% if page.person.gender == 'male' %}
+  {% assign pronoun='Him' %}
+{% elsif page.person.gender == 'female' %}
+  {% assign pronoun='Her' %}
+{% else %}
+  {% assign pronoun='Them' %}
+{% endif %}
+
 <div class="person__details">
   <p>
     {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
@@ -37,21 +45,27 @@ layout: default
   {% endif %}
   </p>
 
-  {% if page.person.cv %}
   <div class='person__cv'>
-  <h2>CV</h2>
+  <span class='person__box__byline'>by <a href='https://cv.democracyclub.org.uk/'>Democracy Club CVs</a></span>
+  <h2><i class='fa fa-file-text-o'></i> CV</h2>
+  {% if page.person.cv %}
     <a class='person__cv__imglink' href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
       <img src="{{ page.person.cv.thumb.url }}">
     </a>
 
     <p class='person__cv__text'>{{ page.person.name}} has sent us {{ possessive|downcase }} CV. Read {{ page.person.name}}'s CV now.</p>
     <div style='clear:both;'></div>
-  </div>
+  {% else %}
+    <p class='person__cv__text'>{{ page.person.name }} hasn't sent <a href='cv.democracyclub.org.uk'>Democracy Club CVs</a> {{ pronoun|downcase }} CV.</p>
+
+    <a class='button' href='http://cv.democracyclub.org.uk/candidates/{{ page.person.candidacies.ge2015.constituency.mapit.id }}'>Ask {{ pronoun|downcase }} now</a>
   {% endif %}
+  </div>
   
-  {% if page.person.leaflets %}
   <div class='person__leaflets'>
-  <h2>Leaflets</h2>
+  <span class='person__box__byline'>by <a href='https://www.electionleaflets.org/'>ElectionLeaflets.org</a></span>
+  <h2><i class='fa fa-paper-plane-o'></i> Leaflets</h2>
+  {% if page.person.leaflets %}
   <ul class="leaflets-list">
     {% for leaflet in page.person.leaflets %}
       <li class="leaflet-list__cv">
@@ -63,10 +77,17 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-  </div>
+  {% else %}
+    <p>We don't know of any leaflets from {{ page.person.name }}.</p>
   {% endif %}
+  <a class='button' href='https://electionleaflets.org/leaflets/add/'>Upload a leaflet now</a>
+  </div>
 
-  <h2>Press mentions</h2>
+  <div class='person__mentions'>
+  <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
+  <h2><i class='fa fa-newspaper-o'></i> Press mentions</h2>
+  <p>We don't know any articles about {{ page.person.name }} right now.</p>
+  </div>
 
   <h2>Demographics:</h2>
 
