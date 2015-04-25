@@ -145,11 +145,11 @@ layout: default
   {% endif %}
   
   {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{page.person.links.facebook_personal.value}}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
   {% endif %}
   
   {% if page.person.links.facebook_page %}
-  <a class="button" rel="nofollow" href="{{page.person.links.facebook_page.value}}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
   {% endif %}
   
   {% if page.person.links.homepage %}
