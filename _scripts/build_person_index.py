@@ -1,8 +1,14 @@
 import json
 import sys
+from collections import defaultdict
 from datetime import date, datetime
 
 ynmp_export_path = sys.argv[1]
+mapit_export_path = sys.argv[2]
+em_export_path = sys.argv[3]
+cv_export_path = sys.argv[4]
+meet_export_path = sys.argv[5]
+el_export_path = sys.argv[6]
 
 ynmp_export = json.load(open(ynmp_export_path))
 
@@ -45,6 +51,26 @@ party_dict = {}
 for party in ynmp_export['organizations']:
     if party['classification'] == "Party":
         party_dict[party['id']] = party
+
+# Build CV data
+cv_export = json.load(open(cv_export_path))
+
+person_cvs = {}
+for cv in cv_export:
+    cv['person_id'] = str(cv['person_id'])
+    person_cvs[cv['person_id']] = cv
+
+# Build EL data
+el_export = json.load(open(el_export_path))
+
+person_leaflets = defaultdict(list)
+for constituency_id, leaflets in el_export.items():
+    if leaflets:
+        for leaflet in leaflets:
+            if leaflet['publisher_person']:
+                person_id = leaflet['publisher_person']['remote_id']
+                person_leaflets[person_id].append(leaflet)
+
 
 for person in ynmp_export['persons']:
     # Remove stuff we don't need
@@ -96,6 +122,12 @@ for person in ynmp_export['persons']:
     person['candidacies'] = candidacies
     del person['standing_in']
     del person['party_memberships']
+
+    if person['id'] in person_cvs:
+        person['cv'] = person_cvs[person['id']]
+
+    if person['id'] in person_leaflets:
+        person['leaflets'] = person_leaflets[person['id']]
 
     if 'ge2015' in person['candidacies']:
         #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']

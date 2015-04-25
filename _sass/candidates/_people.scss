@@ -104,20 +104,20 @@
           i.fa {
             padding-right: 0.5rem;
           }
-
-          i.wikipedia-icon:before {
-            font-family: 'wikipedia-icon';
-            content: '\e600';
-          }
-
-          i.wikipedia-icon {
-            font-style: normal;
-            padding-right: 0.5rem;
-          }
         }
       }
     }
   }
+}
+
+i.wikipedia-icon:before {
+  font-family: 'wikipedia-icon';
+  content: '\e600';
+}
+
+i.wikipedia-icon {
+  font-style: normal;
+  padding-right: 0.5rem;
 }
 
 .candidates__known {
@@ -267,4 +267,43 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.person__buttons {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+
+    .button {
+        padding: 0.5rem;
+        display: block;
+        margin: 0 0 0.5rem 0;
+    }
+}
+
+.person__cv {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .person__cv__imglink {
+        float: left;
+        margin-right: 1rem;
+    }
+
+    .person__cv__text {
+    }
+}
+
+.person__leaflets {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
 }
