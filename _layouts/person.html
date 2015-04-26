@@ -17,6 +17,47 @@ layout: default
   {% assign pronoun='Them' %}
 {% endif %}
 
+<div class='person__buttons'>
+  {% if page.person.email %}
+  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.contact_details.twitter %}
+  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet to {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.links.wikipedia %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_personal %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
+  {% endif %}
+  
+  {% if page.person.links.homepage %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> Website</a>
+  {% endif %}
+  
+  {% if page.person.links.linkedin %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
+  {% endif %}
+  
+  {% if page.person.links.party_PPC_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> {{ page.person.candidacies.ge2015.party.name }} profile</a>
+  {% endif %}
+
+  {% if page.person.party_emblem.proxy_url %}
+  <div class="person__party_emblem">
+    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
+  </div>
+  {% endif %}
+
+</div>
+
 <div class="person__details">
   <p>
     {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
@@ -120,9 +161,9 @@ layout: default
     {% endif %}
     {% if page.person.age %}
     <dt>Age</dt>
-{% comment %}
+    {% comment %}
       TODO Add 'th' or 'nd' here
-{% endcomment %}
+    {% endcomment %}
     <dd>
         {{page.person.age}}
         <small class="dob">
@@ -136,54 +177,16 @@ layout: default
     {% endif %}
   </dl>
 
+  {% if page.person.image_data %}
   <h2>Photo Credit:</h2>
   <p class="person__photo-credit">
   {% include _photo-credit.html image_data=page.person.image_data %}
   </p>
+  {% endif %}
 
 </div>
 
-
 <div class="person__actions">
-  <div class='person__buttons'>
-  {% if page.person.email %}
-  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.contact_details.twitter %}
-  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet to {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.links.wikipedia %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
-  {% endif %}
-  
-  {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
-  {% endif %}
-  
-  {% if page.person.links.facebook_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
-  {% endif %}
-  
-  {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> Website</a>
-  {% endif %}
-  
-  {% if page.person.links.linkedin %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
-  {% endif %}
-  
-  {% if page.person.links.party_PPC_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> {{ page.person.candidacies.ge2015.party.name }} profile</a>
-  {% endif %}
-  </div>
-
-  {% if page.person.party_emblem.proxy_url %}
-  <div class="person__party_emblem">
-    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
-  </div>
-  {% endif %}
 
   <div class="person__actions__action person__actions__edit">
     <h2>Improve this data!</h2>

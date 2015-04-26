@@ -192,17 +192,27 @@ i.wikipedia-icon {
 }
 
 @media #{$medium-up} {
+  .person__buttons {
+    /*@include grid-column($columns: 4, $offset: 1, $push: 7, $collapse: true);*/
+    float: right;
+    width: 35%;
+  }
+  
   .person__details {
-    @include grid-column($columns: 7, $collapse: true);
+    /*@include grid-column($columns: 5, $pull: 5, $collapse: true);*/
+    float: left;
+    width: 60%;
   }
 
   .person__actions {
-    @include grid-column($columns: 4, $offset: 1, $collapse: true);
-
-    & + * {
-      clear: both;
-    }
+    float: right;
+    width: 35%;
+    /*@include grid-column($columns: 4, $offset: 1, $push: 7, $collapse: true);*/
   }
+
+  /*  & + * {
+      clear: both;
+    }*/
 }
 
 .person__actions__action {
