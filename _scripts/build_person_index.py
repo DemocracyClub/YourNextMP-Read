@@ -47,6 +47,19 @@ def years_ago(earlier_date, later_date):
     else:
         return (later_date.year - earlier_date.year) - 1
 
+def find_wiki_title(person):
+   if 'wikipedia' in person['links']:
+        link = person['links']['wikipedia']
+
+        if link['url'].startswith('http://en.wikipedia.org/wiki/'):
+            wiki_title = link['url'][len('http://en.wikipedia.org/wiki/'):]
+        elif link['url'].startswith('https://en.wikipedia.org/wiki/'):
+            wiki_title = link['url'][len('https://en.wikipedia.org/wiki/'):]
+        else:
+            wiki_title = None
+
+        return wiki_title
+
 party_dict = {}
 for party in ynmp_export['organizations']:
     if party['classification'] == "Party":
@@ -130,10 +143,13 @@ for person in ynmp_export['persons']:
     if person['id'] in person_leaflets:
         person['leaflets'] = person_leaflets[person['id']]
 
-    wiki_person_path = '_downloads/wikipedia/person_{}.json'.format(person['id'])
-    if os.path.exists(wiki_person_path):
-        wiki_person = json.load(open(wiki_person_path))
-        person['biography'] = wiki_person['first_para']
+    wiki_title = find_wiki_title(person)
+
+    if wiki_title:
+        wiki_path = '_downloads/wikipedia/{}.json'.format(wiki_title)
+        if os.path.exists(wiki_path):
+            wiki_person = json.load(open(wiki_path))
+            person['biography'] = wiki_person['first_para']
 
 
     if 'ge2015' in person['candidacies']:

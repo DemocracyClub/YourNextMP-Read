@@ -7,11 +7,9 @@ url = "http://en.wikipedia.org/w/api.php?titles={}&format=json&action=query&prop
 ynmp_export_path = sys.argv[1]
 ynmp_export = json.load(open(ynmp_export_path))
 
-for person in ynmp_export['persons']:
-    person_path = '_downloads/wikipedia/person_{}.json'.format(person['id'])
-    if os.path.exists(person_path):
-        continue
+fresh = False
 
+for person in ynmp_export['persons']:
     for link in person['links']:
         if link['note'] == 'wikipedia':
             if link['url'].startswith('http://en.wikipedia.org/wiki/'):
@@ -20,6 +18,10 @@ for person in ynmp_export['persons']:
                 wiki_title = link['url'][len('https://en.wikipedia.org/wiki/'):]
             else:
                 wiki_title = None
+    
+            save_path = '_downloads/wikipedia/{}.json'.format(wiki_title)
+            if os.path.exists(save_path) and not fresh:
+                continue
 
             api_url = url.format(wiki_title)
 
@@ -41,9 +43,11 @@ for person in ynmp_export['persons']:
             print
 
             obj = {'first_para': first_para,
-                   'full': full}
+                   'full': full,
+                   'api_url': api_url,
+                   'title': wiki_title,}
 
             #person_dumped = json.load(open('_data/people/id/{}.json'.format(person['id']), 'r'))
             #person_dumped['biography'] = first_para
             
-            json.dump(obj, open(person_path, 'w+'), indent=4, sort_keys=True)
+            json.dump(obj, open(save_path, 'w+'), indent=4, sort_keys=True)
