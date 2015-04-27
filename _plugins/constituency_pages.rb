@@ -12,6 +12,7 @@ module Jekyll
       self.data['constituency'] = constituency
       self.data['title'] = "Candidates to be MP (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election"
       self.data['hero'] = "Candidates to be MP for #{constituency['mapit']['name']}"
+      self.data['description'] = "List of candidates to be MP (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election - find out more on YourNextMP"
 
     end
   end
@@ -29,6 +30,8 @@ module Jekyll
       self.data['constituency'] = constituency
       self.data['title'] = "Candidates to be MP (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election"
       self.data['hero'] = "Candidates to be MP for #{constituency['mapit']['name']}"
+      self.data['description'] = "List of candidates to be MP (PPCs) for #{constituency['mapit']['name']} in the UK 2015 General Election - find out more on YourNextMP"
+
     end
   end
   

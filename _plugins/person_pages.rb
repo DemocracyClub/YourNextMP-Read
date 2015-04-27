@@ -11,6 +11,7 @@ module Jekyll
       self.read_yaml(File.join(base, '_layouts'), 'person.html')
       self.data['person'] = person
       self.data['hero'] = "#{person['name']}"
+      self.data['description'] = ""
 
     end
   end
