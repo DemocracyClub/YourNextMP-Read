@@ -264,7 +264,8 @@ i.wikipedia-icon {
 
 .person__party_emblem {
   text-align: center;
-  padding-bottom: 2em;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 
   img {
     width: auto;
@@ -274,9 +275,13 @@ i.wikipedia-icon {
   }
 }
 
+.person__party_emblem_spacer {
+    padding-bottom: 1rem;
+}
+
 .person__buttons {
     font-size: 0.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     .button {
         padding: 0.5rem;

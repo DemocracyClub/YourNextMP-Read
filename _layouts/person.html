@@ -17,48 +17,15 @@ layout: default
   {% assign pronoun='Them' %}
 {% endif %}
 
-<div class='person__buttons'>
-  {% if page.person.email %}
-  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.contact_details.twitter %}
-  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.links.wikipedia %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
-  {% endif %}
-  
-  {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
-  {% endif %}
-  
-  {% if page.person.links.facebook_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
-  {% endif %}
-  
-  {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> Website</a>
-  {% endif %}
-  
-  {% if page.person.links.linkedin %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
-  {% endif %}
-  
-  {% if page.person.links.party_PPC_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> {{ page.person.candidacies.ge2015.party.name }} profile</a>
-  {% endif %}
+{% assign last_letter_of_name=page.person.name|split:''|last %}
 
-  {% if page.person.party_emblem.proxy_url %}
-  <div class="person__party_emblem">
-    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
-  </div>
-  {% endif %}
+{% if last_letter_of_name == 's' %}
+  {% assign s_end='' %}
+{% else %}
+  {% assign s_end='s' %}
+{% endif %}
 
-</div>
-
-<div class="person__details">
+<div class='person__details'>
   <p>
     {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
 
@@ -85,6 +52,66 @@ layout: default
     {% endif %}
   {% endif %}
   </p>
+</div>
+
+<div class='person__buttons'>
+  {% if page.person.email %}
+  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.contact_details.twitter %}
+  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.links.wikipedia %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_personal %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
+  {% endif %}
+  
+  {% if page.person.links.homepage %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name }}'{{ s_end }} website</a>
+  {% endif %}
+  
+  {% if page.person.links.linkedin %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
+  {% endif %}
+  
+  {% if page.person.links.party_PPC_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> Party profile for {{ page.person.name }}</a>
+  {% endif %}
+
+  {% if page.person.party_emblem.proxy_url %}
+  <div class="person__party_emblem">
+    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
+  </div>
+  {% else %}
+  <div class="person__party_emblem_spacer">
+  </div>
+  {% endif %}
+
+  {% assign party = page.person.candidacies.ge2015.party %}
+  {% assign party_links = site.data.party_links[page.person.candidacies.ge2015.party.id] %}
+  {% for link in party_links.links %}
+    <a class="button" rel="nofollow" href="{{ link.url }}">
+        {% if link.note == 'facebook page' %}<i class="fa fa-facebook"></i> {{ party.name }} Facebook page
+        {% elsif link.note == 'homepage' %}<i class="fa fa-home"></i> {{ party.name }} website
+        {% elsif link.note == 'wikipedia' %}<i class='wikipedia-icon'/></i>{{ party.name }} on Wikipedia
+        {% elsif link.note == 'linkedin' %}<i class="fa fa-linkedin"></i> {{ party.name }} LinkedIn profile
+        {% else %}<i class="fa fa-home"></i> {{ party.name }} {{ link.note }}
+        {% endif %}
+    </a>
+  {% endfor %}
+
+</div>
+
+<div class="person__details">
  
   {% if page.person.biography %} 
   <div class='person__bio'>
