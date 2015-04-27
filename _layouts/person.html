@@ -17,6 +17,14 @@ layout: default
   {% assign pronoun='Them' %}
 {% endif %}
 
+{% assign last_letter_of_name=page.person.name|split:''|last %}
+
+{% if last_letter_of_name == 's' %}
+  {% assign s_end='' %}
+{% else %}
+  {% assign s_end='s' %}
+{% endif %}
+
 <div class='person__details'>
   <p>
     {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
@@ -68,7 +76,7 @@ layout: default
   {% endif %}
   
   {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name }}'s website</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name }}'{{ s_end }} website</a>
   {% endif %}
   
   {% if page.person.links.linkedin %}
