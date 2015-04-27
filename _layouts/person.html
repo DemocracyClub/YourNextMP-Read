@@ -1,43 +1,14 @@
 ---
 layout: default
 ---
-{% if page.person.gender == 'male' %}
-  {% assign possessive='His' %}
-{% elsif page.person.gender == 'female' %}
-  {% assign possessive='Her' %}
-{% else %}
-  {% assign possessive='Their' %}
-{% endif %}
-
-{% if page.person.gender == 'male' %}
-  {% assign pronoun='Him' %}
-{% elsif page.person.gender == 'female' %}
-  {% assign pronoun='Her' %}
-{% else %}
-  {% assign pronoun='Them' %}
-{% endif %}
-
 {% assign last_letter_of_name=page.person.name|split:''|last %}
-
-{% if last_letter_of_name == 's' %}
-  {% assign s_end='' %}
-{% else %}
-  {% assign s_end='s' %}
-{% endif %}
 
 <div class='person__details'>
   <p>
     {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
 
   {% if page.person.candidacies.ge2010 %}
-    {% if page.person.gender == 'male' %}
-        He
-    {% elsif page.person.gender == 'female' %}
-        She
-    {% else %}
-        They
-    {% endif %} 
-    previously ran in
+    {{ page.person.gender | pronoun:"subject" | capitalize }} previously ran in
     {% if page.person.candidacies.ge2010.constituency.post_id == page.person.candidacies.ge2015.constituency.post_id %}
         the same constituency
     {% else %}
@@ -76,7 +47,7 @@ layout: default
   {% endif %}
   
   {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name }}'{{ s_end }} website</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name|possessive }} website</a>
   {% endif %}
   
   {% if page.person.links.linkedin %}
@@ -130,7 +101,7 @@ layout: default
     </a>
 
     <p class='person__cv__text'>
-        {{ page.person.name}} has sent us {{ possessive|downcase }} CV. 
+        {{ page.person.name}} has sent us {{ page.person.gender|pronoun:"possessive" }} CV.
 
         <a href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
         Read {{ page.person.name}}'s CV now.
@@ -138,7 +109,7 @@ layout: default
     </p>
     <div style='clear:both;'></div>
   {% else %}
-    <p class='person__cv__text'>{{ page.person.name }} hasn't sent us {{ possessive|downcase }} CV.</p>
+    <p class='person__cv__text'>{{ page.person.name }} hasn't sent us {{ page.person.gender|pronoun:"possessive" }} CV.</p>
 
     <a class='button' href='http://cv.democracyclub.org.uk/upload_cv/{{ page.person.id }}'>Ask {{ pronoun|downcase }} now</a>
   {% endif %}
