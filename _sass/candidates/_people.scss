@@ -98,7 +98,7 @@
 
         a {
           &:visited {
-            color: $primary-color; 
+            color: $primary-color;
           }
 
           i.fa {
@@ -122,11 +122,6 @@
 
 .candidates__known {
   margin-bottom: 3em;
-
-  @media #{$medium-up} {
-    /*padding-left: 100px;*/
-    background: transparent url(img/icon-candidates.gif) 0 0 no-repeat;
-  }
 
   h3 {
     margin-top: 0;
