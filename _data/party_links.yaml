@@ -1,0 +1,746 @@
+"party:52": # Conservative party
+    links:
+        - url: https://www.conservatives.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Conservative_Party_%28UK%29
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: conservatives
+
+"party:90": # Liberal democrats
+    links:
+        - url: http://www.libdems.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Liberal_Democrats
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: libdems
+
+"party:53": # Labour party
+    links:
+        - url: http://www.labour.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Labour_Party_%28UK%29
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: uklabour
+
+"party:85": # UKIP
+    links:
+        - url: http://www.ukip.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/UK_Independence_Party
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: ukip
+
+"party:63": # Green
+    links:
+        - url: https://www.greenparty.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Green_Party_of_England_and_Wales
+          note: wikipedia
+        - url: https://www.facebook.com/thegreenparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: thegreenparty
+
+"party:804": # TUSC
+    links:
+        - url: http://tusc.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Trade_Unionist_and_Socialist_Coalition
+          note: wikipedia
+        - url: https://www.facebook.com/TUSCoalition
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: tuscoalition
+
+"party:102": # SNP
+    links:
+        - url: http://www.snp.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Scottish_National_Party
+          note: wikipedia
+        - url: https://www.facebook.com/theSNP
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: theSNP
+
+"joint-party:53-119": # Labour and co-operative
+    links:
+        - url: https://party.coop/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Co-operative_Party
+          note: wikipedia
+        - url: https://www.facebook.com/CoopParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: CoopParty
+
+"party:77": # Plaid Cymru
+    links:
+        - url: https://www.plaid.cymru/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Plaid_Cymru
+          note: wikipedia
+        - url: https://www.facebook.com/PlaidCymruWales
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: plaid_cymru
+
+"party:17": # English Democrats
+    links:
+        - url: http://www.englishdemocrats.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/English_Democrats
+          note: wikipedia
+        - url: https://www.facebook.com/www.EngDem.org
+          note: facebook page
+        - url: https://www.linkedin.com/company/the-english-democrats
+          note: linkedin
+    contact_details:
+        - type: twitter
+          value: englishvoice
+
+"party:130": # Scottish Green Party
+    links:
+        - url: http://www.scottishgreens.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Scottish_Green_Party
+          note: wikipedia
+        - url: https://www.facebook.com/ScottishGreens
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: scotgp
+
+"party:2552": # CISTA
+    links:
+        - url: http://cista.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Cannabis_Is_Safer_Than_Alcohol
+          note: wikipedia
+        - url: https://www.facebook.com/CISTA2015
+          note: facebook page
+
+"party:103": # Alliance NI
+    links:
+        - url: http://allianceparty.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Alliance_Party_of_Northern_Ireland
+          note: wikipedia
+        - url: https://www.facebook.com/alliancepartyni
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: allianceparty
+
+"party:55": # SDLP
+    links:
+        - url: http://www.sdlp.ie/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Social_Democratic_and_Labour_Party
+          note: wikipedia
+        - url: https://www.facebook.com/SocialDemocraticLabourParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: SDLPlive
+
+"party:39": # Sinn Fein
+    links:
+        - url: http://www.sinnfein.ie/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Sinn_F%C3%A9in
+          note: wikipedia
+        - url: https://www.facebook.com/sinnfein
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: sinnfeinireland
+
+"party:79": # Christian People's Alliance
+    links:
+        - url: http://www.cpaparty.net/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Christian_Peoples_Alliance
+          note: wikipedia
+        - url: https://www.facebook.com/pages/Christian-Peoples-Alliance-UK/159505527405662
+          note: facebook page
+
+"party:51": # NI Conservatives & Unionists
+    links:
+        - url: http://www.niconservatives.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Northern_Ireland_Conservatives
+          note: wikipedia
+        - url: https://www.facebook.com/niconservatives
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ni_conservative
+
+"party:70": # DUP
+    links:
+        - url: http://www.mydup.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Democratic_Unionist_Party
+          note: wikipedia
+        - url: https://www.facebook.com/democraticunionistparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: duponline
+
+"party:66": # Monster Raving Loonies
+    links:
+        - url: http://www.omrlp.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Official_Monster_Raving_Loony_Party
+          note: wikipedia
+        - url: https://www.facebook.com/loonyparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: official_mrlp
+
+"party:83": # UUP
+    links:
+        - url: http://www.uup.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Ulster_Unionist_Party
+          note: wikipedia
+        - url: https://www.facebook.com/ulsterunionistparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: uuponline
+
+"party:2120": # Yorkshire First
+    links:
+        - url: http://www.yorkshirefirst.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Yorkshire_First
+          note: wikipedia
+        - url: https://www.facebook.com/yorkshirefirst
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: yorkshirefirst
+
+"party:1931": # NHAP
+    links:
+        - url: http://nhap.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/National_Health_Action_Party
+          note: wikipedia
+        - url: https://www.facebook.com/NationalHealthActionParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: nhaparty
+
+"party:110": # SPGB
+    links:
+        - url: http://www.worldsocialism.org/spgb/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Socialist_Party_of_Great_Britain
+          note: wikipedia
+        - url: https://www.facebook.com/socialistpartyofgreatbritain
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: officialspgb
+
+"party:84": # UKIP NI
+    links:
+        - url: http://ukipni.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/UK_Independence_Party
+          note: wikipedia
+        - url: https://www.facebook.com/UkipNorthernIreland
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ukip_ni
+
+"party:1992": # Christian Party
+    links:
+        - url: http://www.ukchristianparty.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Christian_Party_(UK)
+          note: wikipedia
+        - url: https://www.facebook.com/TheChristianParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: newsukcp
+
+"party:78": # Communist Party of Britain
+    links:
+        - url: http://www.communist-party.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Communist_Party_of_Britain
+          note: wikipedia
+        - url: https://www.facebook.com/communistpartybritain
+          note: facebook page
+
+"party:106": # BNP
+    links:
+        - url: http://www.bnp.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/British_National_Party
+          note: wikipedia
+        - url: https://www.facebook.com/OfficialBritishNationalParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: bnp
+
+"party:73": # Socialist labour party
+    links:
+        - url: http://www.socialist-labour-party.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Socialist_Labour_Party_(UK)
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: slp_gb
+
+"party:2269": # Class War
+    links:
+        - url: http://www.classwarparty.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Class_War
+          note: wikipedia
+        - url: https://www.facebook.com/classwarparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: classwar2015
+
+"joint-party:804-2045": # Left Unity - Trade Unionists and Socialists
+    links:
+        - url: http://leftunity.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Left_Unity_(UK)
+          note: wikipedia
+
+"party:2707": # National Front 
+    links:
+        - url: http://www.britishnationalfront.net/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/National_Front_(UK)
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: NF_14WORDS
+
+"party:680": # TUV
+    links:
+        - url: http://tuv.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Traditional_Unionist_Voice 
+          note: wikipedia
+
+"party:184": # Workers Revolutionary Party
+    links:
+        - url: http://wrp.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Workers_Revolutionary_Party_(UK)
+          note: wikipedia
+
+"party:58": # Mebyon Kernow
+    links:
+        - url: https://www.mebyonkernow.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Mebyon_Kernow
+          note: wikipedia
+        - url: https://www.facebook.com/MebyonKernow
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: mebyonkernow
+
+"party:770": # Pirate Party
+    links:
+        - url: https://www.pirateparty.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Pirate_Party_UK
+          note: wikipedia
+        - url: https://www.facebook.com/piratepartyuk
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: piratepartyuk
+
+"party:844": # Communities United Party
+    links:
+        - url: http://www.communitiesunitedparty.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Communities_United_Party
+          note: wikipedia
+
+"party:305": # Green Party NI
+    links:
+        - url: http://www.greenpartyni.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Green_Party_in_Northern_Ireland
+          note: wikipedia
+        - url: https://www.facebook.com/GreenParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: greenpartyni
+
+"party:1918": # Independence from Europe
+    links:
+        - url: http://www.aipmep.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Independence_from_Europe
+          note: wikipedia
+
+"party:733": # Lincolnshire Independents
+    links:
+        - url: http://www.lincolnshireindependents.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Lincolnshire_Independents
+          note: wikipedia
+        - url: https://www.facebook.com/pages/Lincolnshire-Independents/69016128427
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: LincIndependent
+
+"party:2551": # Above and Beyond
+    links:
+        - url: http://www.voteaboveandbeyond.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Above_and_Beyond_Party
+          note: wikipedia
+        - url: https://www.facebook.com/voteaboveandbeyond
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: voteabovebeyond
+
+"party:127": # Workers Party 
+    links:
+        - url: http://workersparty.ie/
+          note: homepage
+        - url: "http://en.wikipedia.org/wiki/Workers'_Party_of_Ireland" 
+          note: wikipedia
+        - url: https://www.facebook.com/workerspartyireland
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: workersparty 
+
+"party:67": # Alliance For Green Socialism
+    links:
+        - url: http://www.agstest.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Alliance_for_Green_Socialism
+          note: wikipedia
+
+"party:2137": # All People's Party
+    links:
+        - url: http://allpeoplesparty.co.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/All_Peoples_Party_(UK)
+          note: wikipedia
+        - url: https://www.facebook.com/allpeoplesparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: allpeoplesparty
+
+"party:616": # Animal Welfare Party 
+    links:
+        - url: http://www.animalwelfareparty.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Animal_Welfare_Party
+          note: wikipedia
+        - url: https://www.facebook.com/Animal.Welfare.Party
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: animalscount
+
+"party:2724": # CISTA NI
+    links:
+        - url: http://cista.org/ 
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Cannabis_Is_Safer_Than_Alcohol
+          note: wikipedia
+        - url: https://www.facebook.com/CISTA2015
+          note: facebook page
+
+"party:46": # Scottish Socialist Party 
+    links:
+        - url: http://www.scottishsocialistparty.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Scottish_Socialist_Party
+          note: wikipedia
+        - url: https://www.facebook.com/scottishsocialistparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: the_ssp_
+
+"party:54": # The Liberal Party 
+    links:
+        - url: http://www.liberal.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Liberal_Party_(UK,_1989)
+          note: wikipedia
+        - url: https://www.facebook.com/LiberalPartyUK
+          note: facebook page
+
+"party:2303": # The North East Party
+    links:
+        - url: http://www.thenortheastparty.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/North_East_Party
+          note: wikipedia
+        - url: https://www.facebook.com/TheNorthEastParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: northeastnep
+
+"party:133": # Peace Party 
+    links:
+        - url: http://www.peaceparty.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Peace_Party_(UK)
+          note: wikipedia
+        - url: https://www.facebook.com/ThePeacePartyNonviolenceJusticeEnvironment
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: PeacePartyUK
+
+"party:362": # Respect Party
+    links:
+        - url: http://www.respectparty.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Respect_Party
+          note: wikipedia
+        - url: https://www.facebook.com/ukrespectparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ukrespectparty
+ 
+"party:2380": # Whig Party
+    links:
+        - url: http://whigs.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/The_Whig_Party_(British_political_party)
+          note: wikipedia
+        - url: https://www.facebook.com/WhigsUK
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: whigsuk
+
+"party:2045": # Left Unity
+    links:
+        - url: http://leftunity.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Left_Unity_(UK)
+          note: wikipedia
+        - url: https://www.facebook.com/leftunity
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: leftunityuk
+
+"party:2032": # Liberty GB
+    links:
+        - url: http://libertygb.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Liberty_GB
+          note: wikipedia
+        - url: https://www.facebook.com/LibertyGBParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: liberty_gb
+ 
+"party:2664": # The Northern Party
+    links:
+        - url: http://www.northern.party/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Northern_Party
+          note: wikipedia
+        - url: https://www.facebook.com/northernparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: northern_party
+ 
+"party:2595": # We Are The Reality Party
+    links:
+        - url: http://www.realitypartysalford.co.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Reality_Party
+          note: wikipedia
+        - url: https://www.facebook.com/realitypartyuk
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: reality_party
+
+"party:823": # Communist League Election Campaign
+    links:
+        - url: http://en.wikipedia.org/wiki/Communist_League_(UK,_1988)
+          note: wikipedia
+
+"party:2034": # Justice For Men & Boys
+    links:
+        - url: https://j4mb.wordpress.com/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Justice_for_Men_and_Boys
+          note: wikipedia
+
+"party:789": # Lewisham People Before Profit
+    links:
+        - url: http://peoplebeforeprofit.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Lewisham_People_Before_Profit
+          note: wikipedia
+        - url: https://www.facebook.com/pages/Lewisham-People-Before-Profit/517282488390905
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: peopleb_4profit
+
+"party:32": # National Liberal Party - True Liberalism
+    links:
+        - url: http://nationalliberal.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/National_Liberal_Party_%28UK,_1999%29
+          note: wikipedia
+        - url: https://www.facebook.com/NationalLiberalParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: NATIONAL_LIBERA
+
+"party:2539": # Party for a United Thanet
+    links:
+        - url: http://iputthanetfirst.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/iputthanetfirst
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: iputthanetfirst
+
+"party:1969": # Patria
+    links:
+        - url: http://www.patria-uk.org/
+          note: homepage
+        - url: 
+          note: wikipedia
+        - url: https://www.facebook.com/pages/Patria/356470074449464
+          note: facebook page
+
+"party:2187": # Patriotic Socialist Party
+    links:
+        - url: http://www.patriotic-socialist.org/
+          note: homepage
+        - url: 
+          note: wikipedia
+        - url: https://www.facebook.com/PatrioticSocialistParty
+          note: facebook page
+
+"party:2343": # Red Flag - Anti-Corruption
+    links:
+        - url: http://redflagac.org/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Red_Flag_Anti-Corruption
+          note: wikipedia
+
+"party:243": # Social Democratic Party
+    links:
+        - url: http://www.socialdemocraticparty.co.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Social_Democratic_Party_(UK,_1990%E2%80%93present)
+          note: wikipedia
+
+"party:633": # Socialist Equality Party
+    links:
+        - url: http://socialequality.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Socialist_Equality_Party_(UK)
+          note: wikipedia
+        - url: https://www.facebook.com/sepbritain
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: sep_britain
+
+"party:2486": # Something New
+    links:
+        - url: http://www.somethingnew.org.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Something_New_(political_party)
+          note: wikipedia
+        - url: https://www.facebook.com/somethingnewuk
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: havesomenew
+
+"party:865": # The Justice & Anti-Corruption Party
+    links:
+        - url: http://www.jacparty.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/pages/Justice-Anti-Corruption-Party/284749778292935
+          note: facebook page
+
+"party:2476": # Ubuntu Party
+    links:
+        - url: http://www.ubuntuparty.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/UbuntuPartyUK
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ubuntupartyuk
+
+"party:2305": # Vapers In Power
+    links:
+        - url: http://vapersinpower.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/vapersinpower
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: vapers
+
+"party:1912": # Young People's Party YPP
+    links:
+        - url: http://www.yppuk.org/
+          note: homepage
+        - url: "http://en.wikipedia.org/wiki/Young_People's_Party_UK"
+          note: wikipedia
+        - url: https://www.facebook.com/groups/YoungPeoplesParty/
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: YPPUK
+
