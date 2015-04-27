@@ -26,6 +26,9 @@ layout: default
 
         <div class="person-links">
             <ul>
+            {% if person.cv %}
+            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text-o"></i> Curriculum Vitae</a></li>
+            {% endif %}
             {% if person.links['homepage'] %}
             <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
             {% endif %}
