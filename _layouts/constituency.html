@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<div class="candidates__known">
-<ul class="candidate-list">
-{% for person_id in page.constituency.ynmp %}
+<div class="candidates__known row">
+  <ul class="candidate-list" id="candidates" data-magellan-destination="candidates">
+  {% for person_id in page.constituency.ynmp %}
     {% assign person = site.data.people.id[person_id] %}
     <li class="candidates-list__person">
         <a href="/person/{{ person.id}}/{{person.name|slugify }}">
@@ -50,14 +50,14 @@ layout: default
             </ul>
         </div>
     </li>
-{% endfor %}
-</ul>
+  {% endfor %}
+  </ul>
 </div>
 
 <div class="row">
-<div class="small-12 large-6 columns">
+  <div class="small-12 large-12 columns">
     <div class="cvs-block data-block">
-    <h3>CVs uploaded</h3>
+    <h3 id="cvs" data-magellan-destination="cvs">CVs uploaded</h3>
 
     <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV!</p>
 
@@ -80,17 +80,20 @@ layout: default
     </ul>
     {% else %}
     <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet!</p>
+    {% endif %}
+
+    {% if page.constituency.cv.size != page.constituency.ynmp.size %}
     <p>
-      <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}">
-      Ask them to upload their CV</a>
+      <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}" class="button success">
+      Ask these candidates to upload their CV</a>
     </p>
     {% endif %}
-    </div>
+  </div>
 </div>
 
-<div class="small-12 large-6 columns">
-    <div class="leaflets-block data-block">
-    <h3>Leaflets sent to {{ page.constituency.mapit.name }}</h3>
+<div class="small-12 large-12 columns">
+  <div class="leaflets-block data-block">
+    <h3 id="leaflets">Leaflets sent to {{ page.constituency.mapit.name }}</h3>
 
     <p class="info"><a href="https://electionleaflets.org/">ElectionLeaflets.org</a> is an online archive of political leaflets. It is created by members of the public photographing and classifying what comes through their doors at election time.</p>
 
@@ -111,31 +114,36 @@ layout: default
       </li>
     {% endfor %}
     </ul>
-    <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}">See more leaflets on ElectionLeaflets.org</a>
+    <p>
+      <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}">See more leaflets on ElectionLeaflets.org</a>
+    </p>
     {% else %}
     <p>
       No one has uploaded any leaflets in {{ page.constituency.mapit.name }} yet.
-      Photograph and upload any you get at
-      <a href="https://electionleaflets.org">ElectionLeaflets.org</a>
     </p>
     {% endif %}
+    <p>
+      <a href="https://electionleaflets.org" class="button success">
+        Upload a leaflet
+      </a>
+    </p>
     </div>
-</div>
+  </div>
 </div>
 
 <div class="row">
-<div class="small-12 large-6 columns">
+  <div class="small-12 large-12 columns">
     <div class="meet-block data-block">
-    <h3>Public events with your candidates in {{ page.constituency.mapit.name }}</h3>
+    <h3 id="events">Public events with your candidates in {{ page.constituency.mapit.name }}</h3>
     {% if page.constituency contains 'meet' and page.constituency.meet|length > 0 %}
-	<p class="info">
-		<a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area so you can go and question your candidates.
-		{% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
-		We know of 1 event that has already happened!
-		{% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
-		We know of {{ page.constituency.meetPastEventsCount }} events that have already happened!
-		{% endif %}
-	</p>
+  <p class="info">
+    <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area so you can go and question your candidates.
+    {% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
+    We know of 1 event that has already happened!
+    {% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
+    We know of {{ page.constituency.meetPastEventsCount }} events that have already happened!
+    {% endif %}
+  </p>
     <ul class="meet-list">
     {% for event in page.constituency.meet %}
       <li class="meet-list__event">
@@ -147,40 +155,44 @@ layout: default
     {% endfor %}
     </ul>
     {% else %}
-	<p class="info">
-		<a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area. Go and question your candidates!
-	</p>
+  <p class="info">
+    <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area. Go and question your candidates!
+  </p>
     <p>
-		{% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
-		Sorry, one event has already happened here and we don't know about any more.
-		{% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
-		Sorry, {{ page.constituency.meetPastEventsCount }} events have already happened here and we don't know about any more.
-		{% else %}
-		Sorry, we don't know about any events here.
-		{% endif %}
-      Can you add any you know about to
-      <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a>?
-    </p>
+    {% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
+    Sorry, one event has already happened here and we don't know about any more.
+    {% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
+    Sorry, {{ page.constituency.meetPastEventsCount }} events have already happened here and we don't know about any more.
+    {% else %}
+    Sorry, we don't know about any events here.
     {% endif %}
-    </div>
+    {% endif %}
+    <p>
+      <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}" class="button success">
+        Add events you know about
+      </a>
+    </p>
+  </div>
 </div>
 
-<div class="small-12 large-6 columns">
-    <div class="mentions-block data-block">
-    <h3>Press mentions of {{ page.constituency.mapit.name }}</h3>
+<div class="small-12 large-12 columns">
+  <div class="mentions-block data-block">
+    <h3 id="press">Press mentions of {{ page.constituency.mapit.name }}</h3>
 
     <p class="info">The national and local press say lots of interesting things about your constituency and candidates, so <a href="https://www.electionmentions.com">Election Mentions</a> is collecting news articles about {{ page.constituency.mapit.name }} constituency or the candidates standing here. There may be errors.</p>
 
     <ul class="mentions-list">
-    {% for mention in page.constituency.em %}
+      {% for mention in page.constituency.em %}
       <li class="mentions-list__mention">
         <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
         <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
         <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
       </li>
-    {% endfor %}
+      {% endfor %}
     </ul>
-    <p>Read more on <a href='https://www.electionmentions.com/constituency/{{page.constituency.mapit.id}}'>ElectionMentions.com</a></p>
+    <p>
+      <a href='https://www.electionmentions.com/constituency/{{page.constituency.mapit.id}}' class="button success">Read more on ElectionMentions.com</a>
+    </p>
     </div>
-</div>
+  </div>
 </div>
