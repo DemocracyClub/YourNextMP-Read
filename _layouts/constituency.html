@@ -26,14 +26,17 @@ layout: default
 
         <div class="person-links">
             <ul>
+            {% if person.email %}
+            <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i> Email</a></li>
+            {% endif %}
             {% if person.cv %}
-            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text-o"></i> Curriculum Vitae</a></li>
+            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i> Curriculum Vitae</a></li>
             {% endif %}
             {% if person.links['homepage'] %}
             <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
             {% endif %}
             {% if person.links['party_PPC_page'] %}
-            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i> Party page</a></li>
+            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i> Party profile</a></li>
             {% endif %}
             {% if person.links['wikipedia'] %}
             <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i> Wikipedia article</a></li>
