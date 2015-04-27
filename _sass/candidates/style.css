@@ -6986,10 +6986,6 @@ body,
 
 .candidates__known {
   margin-bottom: 3em; }
-  @media only screen and (min-width: 40.063em) {
-    .candidates__known {
-      /*padding-left: 100px;*/
-      background: transparent url(img/icon-candidates.gif) 0 0 no-repeat; } }
   .candidates__known h3 {
     margin-top: 0;
     margin-bottom: 0.5em; }
