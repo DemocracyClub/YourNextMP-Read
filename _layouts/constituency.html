@@ -59,7 +59,7 @@ layout: default
     <div class="cvs-block data-block">
     <h3 id="cvs" data-magellan-destination="cvs">CVs uploaded</h3>
 
-    <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV!</p>
+    <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV</p>
 
     {% if page.constituency contains 'cv' %}
     <ul class="cvs-list">
@@ -79,7 +79,7 @@ layout: default
     {% endfor %}
     </ul>
     {% else %}
-    <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet!</p>
+    <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet.</p>
     {% endif %}
 
     {% if page.constituency.cv.size != page.constituency.ynmp.size %}
@@ -139,9 +139,9 @@ layout: default
   <p class="info">
     <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area so you can go and question your candidates.
     {% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
-    We know of 1 event that has already happened!
+    We know of 1 event that has already happened.
     {% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
-    We know of {{ page.constituency.meetPastEventsCount }} events that have already happened!
+    We know of {{ page.constituency.meetPastEventsCount }} events that have already happened.
     {% endif %}
   </p>
     <ul class="meet-list">
@@ -177,7 +177,7 @@ layout: default
 
 <div class="small-12 large-12 columns">
   <div class="mentions-block data-block">
-    <h3 id="press">Press mentions of {{ page.constituency.mapit.name }}</h3>
+    <h3 id="press">Press mentions for {{ page.constituency.mapit.name }}</h3>
 
     <p class="info">The national and local press say lots of interesting things about your constituency and candidates, so <a href="https://www.electionmentions.com">Election Mentions</a> is collecting news articles about {{ page.constituency.mapit.name }} constituency or the candidates standing here. There may be errors.</p>
 

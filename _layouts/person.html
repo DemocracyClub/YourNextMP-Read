@@ -23,7 +23,7 @@ layout: default
   {% endif %}
   
   {% if page.person.contact_details.twitter %}
-  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet to {{ page.person.name }}</a>
+  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet {{ page.person.name }}</a>
   {% endif %}
   
   {% if page.person.links.wikipedia %}
@@ -88,7 +88,7 @@ layout: default
  
   {% if page.person.biography %} 
   <div class='person__bio'>
-    <span class='person__box__byline'>jacked from <a href='{{ page.person.links.wikipedia.url }}'>Wikipedia</a> <small><a href='http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License'>CC BY-SA 3.0</a></small></span>
+    <span class='person__box__byline'>from <a href='{{ page.person.links.wikipedia.url }}'>Wikipedia</a> <small><a href='http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License'>CC BY-SA 3.0</a></small></span>
     <h2><i class='fa fa-book'></i> Biography</h2>
     <p>{{ page.person.biography }}</p>
   </div>
@@ -141,7 +141,7 @@ layout: default
   <div class='person__mentions'>
   <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
   <h2><i class='fa fa-newspaper-o'></i> Press mentions</h2>
-  <p>We don't know any articles about {{ page.person.name }} right now.</p>
+  <p>We don't know of any articles about {{ page.person.name }} right now.</p>
   <form method="post" action="https://www.electionmentions.com/article" class='form-inline'>
     <div class="form-group">
         <label for='url'>Article URL
