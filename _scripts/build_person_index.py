@@ -1,8 +1,14 @@
 import json
-import sys
+import sys, os.path
+from collections import defaultdict
 from datetime import date, datetime
 
 ynmp_export_path = sys.argv[1]
+mapit_export_path = sys.argv[2]
+em_export_path = sys.argv[3]
+cv_export_path = sys.argv[4]
+meet_export_path = sys.argv[5]
+el_export_path = sys.argv[6]
 
 ynmp_export = json.load(open(ynmp_export_path))
 
@@ -41,12 +47,46 @@ def years_ago(earlier_date, later_date):
     else:
         return (later_date.year - earlier_date.year) - 1
 
+def find_wiki_title(person):
+   if 'wikipedia' in person['links']:
+        link = person['links']['wikipedia']
+
+        if link['url'].startswith('http://en.wikipedia.org/wiki/'):
+            wiki_title = link['url'][len('http://en.wikipedia.org/wiki/'):]
+        elif link['url'].startswith('https://en.wikipedia.org/wiki/'):
+            wiki_title = link['url'][len('https://en.wikipedia.org/wiki/'):]
+        else:
+            wiki_title = None
+
+        return wiki_title
+
 party_dict = {}
 for party in ynmp_export['organizations']:
     if party['classification'] == "Party":
         party_dict[party['id']] = party
 
+# Build CV data
+cv_export = json.load(open(cv_export_path))
+
+person_cvs = {}
+for cv in cv_export:
+    cv['person_id'] = str(cv['person_id'])
+    person_cvs[cv['person_id']] = cv
+
+# Build EL data
+el_export = json.load(open(el_export_path))
+
+person_leaflets = defaultdict(list)
+for constituency_id, leaflets in el_export.items():
+    if leaflets:
+        for leaflet in leaflets:
+            if leaflet['publisher_person']:
+                person_id = leaflet['publisher_person']['remote_id']
+                person_leaflets[person_id].append(leaflet)
+
+
 for person in ynmp_export['persons']:
+    
     # Remove stuff we don't need
     del person['versions']
     candidacies = {}
@@ -96,6 +136,21 @@ for person in ynmp_export['persons']:
     person['candidacies'] = candidacies
     del person['standing_in']
     del person['party_memberships']
+
+    if person['id'] in person_cvs:
+        person['cv'] = person_cvs[person['id']]
+
+    if person['id'] in person_leaflets:
+        person['leaflets'] = person_leaflets[person['id']]
+
+    wiki_title = find_wiki_title(person)
+
+    if wiki_title:
+        wiki_path = '_downloads/wikipedia/{}.json'.format(wiki_title)
+        if os.path.exists(wiki_path):
+            wiki_person = json.load(open(wiki_path))
+            person['biography'] = wiki_person['first_para']
+
 
     if 'ge2015' in person['candidacies']:
         #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']

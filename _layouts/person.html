@@ -1,81 +1,156 @@
 ---
 layout: default
 ---
+{% if page.person.gender == 'male' %}
+  {% assign possessive='His' %}
+{% elsif page.person.gender == 'female' %}
+  {% assign possessive='Her' %}
+{% else %}
+  {% assign possessive='Their' %}
+{% endif %}
+
+{% if page.person.gender == 'male' %}
+  {% assign pronoun='Him' %}
+{% elsif page.person.gender == 'female' %}
+  {% assign pronoun='Her' %}
+{% else %}
+  {% assign pronoun='Them' %}
+{% endif %}
+
+<div class='person__buttons'>
+  {% if page.person.email %}
+  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.contact_details.twitter %}
+  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet to {{ page.person.name }}</a>
+  {% endif %}
+  
+  {% if page.person.links.wikipedia %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_personal %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  {% endif %}
+  
+  {% if page.person.links.facebook_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
+  {% endif %}
+  
+  {% if page.person.links.homepage %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> Website</a>
+  {% endif %}
+  
+  {% if page.person.links.linkedin %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
+  {% endif %}
+  
+  {% if page.person.links.party_PPC_page %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> {{ page.person.candidacies.ge2015.party.name }} profile</a>
+  {% endif %}
+
+  {% if page.person.party_emblem.proxy_url %}
+  <div class="person__party_emblem">
+    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
+  </div>
+  {% endif %}
+
+</div>
 
 <div class="person__details">
+  <p>
+    {{ page.person.name }} is running in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
 
-  <h2>Personal details:</h2>
-
-  <dl>
-    <dt>Name</dt>
-    <dd>{{page.person.name}}</dd>
-
-
-    {% if page.person.email %}
-    <dt>Email</dt>
-    <dd><a href="mailto:{{ page.person.email }}">{{ page.person.email }}</a></dd>
-    {% endif %}
-    <dt>Party</dt>
-    <dd>{{page.person.candidacies.ge2015.party.name}}</dd>
-  </dl>
-
-  <h2>Constituencies:</h2>
-
-  <dl>
-    <dt>Contesting in 2015</dt>
-    <dd><span class="constituency-value-standing-link">
-        <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">{{page.person.candidacies.ge2015.constituency.name}}</a></span>
-        <span class="party">{{page.person.candidacies.ge2015.party.name}}</span></dd>
-
-    <dt>Contested in 2010</dt>
-    {% if page.person.candidacies.ge2010 %}
-    <dd><span class="constituency-value-standing-link">
-        <a href="/constituency/{{page.person.candidacies.ge2010.constituency.post_id}}/{{page.person.candidacies.ge2010.constituency.name|slugify}}">{{page.person.candidacies.ge2010.constituency.name}}</a></span>
-        <span class="party">{{page.person.candidacies.ge2010.party.name}}</span></dd>
+  {% if page.person.candidacies.ge2010 %}
+    {% if page.person.gender == 'male' %}
+        He
+    {% elsif page.person.gender == 'female' %}
+        She
     {% else %}
-    <dd><span class="constituency-not-standing">Did not stand in 2010</span></dd>
+        They
+    {% endif %} 
+    previously ran in
+    {% if page.person.candidacies.ge2010.constituency.post_id == page.person.candidacies.ge2015.constituency.post_id %}
+        the same constituency
+    {% else %}
+        {{ page.person.candidacies.ge2010.constituency.name }}
     {% endif %}
-  </dl>
+    in 2010,
 
-  <h2>Links and social media:</h2>
-
-  <dl>
-    {% if page.person.contact_details.twitter %}
-    <dt>Twitter</dt>
-    <dd><a rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}">@{{page.person.contact_details.twitter.value}}</a></dd>
+    {% if page.person.candidacies.ge2010.party.id == page.person.candidacies.ge2015.party.id %}
+    also as a {{ page.person.candidacies.ge2010.party.name }} candidate.
+    {% else %}
+    as a {{ page.person.candidacies.ge2010.party.name }} candidate.
     {% endif %}
+  {% endif %}
+  </p>
+ 
+  {% if page.person.biography %} 
+  <div class='person__bio'>
+    <span class='person__box__byline'>jacked from <a href='{{ page.person.links.wikipedia.url }}'>Wikipedia</a> <small><a href='http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License'>CC BY-SA 3.0</a></small></span>
+    <h2><i class='fa fa-book'></i> Biography</h2>
+    <p>{{ page.person.biography }}</p>
+  </div>
+  {% endif %}
 
-    {% if page.person.links.facebook_personal %}
-    <dt>Facebook</dt>
-    <dd><a rel="nofollow" href="{{ page.person.links.facebook_personal.url }}">{{page.person.links.facebook_personal.url}}</a> <small>(personal profile)</small></dd>
-    {% endif %}
+  <div class='person__cv'>
+  <span class='person__box__byline'>by <a href='https://cv.democracyclub.org.uk/'>Democracy Club CVs</a></span>
+  <h2><i class='fa fa-file-text-o'></i> CV</h2>
+  {% if page.person.cv %}
+    <a class='person__cv__imglink' href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
+      <img src="{{ page.person.cv.thumb.url }}">
+    </a>
 
-    {% if page.person.links.facebook_page %}
-    <dt>Facebook</dt>
-    <dd><a rel="nofollow" href="{{ page.person.links.facebook_page.url }}">{{page.person.links.facebook_page.url}}</a> <small>(campaign page)</small></dd>
-    {% endif %}
+    <p class='person__cv__text'>
+        {{ page.person.name}} has sent us {{ possessive|downcase }} CV. 
 
-    {% if page.person.links.homepage %}
-    <dt>Homepage</dt>
-    <dd><a rel="nofollow" href="{{page.person.links.homepage.url}}">{{page.person.links.homepage.url}}</a></dd>
-    {% endif %}
+        <a href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
+        Read {{ page.person.name}}'s CV now.
+        </a>
+    </p>
+    <div style='clear:both;'></div>
+  {% else %}
+    <p class='person__cv__text'>{{ page.person.name }} hasn't sent us {{ possessive|downcase }} CV.</p>
 
-    {% if page.person.links.wikipedia %}
-    <dt>Wikipedia page</dt>
-    <dd><a rel="nofollow" href="{{page.person.links.wikipedia.url}}">{{page.person.links.wikipedia.url}}</a></dd>
-    {% endif %}
+    <a class='button' href='http://cv.democracyclub.org.uk/candidates/{{ page.person.candidacies.ge2015.constituency.mapit.id }}'>Ask {{ pronoun|downcase }} now</a>
+  {% endif %}
+  </div>
+  
+  <div class='person__leaflets'>
+  <span class='person__box__byline'>by <a href='https://www.electionleaflets.org/'>ElectionLeaflets.org</a></span>
+  <h2><i class='fa fa-paper-plane-o'></i> Leaflets</h2>
+  {% if page.person.leaflets %}
+  <ul class="leaflets-list">
+    {% for leaflet in page.person.leaflets %}
+      <li class="leaflet-list__cv">
+      <figure>
+        <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+          <img src="{{ leaflet.first_page_thumb }}">
+        </a>
+      </figure>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>We don't know of any leaflets from {{ page.person.name }}.</p>
+  {% endif %}
+  <a class='button' href='https://electionleaflets.org/leaflets/add/'>Upload a leaflet now</a>
+  </div>
 
-    {% if page.person.links.linkedin %}
-    <dt>LinkedIn page</dt>
-    <dd><a rel="nofollow" href="{{page.person.links.linkedin.url}}">{{page.person.links.linkedin.url}}</a></dd>
-    {% endif %}
-
-    {% if page.person.links.party_PPC_page %}
-    <dt>Party PPC page</dt>
-    <dd><a rel="nofollow" href="{{page.person.links.party_PPC_page.url}}">{{page.person.links.party_PPC_page.url}}</a></dd>
-    {% endif %}
-
-  </dl>
+  <div class='person__mentions'>
+  <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
+  <h2><i class='fa fa-newspaper-o'></i> Press mentions</h2>
+  <p>We don't know any articles about {{ page.person.name }} right now.</p>
+  <form method="post" action="https://www.electionmentions.com/article" class='form-inline'>
+    <div class="form-group">
+        <label for='url'>Article URL
+        <input type='text' name='url' value='' id='url' placeholder='Enter url here...' class="form-control"/>
+        </label>
+        <input type='submit' value='add article' class="button"/>
+    </div>
+  </form>
+  </div>
 
   <h2>Demographics:</h2>
 
@@ -86,9 +161,9 @@ layout: default
     {% endif %}
     {% if page.person.age %}
     <dt>Age</dt>
-{% comment %}
+    {% comment %}
       TODO Add 'th' or 'nd' here
-{% endcomment %}
+    {% endcomment %}
     <dd>
         {{page.person.age}}
         <small class="dob">
@@ -102,19 +177,16 @@ layout: default
     {% endif %}
   </dl>
 
+  {% if page.person.image_data %}
   <h2>Photo Credit:</h2>
   <p class="person__photo-credit">
   {% include _photo-credit.html image_data=page.person.image_data %}
   </p>
+  {% endif %}
 
 </div>
 
 <div class="person__actions">
-  {% if page.person.party_emblem.proxy_url %}
-  <div class="person__party_emblem">
-    <img src="{{ page.person.party_emblem.proxy_url}}/240/0">
-  </div>
-  {% endif %}
 
   <div class="person__actions__action person__actions__edit">
     <h2>Improve this data!</h2>

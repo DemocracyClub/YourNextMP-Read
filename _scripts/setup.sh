@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir -p _downloads
+mkdir -p _downloads/wikipedia
 mkdir -p _data/constituencies
 mkdir -p _data/constituencies/id
 mkdir -p _data/people

@@ -104,20 +104,20 @@
           i.fa {
             padding-right: 0.5rem;
           }
-
-          i.wikipedia-icon:before {
-            font-family: 'wikipedia-icon';
-            content: '\e600';
-          }
-
-          i.wikipedia-icon {
-            font-style: normal;
-            padding-right: 0.5rem;
-          }
         }
       }
     }
   }
+}
+
+i.wikipedia-icon:before {
+  font-family: 'wikipedia-icon';
+  content: '\e600';
+}
+
+i.wikipedia-icon {
+  font-style: normal;
+  padding-right: 0.5rem;
 }
 
 .candidates__known {
@@ -187,17 +187,27 @@
 }
 
 @media #{$medium-up} {
+  .person__buttons {
+    /*@include grid-column($columns: 4, $offset: 1, $push: 7, $collapse: true);*/
+    float: right;
+    width: 35%;
+  }
+  
   .person__details {
-    @include grid-column($columns: 7, $collapse: true);
+    /*@include grid-column($columns: 5, $pull: 5, $collapse: true);*/
+    float: left;
+    width: 60%;
   }
 
   .person__actions {
-    @include grid-column($columns: 4, $offset: 1, $collapse: true);
-
-    & + * {
-      clear: both;
-    }
+    float: right;
+    width: 35%;
+    /*@include grid-column($columns: 4, $offset: 1, $push: 7, $collapse: true);*/
   }
+
+  /*  & + * {
+      clear: both;
+    }*/
 }
 
 .person__actions__action {
@@ -262,4 +272,84 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.person__buttons {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+
+    .button {
+        padding: 0.5rem;
+        display: block;
+        margin: 0 0 0.5rem 0;
+    }
+}
+    
+.person__box__byline {
+    float:right;
+    font-style:italic;
+    color:#999;
+    font-size: 0.8rem;
+
+    a:link, a:visited {
+        color: #999;
+        text-decoration: underline;
+    }
+}
+
+.person__cv {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .person__cv__imglink {
+        float: left;
+        margin-right: 1rem;
+    }
+
+    .person__cv__text {
+    }
+        
+    .button {
+        margin: 0 0 0 0;
+    }
+
+}
+
+.person__leaflets {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .button {
+        margin: 0 0 0 0;
+    }
+}
+
+.person__mentions {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .button {
+        margin: 0 0 0 0;
+    }
+}
+
+.person__bio {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
 }
