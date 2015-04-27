@@ -113,7 +113,7 @@ layout: default
   {% else %}
     <p class='person__cv__text'>{{ page.person.name }} hasn't sent us {{ possessive|downcase }} CV.</p>
 
-    <a class='button' href='http://cv.democracyclub.org.uk/candidates/{{ page.person.candidacies.ge2015.constituency.mapit.id }}'>Ask {{ pronoun|downcase }} now</a>
+    <a class='button' href='http://cv.democracyclub.org.uk/upload_cv/{{ page.person.id }}'>Ask {{ pronoun|downcase }} now</a>
   {% endif %}
   </div>
   
