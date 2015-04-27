@@ -38,9 +38,9 @@ for person in ynmp_export['persons']:
             else:
                 continue
 
-            print link['url']
-            print first_para 
-            print
+            #print link['url']
+            #print first_para 
+            #print
 
             obj = {'first_para': first_para,
                    'full': full,
