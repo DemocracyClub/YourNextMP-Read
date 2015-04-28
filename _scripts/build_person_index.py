@@ -9,6 +9,7 @@ em_export_path = sys.argv[3]
 cv_export_path = sys.argv[4]
 meet_export_path = sys.argv[5]
 el_export_path = sys.argv[6]
+em_people_export_path = sys.argv[7]
 
 with open(ynmp_export_path) as f:
     ynmp_export = json.load(f)
@@ -87,6 +88,8 @@ for constituency_id, leaflets in el_export.items():
                 person_id = leaflet['publisher_person']['remote_id']
                 person_leaflets[person_id].append(leaflet)
 
+# EM data
+em_export = json.load(open(em_people_export_path))
 
 for person in ynmp_export['persons']:
     
@@ -145,6 +148,8 @@ for person in ynmp_export['persons']:
 
     if person['id'] in person_leaflets:
         person['leaflets'] = person_leaflets[person['id']]
+
+    person['em'] = em_export.get(person['id'])
 
     wiki_title = find_wiki_title(person)
 

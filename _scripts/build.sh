@@ -14,6 +14,7 @@ data_files=(
     _downloads/cv.export.json
     _downloads/meet.export.json
     _downloads/el.export.json
+    _downloads/electionmentions.export.people.json
 )
 
 python ./_scripts/get_wikipedia_extracts.py "${data_files[@]}"
