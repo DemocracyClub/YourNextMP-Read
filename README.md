@@ -35,6 +35,9 @@ _scripts/build.sh
 For development, only a mini version of the site is built by default.
 
 ```
+# copy over a small selection of constituencies and people for development
+python _scripts/build_data_small.py
+
 # build the site, and start the server running
 jekyll serve
 ```
