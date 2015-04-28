@@ -1,1 +1,1 @@
-curl "http://cv.democracyclub.org.uk/cvs.json" -o _downloads/cv.export.json
+curl "http://cv.democracyclub.org.uk/cvs.json" -fsS -o _downloads/cv.export.json

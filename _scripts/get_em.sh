@@ -1,1 +1,1 @@
-curl "https://www.electionmentions.com/export.json" -o _downloads/electionmentions.export.json
+curl "https://www.electionmentions.com/export.json" -fsS -o _downloads/electionmentions.export.json
