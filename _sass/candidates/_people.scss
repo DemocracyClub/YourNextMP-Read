@@ -86,8 +86,10 @@
     }
   }
 
-  .person-links {
+  .person-contact-links, .person-web-links, .person-dc-links {
     margin-left: 5.5rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
 
     ul {
       list-style: none;
@@ -97,8 +99,8 @@
       li {
 
         a {
-          &:visited {
-            color: $primary-color;
+          &:link, &:visited {
+            color: #008CBA;
           }
 
           i.fa {

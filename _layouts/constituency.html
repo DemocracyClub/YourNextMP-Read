@@ -24,14 +24,33 @@ layout: default
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
 
-        <div class="person-links">
+        {% if person.cv or person.leaflets %}
+        <div class="person-dc-links">
+            <ul>
+            {% if person.cv %}
+            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i> Curriculum Vitae</a></li>
+            {% endif %}
+            {% if person.leaflets %}
+            {% assign num_leaflets = person.leaflets | size %}
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i> {{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="person-contact-links">
             <ul>
             {% if person.email %}
             <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i> Email</a></li>
             {% endif %}
-            {% if person.cv %}
-            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i> Curriculum Vitae</a></li>
+            {% if person.contact_details['twitter'] %}
+            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i> Twitter account</a></li>
             {% endif %}
+            </ul>
+        </div>
+        
+        <div class="person-web-links">
+            <ul>
             {% if person.links['homepage'] %}
             <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
             {% endif %}
@@ -49,9 +68,6 @@ layout: default
             {% endif %}
             {% if person.links['linkedin'] %}
             <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i> Linkedin profile</a></li>
-            {% endif %}
-            {% if person.contact_details['twitter'] %}
-            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i> Twitter account</a></li>
             {% endif %}
             </ul>
         </div>
