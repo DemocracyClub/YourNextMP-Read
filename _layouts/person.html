@@ -37,15 +37,15 @@ layout: default
   {% if page.person.links.wikipedia %}
   <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
   {% endif %}
-  
-  {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
-  {% endif %}
-  
+
   {% if page.person.links.facebook_page %}
   <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
   {% endif %}
-  
+
+  {% if page.person.links.facebook_personal %}
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  {% endif %}
+
   {% if page.person.links.homepage %}
   <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name|possessive }} website</a>
   {% endif %}
