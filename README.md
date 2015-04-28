@@ -10,18 +10,22 @@ This site combines the various outputs of
  * Jekyll >= 2.4.0 ([installation instructions](http://jekyllrb.com/docs/installation/))
  * Python 2.7 ([installation instructions](https://www.python.org/downloads/))
 
-You will also need the following Python packages installed:
-
- * [geopy](https://pypi.python.org/pypi/geopy/)
+You will also need the Python packages listed in `requirements.txt`.
 
 ## Installation
 
 ```
 # clone this repo
 git clone https://github.com/DemocracyClub/YourNextMP-Read.git
+cd YourNextMP-Read
+
+# install the requirements
+# (you might want to use rbenv & virtualenv)
+gem install jekyll
+pip install -r requirements.txt
 
 # run the setup scripts
-cd YourNextMP-Read
+
 _scripts/setup.sh
 _scripts/build.sh
 ```
