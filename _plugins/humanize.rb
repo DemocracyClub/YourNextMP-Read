@@ -233,6 +233,19 @@ module Jekyll
 
     end
 
+    def possessive(str)
+      str + ('s' == str[-1,1] ? "'" : "'s")
+    end
+
+    def pronoun(gender, type="subject")
+      pronouns = {
+        male: {subject: "he", object: "him", possessive: "his"},
+        female: {subject: "she", object: "her", possessive: "her"}
+      }
+      pronouns.default = {subject: "they", object: "them", possessive: "their"}
+      return pronouns[gender.downcase.to_sym][type.to_sym]
+    end
+
     #####################
     #  PRIVATE METHODS  #
     #####################
