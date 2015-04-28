@@ -744,3 +744,512 @@
         - type: twitter
           value: YPPUK
 
+"party:2464": # Alter Change - Politics. Only Different
+    links:
+        - url: http://www.alterchange.com/
+          note: homepage
+
+"party:2399": # Al-Zebabist Nation of Ooog
+    links:
+        - url: http://alzebab.org/
+          note: homepage
+        - url: https://www.facebook.com/alzebabistnationofOOOG
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: Al_Zebab
+
+"party:2719": # Apni Party
+    links:
+        - url: http://www.apniparty.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/apnipartyuk
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ApniPartyUK
+
+"party:845": # Apolitical Democrats
+    links:
+        - url: http://www.apolitical.org.uk/
+          note: homepage
+
+"party:2027": # Beer, Baccy and Scratchings
+    links:
+        - url: http://www.bbandc.org.uk/
+          note: homepage
+
+"party:2503": # Bournemouth Independent Alliance
+    links:
+        - url: http://bia.voting/
+          note: homepage
+        - url: https://www.facebook.com/pages/Bournemouth-Independent-Alliance/1397437250546584
+          note: facebook page
+
+"party:1765": # British Democratic Party
+    links:
+        - url: http://britishdemocraticparty.org/
+          note: homepage
+          url: http://en.wikipedia.org/wiki/British_Democratic_Party_(2013)
+          note: wikipedia
+        - url: https://www.facebook.com/pages/British-Democratic-Party/460694123975727
+          note: facebook page
+
+"party:2165": # British Independents
+    links:
+        - url: http://www.britishindependents.org/
+          note: homepage
+    contact_details:
+        - type: twitter
+          value: TheBrits4Us
+
+"party:2566": # Campaign
+    links:
+        - url: http://gordon-shrigley.com/campaign/
+          note: homepage
+        - url: https://www.facebook.com/pages/Campaign-Project-for-an-Unidentified-Political-Object/394128374102603
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: art_campaign
+
+"party:2567": # Children of the Atom
+    links:
+        - url: http://www.atomist.uk/
+          note: homepage
+
+"party:839": # Christian Movement for Great Britain
+    links:
+        - url: http://www.christianmovement.info/
+          note: homepage
+
+"party:2730": # Common Sense Party
+    links:
+        - url: http://www.trustjo.org/
+          note: homepage
+
+# "party:2626": # Consensus
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2216": # Democratic Reform Party
+    links:
+        - url: http://www.democraticreform.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/demreformparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: DemReformParty
+
+"party:2309": # Europeans Party
+    links:
+        - url: http://www.europeansparty.org/
+          note: homepage
+        - url: https://www.facebook.com/europeansparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: EuropeansParty
+
+# "party:866": # Free Public Transport Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2597": # Free United Kingdom Party
+    contact_details:
+        - type: twitter
+          value: FUKPnews
+
+# "party:2641": # Give Me Back Elmo
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2535": # Guildford Greenbelt Group
+    links:
+        - url: http://www.guildfordgreenbeltgroup.co.uk/
+          note: homepage
+        - url: http://en.wikipedia.org/wiki/Guildford_Greenbelt_Group
+          note: wikipedia
+        - url: https://www.facebook.com/Guildfordgreenbelt
+          note: facebook page
+
+# "party:2237": # Hoi Polloi
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:834": # Humanity
+    links:
+        - url: http://www.humaine.org.uk/
+          note: homepage
+
+"party:2648": # Independent Save Withybush Save Lives
+    links:
+        - url: https://www.facebook.com/SWSLParty
+          note: facebook page
+
+"party:2038": # Independents for Bristol
+    links:
+        - url: http://www.ifbristol.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/IndependentsForBristol
+          note: facebook page
+        - url: http://en.wikipedia.org/wiki/Independents_for_Bristol
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: IfBristol
+
+# "party:449": # Islam Zinda Baad Platform
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2577": # Keep It Real Party
+    links:
+        - url: https://www.keepitrealparty.uk/
+          note: homepage
+        - url:
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: keepitrealparty
+
+"party:794": # Land Party
+    links:
+        - url: http://landparty.org.uk/
+          note: homepage
+
+"party:491": # Magna Carta Conservation Party Great Britain
+    links:
+        - url: http://www.magnacartaconservationpartygb.com/
+          note: homepage
+
+"party:492": # Mainstream
+    links:
+        - url: http://www.mainstream.org.uk/
+          note: homepage
+
+"party:2650": # Manston Airport Independent Party
+    links:
+        - url: http://www.votemanstonairport.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/manstonindependentparty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: VoteManston2015
+
+"party:481": # Movement for Active Democracy (M.A.D.)
+    links:
+        - url: http://movementforactivedemocracy.org.uk/
+          note: homepage
+
+"party:821": # New Independent Centralists
+    links:
+        - url: http://www.nicparty.co.uk/
+          note: homepage
+        - url: https://www.facebook.com/pages/NIC/290127641131711
+          note: facebook page
+
+"party:773": # People Before Profit Alliance
+    links:
+        - url: http://www.peoplebeforeprofit.ie/
+          note: homepage
+        - url: https://www.facebook.com/peopleb4profit
+          note: facebook page
+        - url: http://en.wikipedia.org/wiki/People_Before_Profit_Alliance
+          note: wikipedia
+
+"party:1732": # People First - Gwerin Gyntaf
+    links:
+        - url: http://www.peoplefirstwales.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/pages/People-First-Wales/103559119774630
+          note: facebook page
+
+"party:2563": # Population Party UK
+    links:
+        - url: http://www.populationpartyuk.uk/
+          note: homepage
+        - url: https://www.facebook.com/pages/Population-Party-UK/388347351241197
+          note: facebook page
+
+# "party:185": # Putting Croydon First!
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2674": # Rebooting Democracy
+    links:
+        - url: http://www.rebootingdemocracy.uk/
+          note: homepage
+
+# "party:2628": # Reduce VAT in Sport
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2468": # Residents for Uttlesford
+    links:
+        - url: http://www.residents4u.org/
+          note: homepage
+        - url: https://www.facebook.com/WeAreResidents
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: WeAreResidents
+
+"party:2662": # Restore the Family For Children's Sake
+    links:
+        - url: http://slavery.org.uk/RestoreTheFamily.htm
+          note: homepage
+
+# "party:2512": # Rochdale First Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2581": # Save Hartlepool Hospital
+    links:
+        - url: https://www.facebook.com/savehartlepoolhospital
+          note: facebook page
+
+"party:2063": # The 30-50 Coalition
+    links:
+        - url: http://30-50.co.uk/
+          note: homepage
+
+# "party:778": # The Birthday Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:1813": # The Democratic Party
+    links:
+        - url: http://www.thedemocraticparty.co.uk/
+          note: homepage
+
+"party:2413": # The Eccentric Party of Great Britain
+    links:
+        - url: http://eccentricparty.org/
+          note: homepage
+        - url: https://www.facebook.com/pages/The-Eccentric-Party-of-Great-Britain/1547365858844428
+          note: facebook page
+
+# "party:2694": # The Evolution Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+# "party:1790": # The Independent Political Alliance Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+# "party:863": # The Magna Carta Party
+#     links:
+#         - url: http://www.magnacartaparty.org.uk/
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:2714": # The New Society of Worth
+    links:
+        - url: http://www.tnsw.co.uk/
+          note: homepage
+
+"party:886": # The Party for Poole People Ltd.
+    links:
+        - url: http://www.poolepeople.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/poolepeople
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: Poole_People
+
+"party:2717": # The Pilgrim Party
+    links:
+        - url: http://www.pilgrimparty.org.uk/
+          note: homepage
+
+"party:1887": # The Pluralist Party
+    links:
+        - url: http://www.pluralist.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/PluralistParty
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: PluralistParty
+
+"party:2618": # The Principles of Politics Party
+    links:
+        - url: http://principlesofpolitics.com/
+          note: homepage
+        - url: https://www.facebook.com/principlesofpolitics
+          note: facebook page
+    contact_details:
+        - type: twitter
+          value: ThePopPartyUK
+
+"party:1871": # The Realists' Party
+    links:
+        - url: http://www.therealistsparty.co.uk/
+          note: homepage
+
+"party:1722": # The Republican Socialist Party
+    links:
+        - url: http://www.republicansocialists.org.uk/
+          note: homepage
+        - url: https://www.facebook.com/pages/The-Republican-Socialists/632151753581465
+          note: facebook page
+
+"party:2342": # The Roman Party. Ave
+    links:
+        - url: http://en.wikipedia.org/wiki/Roman_Party
+          note: wikipedia
+    contact_details:
+        - type: twitter
+          value: PascualJeanloui
+
+"party:235": # The Southport Party
+    links:
+        - url: http://www.thesouthportparty.co.uk/
+          note: homepage
+
+# "party:2688": # The Sustainable Population Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+# "party:2625": # The UK Progressive Democracy Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+# "party:860": # The U(niversal) Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:710": # True Democracy Party
+    links:
+        - url: http://www.truedemocracy.uk/
+          note: homepage
+
+# "party:488": # War Veteran's Pro-Traditional Family Party
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+"party:95": # Wessex Regionalists
+    links:
+        - url: http://www.regionalist.net/
+          note: homepage
+    contact_details:
+        - type: twitter
+          value: WessexRegion
+
+# "party:760": # Wigan Independents
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
+
+# "party:2638": # World Peace Through Song
+#     links:
+#         - url:
+#           note: homepage
+#         - url:
+#           note: facebook page
+#     contact_details:
+#         - type: twitter
+#           value:
