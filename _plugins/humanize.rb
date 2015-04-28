@@ -238,12 +238,15 @@ module Jekyll
     end
 
     def pronoun(gender, type="subject")
+      gender = if gender then gender.strip.downcase else "" end
+
       pronouns = {
         male: {subject: "he", object: "him", possessive: "his"},
         female: {subject: "she", object: "her", possessive: "her"}
       }
       pronouns.default = {subject: "they", object: "them", possessive: "their"}
-      return pronouns[gender.downcase.to_sym][type.to_sym]
+
+      return pronouns[gender.to_sym][type.to_sym]
     end
 
     #####################
