@@ -24,7 +24,7 @@ layout: default
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
 
-        {% if person.cv or person.leaflets %}
+        {% if person.cv or person.leaflets or person.em.size > 0%}
         <div class="person-dc-links">
             <ul>
             {% if person.cv %}
@@ -32,7 +32,10 @@ layout: default
             {% endif %}
             {% if person.leaflets %}
             {% assign num_leaflets = person.leaflets | size %}
-            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#leaflets'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            {% endif %}
+            {% if person.em.size > 0 %}
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#mentions'><i class="fa fa-newspaper-o"></i>{{ person.em.size }} mention{% if person.em.size > 1 %}s{% endif %}</a></li>
             {% endif %}
             </ul>
         </div>
@@ -219,8 +222,8 @@ layout: default
       {% for mention in page.constituency.em %}
       <li class="mentions-list__mention">
         <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
-        <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
-        <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
+        <a class='mention-title' href="{{ mention.url }}" target="_blank">{{ mention.title }}</a>
+        <a class='mention-source' href="{{ mention.url }}" target="_blank">{{ mention.source }}</a>
       </li>
       {% endfor %}
     </ul>
