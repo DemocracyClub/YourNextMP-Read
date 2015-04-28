@@ -73,7 +73,7 @@ layout: default
     <a class="button" rel="nofollow" href="{{ link.url }}">
         {% if link.note == 'facebook page' %}<i class="fa fa-facebook"></i> {{ party.name }} Facebook page
         {% elsif link.note == 'homepage' %}<i class="fa fa-home"></i> {{ party.name }} website
-        {% elsif link.note == 'wikipedia' %}<i class='wikipedia-icon'/></i>{{ party.name }} on Wikipedia
+        {% elsif link.note == 'wikipedia' %}<i class='wikipedia-icon'></i>{{ party.name }} on Wikipedia
         {% elsif link.note == 'linkedin' %}<i class="fa fa-linkedin"></i> {{ party.name }} LinkedIn profile
         {% else %}<i class="fa fa-home"></i> {{ party.name }} {{ link.note }}
         {% endif %}
