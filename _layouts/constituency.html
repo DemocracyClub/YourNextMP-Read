@@ -84,31 +84,36 @@ layout: default
     <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV</p>
 
     {% if page.constituency contains 'cv' %}
-    <ul class="cvs-list">
-    {% for cv in page.constituency.cv %}
-      {% assign person = site.data.people.id[cv.person_id] %}
-      <li class="cvs-list__cv">
-        <figure>
-          <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
-            <img src="{{ cv.thumb.url }}">
-          </a>
-          <figcaption class="cv__person-name-and-party">
-            <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
-            <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
-          </figcaption>
-        </figure>
-      </li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet.</p>
-    {% endif %}
+      <ul class="cvs-list">
+      {% for cv in page.constituency.cv %}
+        {% assign person = site.data.people.id[cv.person_id] %}
+        <li class="cvs-list__cv">
+          <figure>
+            <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+              <img src="{{ cv.thumb.url }}">
+            </a>
+            <figcaption class="cv__person-name-and-party">
+              <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
+              <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
+            </figcaption>
+          </figure>
+        </li>
+      {% endfor %}
+      </ul>
 
-    {% if page.constituency.cv.size != page.constituency.ynmp.size %}
-    <p>
-      <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}" class="button success">
-      Ask these candidates to upload their CV</a>
-    </p>
+      {% if page.constituency.cv.size != page.constituency.ynmp.size %}
+      <p>
+        <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}" class="button success">
+        Ask the other candidates to upload their CVs</a>
+      </p>
+      {% endif %}
+    {% else %}
+      <p>None of the candidates in {{ page.constituency.mapit.name }} have uploaded a CV yet.</p>
+
+      <p>
+        <a href="http://cv.democracyclub.org.uk/candidates/{{ page.constituency.mapit.id }}" class="button success">
+        Ask these candidates to upload their CVs</a>
+      </p>
     {% endif %}
   </div>
 </div>
