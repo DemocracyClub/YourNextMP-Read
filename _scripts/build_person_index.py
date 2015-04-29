@@ -10,7 +10,8 @@ cv_export_path = sys.argv[4]
 meet_export_path = sys.argv[5]
 el_export_path = sys.argv[6]
 
-ynmp_export = json.load(open(ynmp_export_path))
+with open(ynmp_export_path) as f:
+    ynmp_export = json.load(f)
 
 def list_to_dict(data_list, key):
     """
@@ -66,7 +67,8 @@ for party in ynmp_export['organizations']:
         party_dict[party['id']] = party
 
 # Build CV data
-cv_export = json.load(open(cv_export_path))
+with open(cv_export_path) as f:
+    cv_export = json.load(f)
 
 person_cvs = {}
 for cv in cv_export:
@@ -74,7 +76,8 @@ for cv in cv_export:
     person_cvs[cv['person_id']] = cv
 
 # Build EL data
-el_export = json.load(open(el_export_path))
+with open(el_export_path) as f:
+    el_export = json.load(f)
 
 person_leaflets = defaultdict(list)
 for constituency_id, leaflets in el_export.items():
@@ -148,13 +151,15 @@ for person in ynmp_export['persons']:
     if wiki_title:
         wiki_path = '_downloads/wikipedia/{}.json'.format(wiki_title)
         if os.path.exists(wiki_path):
-            wiki_person = json.load(open(wiki_path))
+            with open(wiki_path) as f:
+                wiki_person = json.load(f)
             person['biography'] = wiki_person['first_para']
 
 
     #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
 
-    json.dump(person, open('_data/people/id/{}.json'.format(person['id']), 'w+'), indent=4, sort_keys=True)
+    with open('_data/people/id/{}.json'.format(person['id']), 'w+') as f:
+        json.dump(person, f, indent=4, sort_keys=True)
 
 #json.dump(people_constituency_2015, open('_data/people_constituency_2015_index.json', 'w+'), indent=4, sort_keys=True)
 
