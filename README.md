@@ -24,9 +24,8 @@ cd YourNextMP-Read
 gem install jekyll
 pip install -r requirements.txt
 
-# run the setup scripts
+# run the build script
 
-_scripts/setup.sh
 _scripts/build.sh
 ```
 
