@@ -28,11 +28,11 @@ layout: default
         <div class="person-dc-links">
             <ul>
             {% if person.cv %}
-            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i> Curriculum Vitae</a></li>
+            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i>Curriculum Vitae</a></li>
             {% endif %}
             {% if person.leaflets %}
             {% assign num_leaflets = person.leaflets | size %}
-            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i> {{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
             {% endif %}
             </ul>
         </div>
@@ -41,33 +41,33 @@ layout: default
         <div class="person-contact-links">
             <ul>
             {% if person.email %}
-            <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i> Email</a></li>
+            <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i>Email</a></li>
             {% endif %}
             {% if person.contact_details['twitter'] %}
-            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i> Twitter account</a></li>
+            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i>Twitter account</a></li>
             {% endif %}
             </ul>
         </div>
-        
+
         <div class="person-web-links">
             <ul>
             {% if person.links['homepage'] %}
-            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
+            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i>Homepage</a></li>
             {% endif %}
             {% if person.links['party_PPC_page'] %}
-            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i> Party profile</a></li>
+            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i>Party profile</a></li>
             {% endif %}
             {% if person.links['wikipedia'] %}
-            <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i> Wikipedia article</a></li>
+            <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i>Wikipedia article</a></li>
             {% endif %}
             {% if person.links['facebook_page'] %}
-            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i> Facebook page</a></li>
+            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i>Facebook page</a></li>
             {% endif %}
             {% if person.links['facebook_personal'] %}
-            <li><a href='{{ person.links['facebook_personal'].url }}'><i class="fa fa-facebook-square"></i> Facebook profile</a></li>
+            <li><a href='{{ person.links['facebook_personal'].url }}'><i class="fa fa-facebook-square"></i>Facebook profile</a></li>
             {% endif %}
             {% if person.links['linkedin'] %}
-            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i> Linkedin profile</a></li>
+            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i>Linkedin profile</a></li>
             {% endif %}
             </ul>
         </div>
