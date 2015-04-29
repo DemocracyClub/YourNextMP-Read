@@ -19,6 +19,10 @@ layout: default
         {% endif %}
         </a>
 
+        {% if person.party_emblem.proxy_url %}
+          <img class="person-avatar" src="{{ person.party_emblem.proxy_url}}/128/0">
+        {% endif %}
+
         <div class="person-name-and-party">
           <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>

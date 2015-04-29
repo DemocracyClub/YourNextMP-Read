@@ -97,8 +97,20 @@
     margin-right: 1.5em;
     background-color: #ddd;
   }
+  
+  .person-avatar + .person-avatar { // a party emblem!
+     margin-top: 1em;
+     clear: left;
+     opacity: 0.3;
+  }
 
   .person-links, .person-contact-links, .person-web-links, .person-dc-links {
+    margin-left: 5.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .person-name-and-party {
+    font-size: 1.2em;
     margin-left: 5.5rem;
     margin-top: 0.75rem;
   }
