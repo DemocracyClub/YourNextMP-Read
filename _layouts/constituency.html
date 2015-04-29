@@ -84,10 +84,10 @@ layout: default
     <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV</p>
 
     {% if page.constituency contains 'cv' %}
-      <ul class="cvs-list">
+      <ul class="media-list">
       {% for cv in page.constituency.cv %}
         {% assign person = site.data.people.id[cv.person_id] %}
-        <li class="cvs-list__cv">
+        <li class="media-list__item">
           <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
             <figure>
               <figcaption class="person-name-and-party">
@@ -95,7 +95,7 @@ layout: default
                 <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
               </figcaption>
               <img src="{{ cv.thumb.url }}">
-              <span class="cvs-list__cv__cta">
+              <span class="media-list__item__cta">
                 <span class="button button-radius">Read CV</span>
               </span>
             </figure>
@@ -128,19 +128,22 @@ layout: default
     <p class="info"><a href="https://electionleaflets.org/">ElectionLeaflets.org</a> is an online archive of political leaflets. It is created by members of the public photographing and classifying what comes through their doors at election time.</p>
 
   {% if page.constituency contains 'el' %}
-    <ul class="leaflets-list">
+    <ul class="media-list">
       {% for leaflet in page.constituency.el %}
-        <li class="leaflet-list__cv">
-        <figure>
-          <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
-            <img src="{{ leaflet.first_page_thumb }}">
-          </a>
-          {% if leaflet.publisher_person %}
-          <figcaption>
-            Sent by {{ leaflet.publisher_person.name }}
-          </figcaption>
-          {% endif %}
-        </figure>
+        <li class="media-list__item">
+            <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+                <figure>
+                  {% if leaflet.publisher_person %}
+                    <figcaption class="person-name-and-party">
+                      {{ leaflet.publisher_person.name }}
+                    </figcaption>
+                  {% endif %}
+                    <img src="{{ leaflet.first_page_thumb }}">
+                    <span class="media-list__item__cta">
+                        <span class="button button-radius">Read leaflet</span>
+                    </span>
+                </figure>
+            </a>
         </li>
       {% endfor %}
     </ul>
