@@ -77,15 +77,6 @@
     background-color: #ddd;
   }
 
-  .person-name-and-party {
-    font-size: 1.2em;
-    margin-left: 5.5rem;
-
-    .party {
-      @extend %candidate-party;
-    }
-  }
-
   .person-contact-links, .person-web-links, .person-dc-links {
     margin-left: 5.5rem;
     margin-top: 0.5rem;
@@ -112,14 +103,28 @@
   }
 }
 
-i.wikipedia-icon:before {
-  font-family: 'wikipedia-icon';
-  content: '\e600';
+.person-name-and-party {
+  font-size: 1.2em;
+  line-height: 1.4em;
+
+  .person-avatar + & {
+    margin-left: 5.5rem;
+  }
+
+  .party {
+    @extend %candidate-party;
+  }
 }
 
 i.wikipedia-icon {
-  font-style: normal;
-  padding-right: 0.5rem;
+  display: inline-block;
+  font: normal normal normal 14px/1 'wikipedia-icon'; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  vertical-align: text-bottom;
+
+  &:before {
+    content: '\e600';
+  }
 }
 
 .candidates__known {

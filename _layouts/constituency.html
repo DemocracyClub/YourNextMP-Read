@@ -92,7 +92,7 @@ layout: default
             <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
               <img src="{{ cv.thumb.url }}">
             </a>
-            <figcaption class="cv__person-name-and-party">
+            <figcaption class="person-name-and-party">
               <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
               <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
             </figcaption>
