@@ -88,15 +88,18 @@ layout: default
       {% for cv in page.constituency.cv %}
         {% assign person = site.data.people.id[cv.person_id] %}
         <li class="cvs-list__cv">
-          <figure>
-            <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+          <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+            <figure>
+              <figcaption class="person-name-and-party">
+                {{ person.name }}
+                <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
+              </figcaption>
               <img src="{{ cv.thumb.url }}">
-            </a>
-            <figcaption class="person-name-and-party">
-              <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
-              <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
-            </figcaption>
-          </figure>
+              <span class="cvs-list__cv__cta">
+                <span class="button button-radius">Read CV</span>
+              </span>
+            </figure>
+          </a>
         </li>
       {% endfor %}
       </ul>
@@ -124,36 +127,37 @@ layout: default
 
     <p class="info"><a href="https://electionleaflets.org/">ElectionLeaflets.org</a> is an online archive of political leaflets. It is created by members of the public photographing and classifying what comes through their doors at election time.</p>
 
-    {% if page.constituency contains 'el' %}
+  {% if page.constituency contains 'el' %}
     <ul class="leaflets-list">
-    {% for leaflet in page.constituency.el %}
-      <li class="leaflet-list__cv">
-      <figure>
-        <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
-          <img src="{{ leaflet.first_page_thumb }}">
-        </a>
-        {% if leaflet.publisher_person %}
-        <figcaption>
-          Sent by {{ leaflet.publisher_person.name }}
-        </figcaption>
-        {% endif %}
-      </figure>
-      </li>
-    {% endfor %}
+      {% for leaflet in page.constituency.el %}
+        <li class="leaflet-list__cv">
+        <figure>
+          <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+            <img src="{{ leaflet.first_page_thumb }}">
+          </a>
+          {% if leaflet.publisher_person %}
+          <figcaption>
+            Sent by {{ leaflet.publisher_person.name }}
+          </figcaption>
+          {% endif %}
+        </figure>
+        </li>
+      {% endfor %}
     </ul>
     <p>
-      <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}">See more leaflets on ElectionLeaflets.org</a>
+      <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}" class="button success">See more leaflets on ElectionLeaflets.org</a>
+      <a href="https://electionleaflets.org" class="button secondary">
+        Or add a new leaflet
+      </a>
     </p>
-    {% else %}
+  {% else %}
     <p>
       No one has uploaded any leaflets in {{ page.constituency.mapit.name }} yet.
     </p>
-    {% endif %}
     <p>
-      <a href="https://electionleaflets.org" class="button success">
-        Upload a leaflet
-      </a>
+      <a href="https://electionleaflets.org" class="button success">Add a leaflet you have received</a>
     </p>
+  {% endif %}
     </div>
   </div>
 </div>

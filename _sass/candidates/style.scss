@@ -22,6 +22,7 @@ $code-font-family: Consolas, Monaco, 'Liberation Mono', Courier, monospace;
 
 @import "../normalize";
 @import "../foundation";
+@import 'mixins';
 
 .container {
   @include grid-row();
@@ -60,7 +61,7 @@ pre {
 }
 
 .magellan_menu {
-  
+
   [data-magellan-expedition] {
     background: #f5f5f5;
 
@@ -68,7 +69,7 @@ pre {
         color: #8c8c8c;
     }
   }
- 
+
   .fixed {
     background: #09a691;
     margin:0;
