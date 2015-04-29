@@ -29,3 +29,13 @@ for constituency_id in SAMPLE_CONSTITUENCIES:
             "_data_small/{0}".format(person_filename),
         )
         
+OTHER_FILES = [
+    "party_links.yaml",
+    "ynmp_numbers.json",
+]
+
+for file in OTHER_FILES:
+    shutil.copyfile("_data/{0}".format(file),
+                    "_data_small/{0}".format(file),
+    )
+

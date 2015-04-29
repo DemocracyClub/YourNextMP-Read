@@ -20,3 +20,6 @@ python ./_scripts/get_wikipedia_extracts.py "${data_files[@]}"
 
 python _scripts/build_person_index.py "${data_files[@]}"
 python _scripts/build_constituency_index.py "${data_files[@]}"
+
+python _scripts/build_data_small.py
+
