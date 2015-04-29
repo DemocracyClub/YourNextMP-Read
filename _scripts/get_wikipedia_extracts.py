@@ -2,7 +2,7 @@ import sys, os.path
 import requests
 import json
 
-url = "http://en.wikipedia.org/w/api.php?titles={}&format=json&action=query&prop=extracts&exintro=&explaintext="
+url = "http://en.wikipedia.org/w/api.php?titles={}&format=json&action=query&prop=extracts&exintro=&explaintext=&redirects="
 
 ynmp_export_path = sys.argv[1]
 ynmp_export = json.load(open(ynmp_export_path))
