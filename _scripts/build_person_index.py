@@ -152,10 +152,9 @@ for person in ynmp_export['persons']:
             person['biography'] = wiki_person['first_para']
 
 
-    if 'ge2015' in person['candidacies']:
-        #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
+    #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
 
-        json.dump(person, open('_data/people/id/{}.json'.format(person['id']), 'w+'), indent=4, sort_keys=True)
+    json.dump(person, open('_data/people/id/{}.json'.format(person['id']), 'w+'), indent=4, sort_keys=True)
 
 #json.dump(people_constituency_2015, open('_data/people_constituency_2015_index.json', 'w+'), indent=4, sort_keys=True)
 
