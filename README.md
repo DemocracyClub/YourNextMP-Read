@@ -25,9 +25,8 @@ cd YourNextMP-Read
 bundle
 pip install -r requirements.txt
 
-# run the setup scripts
+# run the build script
 
-_scripts/setup.sh
 _scripts/build.sh
 ```
 
