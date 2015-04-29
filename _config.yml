@@ -21,3 +21,10 @@ jekyll_sort:
     direction: up
     by: name
     dest: constituencies_sorted
+
+assets:
+  css_compressor: sass
+  sources:
+    - js
+    - css
+    - images

@@ -22,6 +22,7 @@ cd YourNextMP-Read
 # install the requirements
 # (you might want to use rbenv & virtualenv)
 gem install jekyll
+gem install jekyll-assets
 pip install -r requirements.txt
 
 # run the setup scripts
