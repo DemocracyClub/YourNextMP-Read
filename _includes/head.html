@@ -6,10 +6,11 @@
     <title>
       {% if page.title %}
         {{ page.title }} –
-      {% endif %}
-      {% if page.person.name %}
-        {{ page.person.name }}, {{page.person.candidacies.ge2015.party.name}}
-        candidate for {{ page.person.candidacies.ge2015.constituency.name }} –
+      {% elsif page.person.name %}
+        {{ page.person.name }}{% if page.person.candidacies.ge2015 %},
+          {{page.person.candidacies.ge2015.party.name}}
+          candidate for {{ page.person.candidacies.ge2015.constituency.name }}
+        {% endif %} –
       {% endif %}
       {{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
