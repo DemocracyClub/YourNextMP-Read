@@ -1,4 +1,4 @@
-.cvs-list {
+.media-list {
   margin: 1.5em 0;
 
   @media #{$small-up} {
@@ -18,22 +18,52 @@
   }
 }
 
-.cvs-list__cv {
+.media-list__item {
   list-style-type: none;
   margin-bottom: 1em;
-  @include clearfix;
 
   figure {
     margin: 0;
   }
 
-  .cv__person-name-and-party {
-    font-size: 1.2em;
+  a {
+    display: block;
+    position: relative;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    overflow: hidden;
 
-    .party {
-      @extend %candidate-party;
-      margin-left: 0.0em;
+    &:hover,
+    &:focus {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      top: -2px;
+      text-decoration: none;
     }
+  }
+
+  img {
+    min-height: 100px;
+    margin: 0 auto; // centre the image if it's not wide enough
+  }
+
+  .person-name-and-party {
+    padding: 0.6em 0.8em;
+    border-bottom: 1px solid #ddd;
   }
 }
 
+.media-list__item__cta {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2em 0;
+  text-align: center;
+  @include linear-gradient(transparent, #fff);
+
+  .button {
+    margin-bottom: 0;
+  }
+}

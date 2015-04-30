@@ -28,11 +28,11 @@ layout: default
         <div class="person-dc-links">
             <ul>
             {% if person.cv %}
-            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i> Curriculum Vitae</a></li>
+            <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i>Curriculum Vitae</a></li>
             {% endif %}
             {% if person.leaflets %}
             {% assign num_leaflets = person.leaflets | size %}
-            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i> {{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
             {% endif %}
             </ul>
         </div>
@@ -41,33 +41,33 @@ layout: default
         <div class="person-contact-links">
             <ul>
             {% if person.email %}
-            <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i> Email</a></li>
+            <li><a href='mailto:{{ person.email }}'><i class="fa fa-envelope"></i>Email</a></li>
             {% endif %}
             {% if person.contact_details['twitter'] %}
-            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i> Twitter account</a></li>
+            <li><a href='https://twitter.com/{{ person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i>Twitter account</a></li>
             {% endif %}
             </ul>
         </div>
-        
+
         <div class="person-web-links">
             <ul>
             {% if person.links['homepage'] %}
-            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i> Homepage</a></li>
+            <li><a href='{{ person.links['homepage'].url }}'><i class="fa fa-home"></i>Homepage</a></li>
             {% endif %}
             {% if person.links['party_PPC_page'] %}
-            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i> Party profile</a></li>
+            <li><a href='{{ person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i>Party profile</a></li>
             {% endif %}
             {% if person.links['wikipedia'] %}
-            <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i> Wikipedia article</a></li>
+            <li><a href='{{ person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i>Wikipedia article</a></li>
             {% endif %}
             {% if person.links['facebook_page'] %}
-            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i> Facebook page</a></li>
+            <li><a href='{{ person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i>Facebook page</a></li>
             {% endif %}
             {% if person.links['facebook_personal'] %}
-            <li><a href='{{ person.links['facebook_personal'].url }}'><i class="fa fa-facebook-square"></i> Facebook profile</a></li>
+            <li><a href='{{ person.links['facebook_personal'].url }}'><i class="fa fa-facebook-square"></i>Facebook profile</a></li>
             {% endif %}
             {% if person.links['linkedin'] %}
-            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i> Linkedin profile</a></li>
+            <li><a href='{{ person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i>Linkedin profile</a></li>
             {% endif %}
             </ul>
         </div>
@@ -84,19 +84,22 @@ layout: default
     <p class="info">Sending a CV is usually the very first step of a job application, so <a href="http://cv.democracyclub.org.uk/">Democracy Club CVs</a> is collecting every MP candidate's CV</p>
 
     {% if page.constituency contains 'cv' %}
-      <ul class="cvs-list">
+      <ul class="media-list">
       {% for cv in page.constituency.cv %}
         {% assign person = site.data.people.id[cv.person_id] %}
-        <li class="cvs-list__cv">
-          <figure>
-            <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+        <li class="media-list__item">
+          <a href="http://cv.democracyclub.org.uk/show_cv/{{ cv.person_id }}">
+            <figure>
+              <figcaption class="person-name-and-party">
+                {{ person.name }}
+                <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
+              </figcaption>
               <img src="{{ cv.thumb.url }}">
-            </a>
-            <figcaption class="cv__person-name-and-party">
-              <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
-              <span class="party">{{ person.candidacies.ge2015.party.name }}</span>
-            </figcaption>
-          </figure>
+              <span class="media-list__item__cta">
+                <span class="button button-radius">Read CV</span>
+              </span>
+            </figure>
+          </a>
         </li>
       {% endfor %}
       </ul>
@@ -124,36 +127,40 @@ layout: default
 
     <p class="info"><a href="https://electionleaflets.org/">ElectionLeaflets.org</a> is an online archive of political leaflets. It is created by members of the public photographing and classifying what comes through their doors at election time.</p>
 
-    {% if page.constituency contains 'el' %}
-    <ul class="leaflets-list">
-    {% for leaflet in page.constituency.el %}
-      <li class="leaflet-list__cv">
-      <figure>
-        <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
-          <img src="{{ leaflet.first_page_thumb }}">
-        </a>
-        {% if leaflet.publisher_person %}
-        <figcaption>
-          Sent by {{ leaflet.publisher_person.name }}
-        </figcaption>
-        {% endif %}
-      </figure>
-      </li>
-    {% endfor %}
+  {% if page.constituency contains 'el' %}
+    <ul class="media-list">
+      {% for leaflet in page.constituency.el %}
+        <li class="media-list__item">
+            <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+                <figure>
+                  {% if leaflet.publisher_person %}
+                    <figcaption class="person-name-and-party">
+                      {{ leaflet.publisher_person.name }}
+                    </figcaption>
+                  {% endif %}
+                    <img src="{{ leaflet.first_page_thumb }}">
+                    <span class="media-list__item__cta">
+                        <span class="button button-radius">Read leaflet</span>
+                    </span>
+                </figure>
+            </a>
+        </li>
+      {% endfor %}
     </ul>
     <p>
-      <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}">See more leaflets on ElectionLeaflets.org</a>
+      <a href="https://electionleaflets.org/constituencies/{{page.constituency.mapit.id}}/{{page.constituency.mapit.name|slugify}}" class="button success">See more leaflets on ElectionLeaflets.org</a>
+      <a href="https://electionleaflets.org" class="button secondary">
+        Or add a new leaflet
+      </a>
     </p>
-    {% else %}
+  {% else %}
     <p>
       No one has uploaded any leaflets in {{ page.constituency.mapit.name }} yet.
     </p>
-    {% endif %}
     <p>
-      <a href="https://electionleaflets.org" class="button success">
-        Upload a leaflet
-      </a>
+      <a href="https://electionleaflets.org" class="button success">Add a leaflet you have received</a>
     </p>
+  {% endif %}
     </div>
   </div>
 </div>
