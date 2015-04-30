@@ -123,17 +123,20 @@ layout: default
   <span class='person__box__byline'>by <a href='https://www.electionleaflets.org/'>ElectionLeaflets.org</a></span>
   <h2><i class='fa fa-paper-plane-o'></i> Leaflets</h2>
   {% if page.person.leaflets %}
-  <ul class="leaflets-list">
-    {% for leaflet in page.person.leaflets %}
-      <li class="leaflet-list__cv">
-      <figure>
-        <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
-          <img src="{{ leaflet.first_page_thumb }}">
-        </a>
-      </figure>
-      </li>
-    {% endfor %}
-  </ul>
+      <ul class="media-list">
+      {% for leaflet in page.person.leaflets %}
+        <li class="media-list__item">
+            <a href="https://electionleaflets.org/leaflets/{{ leaflet.pk }}/">
+                <figure>
+                    <img src="{{ leaflet.first_page_thumb }}">
+                    <span class="media-list__item__cta">
+                        <span class="button button-radius">Read leaflet</span>
+                    </span>
+                </figure>
+            </a>
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
     <p>We don't know of any leaflets from {{ page.person.name }}.</p>
   {% endif %}
