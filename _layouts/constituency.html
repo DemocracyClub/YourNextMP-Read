@@ -24,7 +24,7 @@ layout: default
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
 
-        {% if person.cv or person.leaflets or person.em.size > 0%}
+        {% if person.cv or person.leaflets or person.mentions.size > 0 or person.quotes.size > 0%}
         <div class="person-dc-links">
             <ul>
             {% if person.cv %}
@@ -34,8 +34,11 @@ layout: default
             {% assign num_leaflets = person.leaflets | size %}
             <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#leaflets'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
             {% endif %}
-            {% if person.em.size > 0 %}
-            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#mentions'><i class="fa fa-newspaper-o"></i>{{ person.em.size }} mention{% if person.em.size > 1 %}s{% endif %}</a></li>
+            {% if person.quotes.size > 0 %}
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#quotes'><i class="fa fa-quote-left"></i>{{ person.quotes.size }} quote{% if person.quotes.size > 1 %}s{% endif %} about</a></li>
+            {% endif %}
+            {% if person.mentions.size > 0 %}
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#mentions'><i class="fa fa-newspaper-o"></i>{{ person.mentions.size }} mention{% if person.mentions.size > 1 %}s{% endif %}</a></li>
             {% endif %}
             </ul>
         </div>

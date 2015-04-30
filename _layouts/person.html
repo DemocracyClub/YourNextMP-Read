@@ -137,17 +137,40 @@ layout: default
       {% endfor %}
     </ul>
   {% else %}
-    <p>We don't know of any leaflets from {{ page.person.name }}.</p>
+    <p>We don't have any leaflets from {{ page.person.name }}.</p>
   {% endif %}
   <a class='button' href='https://electionleaflets.org/leaflets/add/'>Upload a leaflet now</a>
+  </div>
+  
+  <div class='person__quotes'>
+  <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
+  <h2 id="quotes"><i class='fa fa-quote-left'></i> Quotes about {{ page.person.name }}</h2>
+  {% if page.person.quotes.size > 0 %}
+    <p class='warning'>These are automatically matched and extracted quotes. There may be errors. For example, the quote could be talking about a different {{ page.person.name }}.</p>
+    <ul class="quotes-list">
+      {% for quote in page.person.quotes %}
+      <li class="quotes-list__quote">
+        <div class='quote-text'>
+            {{ quote.html }}
+        </div>
+        <div class='quote-source'>
+            seen {{ quote.article.date|date: "%d/%m/%Y" }} in <a href="{{ quote.article.url }}" target="_blank">{{ quote.article.domain }}</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+  <p>We don't have any quotes regarding {{ page.person.name }} right now.</p>
+  {% endif %}
   </div>
 
   <div class='person__mentions'>
   <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
-  <h2 id="mentions"><i class='fa fa-newspaper-o'></i> Press mentions</h2>
-  {% if page.person.em.size > 0 %}
+  <h2 id="mentions"><i class='fa fa-newspaper-o'></i> Mentions</h2>
+  {% if page.person.mentions.size > 0 %}
+    <p class='warning'>These are automatically matched pages. There may be errors. For example, the quote could be talking about a different {{ page.person.name }}.</p>
     <ul class="mentions-list">
-      {% for mention in page.person.em %}
+      {% for mention in page.person.mentions %}
       <li class="mentions-list__mention">
         <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
         <a class='mention-title' href="{{ mention.url }}" target="_blank">{{ mention.title }}</a>
@@ -156,7 +179,7 @@ layout: default
       {% endfor %}
     </ul>
   {% else %}
-  <p>We don't know of any articles about {{ page.person.name }} right now.</p>
+  <p>We don't have any articles about {{ page.person.name }} right now.</p>
   {% endif %}
   <form method="post" action="https://www.electionmentions.com/article" class='form-inline'>
     <div class="form-group">
