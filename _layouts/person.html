@@ -106,11 +106,10 @@ layout: default
 
     <p class='person__cv__text'>
         {{ page.person.name}} has sent us {{ page.person.gender|pronoun:"possessive" }} CV.
-
-        <a href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
-        Read {{ page.person.name}}'s CV now.
-        </a>
     </p>
+    <a class='button' href="http://cv.democracyclub.org.uk/show_cv/{{ page.person.id }}">
+        Read {{ page.person.name}}'s CV now
+    </a>
     <div style='clear:both;'></div>
   {% else %}
     <p class='person__cv__text'>{{ page.person.name }} hasn't sent us {{ page.person.gender|pronoun:"possessive" }} CV.</p>
