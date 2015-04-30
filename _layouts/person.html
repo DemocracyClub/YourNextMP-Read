@@ -31,11 +31,11 @@ layout: default
 
 <div class='person__buttons'>
   {% if page.person.email %}
-  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i> Email {{ page.person.name }}</a>
+  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i>Email {{ page.person.name }}</a>
   {% endif %}
   
   {% if page.person.contact_details.twitter %}
-  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i> Tweet {{ page.person.name }}</a>
+  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i>Tweet {{ page.person.name }}</a>
   {% endif %}
   
   {% if page.person.links.wikipedia %}
@@ -43,23 +43,23 @@ layout: default
   {% endif %}
 
   {% if page.person.links.facebook_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i> Facebook campaign page</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i>Facebook campaign page</a>
   {% endif %}
 
   {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i> Facebook profile</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i>Facebook profile</a>
   {% endif %}
 
   {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i> {{ page.person.name|possessive }} website</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i>{{ page.person.name|possessive }} website</a>
   {% endif %}
   
   {% if page.person.links.linkedin %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i> LinkedIn profile</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i>LinkedIn profile</a>
   {% endif %}
   
   {% if page.person.links.party_PPC_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i> Party profile for {{ page.person.name }}</a>
+  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i>Party profile for {{ page.person.name }}</a>
   {% endif %}
 
   {% if page.person.party_emblem.proxy_url %}
@@ -75,11 +75,11 @@ layout: default
   {% assign party_links = site.data.party_links[page.person.candidacies.ge2015.party.id] %}
   {% for link in party_links.links %}
     <a class="button" rel="nofollow" href="{{ link.url }}">
-        {% if link.note == 'facebook page' %}<i class="fa fa-facebook"></i> {{ party.name }} Facebook page
-        {% elsif link.note == 'homepage' %}<i class="fa fa-home"></i> {{ party.name }} website
+        {% if link.note == 'facebook page' %}<i class="fa fa-facebook"></i>{{ party.name }} Facebook page
+        {% elsif link.note == 'homepage' %}<i class="fa fa-home"></i>{{ party.name }} website
         {% elsif link.note == 'wikipedia' %}<i class='wikipedia-icon'></i>{{ party.name }} on Wikipedia
-        {% elsif link.note == 'linkedin' %}<i class="fa fa-linkedin"></i> {{ party.name }} LinkedIn profile
-        {% else %}<i class="fa fa-home"></i> {{ party.name }} {{ link.note }}
+        {% elsif link.note == 'linkedin' %}<i class="fa fa-linkedin"></i>{{ party.name }} LinkedIn profile
+        {% else %}<i class="fa fa-home"></i>{{ party.name }} {{ link.note }}
         {% endif %}
     </a>
   {% endfor %}
