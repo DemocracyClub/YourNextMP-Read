@@ -14,6 +14,7 @@ data_files=(
     _downloads/cv.export.json
     _downloads/meet.export.json
     _downloads/el.export.json
+    _downloads/el_person.export.json
     _downloads/electionmentions.export.people.json
     _downloads/electionmentions.export.people.quotes.json
 )
