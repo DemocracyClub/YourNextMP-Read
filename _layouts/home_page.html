@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -7,8 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="alternate" type="application/atom+xml" title="RSS" href="/feeds/changes.xml">
 
-    {% include head.html %}
     <title>YourNextMP - 2015 UK general election candidates</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="YourNextMP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
+    <meta property="og:image:height" content="80" />
+    <meta property="og:image:width" content="80" />
+    <meta property="og:site_name" content="YourNextMP" />
+    <meta property="og:description" content="YourNextMP - {{ site.description }}">
+    <meta property="og:locale" content="en_GB" />
+    <!-- Twitter card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@yournextmp" />
+    <meta name="twitter:title" content="YourNextMP" />
+    <meta property="twitter:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
+    <meta property="twitter:image:height" content="120" />
+    <meta property="twitter:image:width" content="120" />
+    <meta name="twitter:url" content="{{ site.url }}" />
+    <meta name="twitter:description" content="YourNextMP - {{ site.description }}"  />
+
+    <link rel="shortcut icon" href="{% asset_path favicon.ico %}"/>
+    <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon.png %}"/>
+
+    {% stylesheet main %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body class="finder">

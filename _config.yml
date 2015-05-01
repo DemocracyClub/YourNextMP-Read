@@ -4,7 +4,7 @@ title: YourNextMP.com
 email: yournextmp@mysociety.org
 description: Get to know the candidates in your constituency
 baseurl: ""
-url: "http://yournextmp.com" # the base hostname & protocol for your site
+url: "https://yournextmp.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
