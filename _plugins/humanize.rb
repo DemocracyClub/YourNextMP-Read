@@ -249,6 +249,10 @@ module Jekyll
       return pronouns[gender.to_sym][type.to_sym]
     end
 
+    def pluralize(num)
+      if num == 1 then '' else 's' end
+    end
+
     #####################
     #  PRIVATE METHODS  #
     #####################

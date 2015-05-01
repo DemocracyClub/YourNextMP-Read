@@ -24,18 +24,17 @@ layout: default
           <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
         </div>
 
-        {% if person.cv or person.leaflets or person.mentions.size > 0 or person.quotes.size > 0%}
+        {% if person.cv or person.leaflets or person.mentions.size > 0 or person.quotes.size > 0 %}
         <div class="person-dc-links">
             <ul>
             {% if person.cv %}
             <li><a href='http://cv.democracyclub.org.uk/show_cv/{{ person.id }}'><i class="fa fa-file-text"></i>Curriculum Vitae</a></li>
             {% endif %}
             {% if person.leaflets %}
-            {% assign num_leaflets = person.leaflets | size %}
-            <li><a href='https://electionleaflets.org/person/{{ person.id }}/'><i class="fa fa-paper-plane"></i>{{ num_leaflets }} leaflet{% if num_leaflets > 1 %}s{% endif %}</a></li>
+            <li><a href='https://electionleaflets.org/person/{{ person.id }}/'><i class="fa fa-paper-plane"></i>{{ person.leaflets.size }} leaflet{{ person.leaflets.size|pluralize }}</a></li>
             {% endif %}
             {% if person.quotes.size > 0 %}
-            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#quotes'><i class="fa fa-quote-left"></i>{{ person.quotes.size }} mention{% if person.quotes.size > 1 %}s{% endif %}</a></li>
+            <li><a href='/person/{{ person.id }}/{{ person.name|slugify }}#quotes'><i class="fa fa-quote-left"></i>{{ person.quotes.size }} mention{{ person.quotes.size|pluralize }}</a></li>
             {% endif %}
             </ul>
         </div>
