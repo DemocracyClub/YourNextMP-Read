@@ -292,6 +292,12 @@ i.wikipedia-icon {
         padding: 0.5rem;
         display: block;
         margin: 0 0 0.5rem 0;
+
+        i {
+          padding-right: 0.5rem;
+          width: 1.5em; // make sure labels line up after different sized icons
+          text-align: center;
+        }
     }
 }
 
