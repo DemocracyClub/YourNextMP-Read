@@ -9,8 +9,9 @@ em_export_path = sys.argv[3]
 cv_export_path = sys.argv[4]
 meet_export_path = sys.argv[5]
 el_export_path = sys.argv[6]
-em_people_export_path = sys.argv[7]
-em_people_quotes_export_path = sys.argv[8]
+el_person_export_path = sys.argv[7]
+em_people_export_path = sys.argv[8]
+em_people_quotes_export_path = sys.argv[9]
 
 with open(ynmp_export_path) as f:
     ynmp_export = json.load(f)
@@ -78,16 +79,8 @@ for cv in cv_export:
     person_cvs[cv['person_id']] = cv
 
 # Build EL data
-with open(el_export_path) as f:
-    el_export = json.load(f)
-
-person_leaflets = defaultdict(list)
-for constituency_id, leaflets in el_export.items():
-    if leaflets:
-        for leaflet in leaflets:
-            if leaflet['publisher_person']:
-                person_id = leaflet['publisher_person']['remote_id']
-                person_leaflets[person_id].append(leaflet)
+with open(el_person_export_path) as f:
+    person_leaflets = json.load(f)
 
 # EM data
 with open(em_people_export_path) as f:
@@ -97,7 +90,7 @@ with open(em_people_quotes_export_path) as f:
     em_quotes_export = json.load(f)
 
 for person in ynmp_export['persons']:
-    
+
     # Remove stuff we don't need
     del person['versions']
     candidacies = {}
