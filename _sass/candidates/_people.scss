@@ -364,6 +364,20 @@ i.wikipedia-icon {
     }
 }
 
+.person__quotes {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+
+    img {
+        height: 10em;
+    }
+
+    .button {
+        margin: 0 0 0 0;
+    }
+}
+
 .person__bio {
     padding: 1rem;
     margin-bottom: 1rem;
