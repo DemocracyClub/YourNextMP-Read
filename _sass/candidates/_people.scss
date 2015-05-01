@@ -59,6 +59,27 @@
   }
 }
 
+.person-links, .person-contact-links, .person-web-links, .person-dc-links {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        &:link, &:visited {
+          color: #008CBA;
+        }
+
+        i {
+          padding-right: 0.5rem;
+          width: 1.5em; // make sure labels line up after different sized icons
+          text-align: center;
+        }
+      }
+    }
+}
+
+
 @font-face {
   font-family: 'wikipedia-icon';
   src: url(/images/wikipedia-icon.woff);
@@ -77,27 +98,9 @@
     background-color: #ddd;
   }
 
-  .person-contact-links, .person-web-links, .person-dc-links {
+  .person-links, .person-contact-links, .person-web-links, .person-dc-links {
     margin-left: 5.5rem;
     margin-top: 0.75rem;
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      a {
-        &:link, &:visited {
-          color: #008CBA;
-        }
-
-        i {
-          padding-right: 0.5rem;
-          width: 1.5em; // make sure labels line up after different sized icons
-          text-align: center;
-        }
-      }
-    }
   }
 }
 
@@ -268,7 +271,7 @@ i.wikipedia-icon {
 }
 
 .person__party_emblem {
-  text-align: center;
+  text-align: left;
   padding-bottom: 1rem;
   padding-top: 1rem;
 

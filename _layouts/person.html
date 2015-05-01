@@ -30,37 +30,34 @@ layout: default
 </div>
 
 <div class='person__buttons'>
-  {% if page.person.email %}
-  <a class="button" href="mailto:{{ page.person.email }}"><i class="fa fa-envelope"></i>Email {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.contact_details.twitter %}
-  <a class="button" rel="nofollow" href="https://twitter.com/{{page.person.contact_details.twitter.value}}"><i class="fa fa-twitter"></i>Tweet {{ page.person.name }}</a>
-  {% endif %}
-  
-  {% if page.person.links.wikipedia %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.wikipedia.url }}"><i class='wikipedia-icon'/></i>{{ page.person.name }} on Wikipedia</a>
-  {% endif %}
-
-  {% if page.person.links.facebook_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_page.url }}"><i class="fa fa-facebook"></i>Facebook campaign page</a>
-  {% endif %}
-
-  {% if page.person.links.facebook_personal %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.facebook_personal.url }}"><i class="fa fa-facebook"></i>Facebook profile</a>
-  {% endif %}
-
-  {% if page.person.links.homepage %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.homepage.url }}"><i class="fa fa-home"></i>{{ page.person.name|possessive }} website</a>
-  {% endif %}
-  
-  {% if page.person.links.linkedin %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.linkedin.url }}"><i class="fa fa-linkedin"></i>LinkedIn profile</a>
-  {% endif %}
-  
-  {% if page.person.links.party_PPC_page %}
-  <a class="button" rel="nofollow" href="{{ page.person.links.party_PPC_page.url }}"><i class="fa fa-user"></i>Party profile for {{ page.person.name }}</a>
-  {% endif %}
+  <div class='person-links'>
+  <ul>
+    {% if page.person.email %}
+    <li><a href='mailto:{{ page.person.email }}'><i class="fa fa-envelope"></i>{{ page.person.email }}</a></li>
+    {% endif %}
+    {% if page.person.contact_details['twitter'] %}
+    <li><a href='https://twitter.com/{{ page.person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i>@{{ page.person.contact_details['twitter'].value }}</a></li>
+    {% endif %}
+    {% if person.links['homepage'] %}
+    <li><a href='{{ page.person.links['homepage'].url }}'><i class="fa fa-home"></i>Homepage</a></li>
+    {% endif %}
+    {% if page.person.links['party_PPC_page'] %}
+    <li><a href='{{ page.person.links['party_PPC_page'].url }}'><i class="fa fa-user"></i>Party profile</a></li>
+    {% endif %}
+    {% if page.person.links['wikipedia'] %}
+    <li><a href='{{ page.person.links['wikipedia'].url }}'><i class='wikipedia-icon'/></i>Wikipedia article</a></li>
+    {% endif %}
+    {% if page.person.links['facebook_page'] %}
+    <li><a href='{{ page.person.links['facebook_page'].url }}'><i class="fa fa-facebook-square"></i>Facebook page</a></li>
+    {% endif %}
+    {% if page.person.links['facebook_personal'] %}
+    <li><a href='{{ page.person.links['facebook_personal'].url }}'><i class="fa fa-facebook-square"></i>Facebook profile</a></li>
+    {% endif %}
+    {% if page.person.links['linkedin'] %}
+    <li><a href='{{ page.person.links['linkedin'].url }}'><i class="fa fa-linkedin"></i>Linkedin profile</a></li>
+    {% endif %}
+  </ul>
+  </div>
 
   {% if page.person.party_emblem.proxy_url %}
   <div class="person__party_emblem">
@@ -73,16 +70,20 @@ layout: default
 
   {% assign party = page.person.candidacies.ge2015.party %}
   {% assign party_links = site.data.party_links[page.person.candidacies.ge2015.party.id] %}
+  <div class='person-links'>
+  <ul>
   {% for link in party_links.links %}
-    <a class="button" rel="nofollow" href="{{ link.url }}">
+    <li><a rel="nofollow" href="{{ link.url }}">
         {% if link.note == 'facebook page' %}<i class="fa fa-facebook"></i>{{ party.name }} Facebook page
         {% elsif link.note == 'homepage' %}<i class="fa fa-home"></i>{{ party.name }} website
         {% elsif link.note == 'wikipedia' %}<i class='wikipedia-icon'></i>{{ party.name }} on Wikipedia
         {% elsif link.note == 'linkedin' %}<i class="fa fa-linkedin"></i>{{ party.name }} LinkedIn profile
         {% else %}<i class="fa fa-home"></i>{{ party.name }} {{ link.note }}
         {% endif %}
-    </a>
+    </a></li>
   {% endfor %}
+  </ul>
+  </div>
 
 </div>
 
