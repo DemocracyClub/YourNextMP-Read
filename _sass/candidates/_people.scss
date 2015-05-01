@@ -90,12 +90,18 @@
   margin-bottom: 1em;
   @include clearfix;
 
-  .person-avatar {
+  .person-avatar, .person-emblem {
     float: left;
     width: 4em;
     height: auto;
     margin-right: 1.5em;
     background-color: #ddd;
+  }
+  
+  .person-emblem {
+     margin-top: 1em;
+     clear: left;
+     opacity: 0.3;
   }
 
   .person-links, .person-contact-links, .person-web-links, .person-dc-links {
