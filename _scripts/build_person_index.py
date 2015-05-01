@@ -157,6 +157,9 @@ for person in ynmp_export['persons']:
     person['mentions'] = em_export.get(person['id'])
     person['quotes'] = em_quotes_export.get(person['id'])
 
+    if person['quotes']:
+        person['quotes'] = person['quotes'][:10]
+
     wiki_title = find_wiki_title(person)
 
     if wiki_title:
