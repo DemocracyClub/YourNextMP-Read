@@ -225,8 +225,8 @@ layout: default
       {% for mention in page.constituency.em %}
       <li class="mentions-list__mention">
         <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
-        <a class='mention-title' href="{{ mention.url }}" target="_blank">{{ mention.title }}</a>
-        <a class='mention-source' href="{{ mention.url }}" target="_blank">{{ mention.source }}</a>
+        <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
+        <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
       </li>
       {% endfor %}
     </ul>

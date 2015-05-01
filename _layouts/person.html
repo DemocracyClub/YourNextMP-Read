@@ -154,7 +154,7 @@ layout: default
             {{ quote.html }}
         </div>
         <div class='quote-source'>
-            seen {{ quote.article.date|date: "%d/%m/%Y" }} in <a href="{{ quote.article.url }}" target="_blank">{{ quote.article.domain }}</a>
+            seen {{ quote.article.date|date: "%d/%m/%Y" }} in <a href="{{ quote.article.url }}">{{ quote.article.domain }}</a>
         </div>
       </li>
       {% endfor %}
@@ -173,8 +173,8 @@ layout: default
       {% for mention in page.person.mentions %}
       <li class="mentions-list__mention">
         <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
-        <a class='mention-title' href="{{ mention.url }}" target="_blank">{{ mention.title }}</a>
-        <a class='mention-source' href="{{ mention.url }}" target="_blank">{{ mention.source }}</a>
+        <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
+        <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
       </li>
       {% endfor %}
     </ul>
