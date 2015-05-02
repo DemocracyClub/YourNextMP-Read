@@ -2,17 +2,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if page.layout == 'home_page' %}
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="/feeds/changes.xml">
+    {% endif %}
 
     <title>
-      {% if page.title %}
-        {{ page.title }} –
-      {% elsif page.person.name %}
-        {{ page.person.name }}{% if page.person.candidacies.ge2015 %},
-          {{page.person.candidacies.ge2015.party.name}}
-          candidate to be MP for {{ page.person.candidacies.ge2015.constituency.name }}
-        {% endif %} –
+      {% if page.layout == 'home_page' %}
+        YourNextMP - 2015 UK general election candidates
+      {% else %}
+        {% if page.title %}
+          {{ page.title }} –
+        {% elsif page.person.name %}
+          {{ page.person.name }}{% if page.person.candidacies.ge2015 %},
+            {{page.person.candidacies.ge2015.party.name}}
+            candidate to be MP for {{ page.person.candidacies.ge2015.constituency.name }}
+          {% endif %} –
+        {% endif %}
+        {{ site.title }}
       {% endif %}
-      {{ site.title }}</title>
+    </title>
     <meta name="description" content="{{ site.description }}">
 
     <!-- Open Graph data -->
