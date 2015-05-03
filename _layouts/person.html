@@ -6,7 +6,7 @@ layout: default
 <div class='person__details'>
   <p>
     {% if page.person.candidacies.ge2015 %}
-      {{ page.person.name }} is standing in <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
+      {{ page.person.name }} is standing to be MP for <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a> as a {{ page.person.candidacies.ge2015.party.name }} candidate.
     {% else %}
       {{ page.person.name }} is not standing as a candidate in the 2015 General Election.
     {% endif %}
