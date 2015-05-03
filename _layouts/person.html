@@ -38,7 +38,7 @@ layout: default
     {% if page.person.contact_details['twitter'] %}
     <li><a href='https://twitter.com/{{ page.person.contact_details['twitter'].value }}'><i class="fa fa-twitter"></i>@{{ page.person.contact_details['twitter'].value }}</a></li>
     {% endif %}
-    {% if person.links['homepage'] %}
+    {% if page.person.links['homepage'] %}
     <li><a href='{{ page.person.links['homepage'].url }}'><i class="fa fa-home"></i>Homepage</a></li>
     {% endif %}
     {% if page.person.links['party_PPC_page'] %}
