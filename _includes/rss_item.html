@@ -1,0 +1,15 @@
+{% assign item=include.item %}
+
+<div class="result_item" data-item_id="{{ item.item_index }}">
+  <h2>
+    <a href="https://yournextmp.com/person/{{item.winner_popit_person_id}}">
+      {% if item.image_url %}
+      <img src="{{ item.image_url }}">
+      {% endif %}
+      {{ item.winner_person_name }}</a>
+      ({{ item.winner_party_name }}) won the seat in
+      <a href="https://yournextmp.com/constituency/{{ item.post_id }}">{{ item.constituency_name }}</a>
+
+
+  </h2>
+</div>
