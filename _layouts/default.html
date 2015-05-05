@@ -29,7 +29,11 @@
       </div>
     </div>
 
-    {% if page.constituency %}
+  {% if page.constituency %}
+    {% if page.constituency.results contains 'winner' %}
+      {% include constituency_winner.html person=page.constituency.results.winner %}
+    {% endif %}
+
     <div class='magellan_container'>
       <div class="container">
         <div class="magellan_menu">
@@ -45,7 +49,7 @@
         </div>
       </div>
     </div>
-    {% endif %}
+  {% endif %}
 
     <div class="content">
       <div class="container">

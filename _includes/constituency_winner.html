@@ -1,0 +1,41 @@
+{% assign person=site.data.people.id[include.person.id] %}
+
+<div class="pre-content">
+  <div class="container">
+    <div class="election-result">
+        <p class="election-result__title">The election is over! The votes have been counted, and <strong>your new MP is…</strong></p>
+        <div class="election-result__person">
+          {% if person.image %}
+            <img class="person-avatar" src="{{ person.proxy_image }}/0/96"/>
+          {% elsif person.gender == 'female' %}
+            <img class="person-avatar" src="/images/blank-woman.png"/>
+          {% elsif person.gender == 'male' %}
+            <img class="person-avatar" src="/images/blank-man.png"/>
+          {% else %}
+            <img class="person-avatar" src="/images/blank-man.png"/>
+          {% endif %}
+            <div class="person-name-and-party">
+                <a href="/person/{{ person.id}}/{{person.name|slugify }}">{{ person.name }}</a>
+                <span class="party">{{ person.candidacies['ge2015'].party.name }}</span>
+            </div>
+            <div class="election-result__links">
+              {% if person.identifiers contains 'uk-org-publicwhip' %}
+                <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+                  {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+                </a>
+                <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+                  Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
+                </a>
+              {% else %}
+                <a href="#">
+                  {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+                </a>
+                <a href="#">
+                  Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
+                </a>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

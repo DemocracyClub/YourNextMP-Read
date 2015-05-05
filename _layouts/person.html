@@ -3,21 +3,20 @@ layout: default
 ---
 {% assign last_letter_of_name=page.person.name|split:''|last %}
 
-  {% if page.person.candidacies.ge2015.constituency contains 'elected' %}
+{% if page.person.candidacies.ge2015.constituency contains 'elected' %}
   <!-- We have results for this constituency -->
 
-    {% if page.person.candidacies.ge2015.constituency.elected %}
+  {% if page.person.candidacies.ge2015.constituency.elected %}
     <!-- This person was elected -->
-      {% include person_won_banner.html person=page.person %}
-    {% else %}
-    <!-- This person was NOT elected -->
-    <p>Not elected</p>
-    {% endif %}
-
+    {% include person_winner.html person=page.person %}
   {% else %}
-  <!-- No results yet -->
-  <p>No results yet</p>
+    <!-- This person was NOT elected -->
+    {% include person_loser.html person=page.person %}
   {% endif %}
+
+{% else %}
+  <!-- No results yet -->
+{% endif %}
 
 <div class='person__details'>
   <p>

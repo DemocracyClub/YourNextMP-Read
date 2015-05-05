@@ -1,0 +1,54 @@
+{% assign person=site.data.people.id[include.person.id] %}
+<div class="election-result">
+  <div class="election-result__person">
+    {% if person.candidacies.ge2015.party.id == 'party:103' %}
+      <img class="party-rosette" src="/images/rosette-alliance.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:52' %}
+      <img class="party-rosette" src="/images/rosette-conservative.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:70' %}
+      <img class="party-rosette" src="/images/rosette-dup.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:63' %}
+      <img class="party-rosette" src="/images/rosette-green.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:53' %}
+      <img class="party-rosette" src="/images/rosette-labour.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:90' %}
+      <img class="party-rosette" src="/images/rosette-libdem.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:77' %}
+      <img class="party-rosette" src="/images/rosette-plaid-cymru.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:362' %}
+      <img class="party-rosette" src="/images/rosette-respect.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:55' %}
+      <img class="party-rosette" src="/images/rosette-sdlp.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:39' %}
+      <img class="party-rosette" src="/images/rosette-sinn-fein.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:102' %}
+      <img class="party-rosette" src="/images/rosette-snp.png" alt="Winner!">
+    {% else if person.candidacies.ge2015.party.id == 'party:85' %}
+      <img class="party-rosette" src="/images/rosette-ukip.png" alt="Winner!">
+    {% else %}
+      <img class="party-rosette" src="/images/rosette-independent.png" alt="Winner!">
+    {% endif %}
+      <p class="election-result__title">
+        {{ person.name }} was elected in
+        <a href='/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/'>{{ page.person.candidacies.ge2015.constituency.name }}</a>
+        for {{ page.person.candidacies.ge2015.party.name }}
+      </p>
+      <div class="election-result__links">
+        {% if person.identifiers contains 'uk-org-publicwhip' %}
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+          </a>
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
+          </a>
+        {% else %}
+          <a href="#">
+            {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+          </a>
+          <a href="#">
+            Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
+          </a>
+        {% endif %}
+      </div>
+  </div>
+</div>
