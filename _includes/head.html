@@ -12,11 +12,6 @@
       {% else %}
         {% if page.title %}
           {{ page.title }} –
-        {% elsif page.person.name %}
-          {{ page.person.name }}{% if page.person.candidacies.ge2015 %},
-            {{page.person.candidacies.ge2015.party.name}}
-            candidate to be MP for {{ page.person.candidacies.ge2015.constituency.name }}
-          {% endif %} –
         {% endif %}
         {{ site.title }}
       {% endif %}
@@ -24,24 +19,51 @@
     <meta name="description" content="{{ site.description }}">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="YourNextMP" />
+    <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
-    <meta property="og:image" content="{% if page.person.image %}{{ page.person.image }}{% else %}{{ 'logo.png' | asset_path | prepend: site.url }}{% endif %}" />
+
+{% if page.person %}
+    {% assign gender_down = page.person.gender|downcase %}
+
+    {% if page.person.image %}
+    <meta property="og:image" content="{{ page.person.proxy_image|fixproxyurl }}/0/80" />
+    {% elsif gender_down == 'female' %}
+    <meta property="og:image" content="{{ 'blank-woman.png' | asset_path | prepend: site.url }}"/>
+    {% else %}
+    <meta property="og:image" content="{{ 'blank-man.png' | asset_path | prepend: site.url }}"/>
+    {% endif %}
+{% else %}
+    <meta property="og:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
+{% endif %}
+
     <meta property="og:image:height" content="80" />
     <meta property="og:image:width" content="80" />
     <meta property="og:site_name" content="YourNextMP" />
-    <meta property="og:description" content="YourNextMP - {{ site.description }}">
+    <meta property="og:description" content="{{ page.description }}">
     <meta property="og:locale" content="en_GB" />
+
     <!-- Twitter card data -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@yournextmp" />
-    <meta name="twitter:title" content="YourNextMP" />
-    <meta property="twitter:image" content="{% if page.person.image %}{{ page.person.image }}{% else %}{{ 'logo.png' | asset_path | prepend: site.url }}{% endif %}" />
-    <meta property="twitter:image:height" content="120" />
-    <meta property="twitter:image:width" content="120" />
     <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
-    <meta name="twitter:description" content="YourNextMP - {{ site.description }}"  />
+    <meta name="twitter:title" content="{{ page.title }}" />
+{% if page.person %}
+    {% assign gender_down = page.person.gender|downcase %}
+
+    {% if page.person.image %}
+    <meta property="twitter:image" content="{{ page.person.image }}" />
+    {% elsif gender_down == 'female' %}
+    <meta property="twitter:image" content="{{ 'blank-woman.png' | asset_path | prepend: site.url }}"/>
+    {% else %}
+    <meta property="twitter:image" content="{{ 'blank-man.png' | asset_path | prepend: site.url }}"/>
+    {% endif %}
+{% else %}
+    <meta property="twitter:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
+{% endif %}
+    <meta property="twitter:image:height" content="160" />
+    <meta property="twitter:image:width" content="160" />
+    <meta name="twitter:description" content="{{ page.description }}"  />
 
     <link rel="shortcut icon" href="{% asset_path favicon.ico %}"/>
     <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon.png %}"/>
