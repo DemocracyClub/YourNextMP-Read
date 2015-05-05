@@ -105,10 +105,11 @@ cv_export = json.load(open(cv_export_path))
 
 for cv in cv_export:
     cv['person_id'] = str(cv['person_id'])
-    constituency_id = PERSON_CONSTITUENCIES[str(cv['person_id'])]
-    cv_list = constituency_data[constituency_id].get('cv', [])
-    cv_list.append(cv)
-    constituency_data[constituency_id]['cv'] = cv_list
+    constituency_id = PERSON_CONSTITUENCIES.get(str(cv['person_id']))
+    if constituency_id:
+        cv_list = constituency_data[constituency_id].get('cv', [])
+        cv_list.append(cv)
+        constituency_data[constituency_id]['cv'] = cv_list
 
 
 # Build Meet data
