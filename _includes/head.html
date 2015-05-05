@@ -27,7 +27,7 @@
     {% assign gender_down = page.person.gender|downcase %}
 
     {% if page.person.image %}
-    <meta property="og:image" content="{{ page.person.image }}" />
+    <meta property="og:image" content="{{ page.person.proxy_image|fixproxyurl }}/0/80" />
     {% elsif gender_down == 'female' %}
     <meta property="og:image" content="{{ 'blank-woman.png' | asset_path | prepend: site.url }}"/>
     {% else %}
@@ -61,8 +61,8 @@
 {% else %}
     <meta property="twitter:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
 {% endif %}
-    <meta property="twitter:image:height" content="120" />
-    <meta property="twitter:image:width" content="120" />
+    <meta property="twitter:image:height" content="160" />
+    <meta property="twitter:image:width" content="160" />
     <meta name="twitter:description" content="{{ page.description }}"  />
 
     <link rel="shortcut icon" href="{% asset_path favicon.ico %}"/>
