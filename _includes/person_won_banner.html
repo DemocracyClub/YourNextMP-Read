@@ -1,0 +1,21 @@
+{% assign person=include.person %}
+<section class="winner_banner">
+  <header>
+    <h2>{{ person.name }} was elected in
+      {{ person.candidacies.ge2015.constituency.name }} for
+      {{ page.person.candidacies.ge2010.party.name }}</h2>
+
+      <ul>
+        <li>
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            {{ page.person.name }} on TheyWorkForYou.com
+          </a>
+        </li>
+        <li>
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            Get an email when {{ page.person.name }} speaks in parliament
+          </a>
+        </li>
+      </ul>
+  </header>
+</section>

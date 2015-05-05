@@ -1,10 +1,17 @@
 #!/bin/bash
 
+if [ "$1" == "staging" ]; then
+    echo "BUILDING FROM STAGING DATABASE"
+    ./_scripts/get_ynmp_staging.sh
+else
+    ./_scripts/get_ynmp.sh
+fi
+
 ./_scripts/get_cv.sh
 ./_scripts/get_el.sh
 ./_scripts/get_em.sh
 ./_scripts/get_meet.sh
-./_scripts/get_ynmp.sh
+
 ./_scripts/get_ynmp_numbers.sh
 
 data_files=(

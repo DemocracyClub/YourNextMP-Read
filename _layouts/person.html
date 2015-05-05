@@ -2,7 +2,9 @@
 layout: default
 ---
 {% assign last_letter_of_name=page.person.name|split:''|last %}
-
+  {% if page.person.candidacies.ge2015.constituency.elected %}
+    {% include person_won_banner.html person=page.person %}
+  {% endif %}
 <div class='person__details'>
   <p>
     {% if page.person.candidacies.ge2015 %}

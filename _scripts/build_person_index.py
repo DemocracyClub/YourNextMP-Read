@@ -23,7 +23,7 @@ def list_to_dict(data_list, key):
     ret = {}
     for item in data_list:
         if key in item:
-            cleaned_key = item[key].replace(' ', '_')
+            cleaned_key = item[key].replace(' ', '_').replace('.', '-')
             ret[cleaned_key] = item
     return ret
 
@@ -118,6 +118,9 @@ for person in ynmp_export['persons']:
 
     person['contact_details'] = list_to_dict(
         person['contact_details'], key='type')
+
+    person['identifiers'] = list_to_dict(
+        person['identifiers'], key='scheme')
 
     person['links'] = list_to_dict(
         person['links'], key='note')
