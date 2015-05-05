@@ -58,6 +58,9 @@ module Jekyll
       end
       self.data['description'] = description
 
+      slug = Utils.slugify(person['name'])
+      self.data['canonical'] = File.join('/person/', person['id'], slug)
+
     end
   end
 

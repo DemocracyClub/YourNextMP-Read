@@ -18,10 +18,15 @@
     </title>
     <meta name="description" content="{{ site.description }}">
 
+    {% if page.canonical %}
+        {% assign canonical_url = page.canonical | replace:'index.html','' | prepend: site.url %}
+    {% else %}
+        {% assign canonical_url = page.url | replace:'index.html','' | prepend: site.url %}
+    {% endif %}
+
     <!-- Open Graph data -->
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
 
 {% if page.person %}
     {% assign gender_down = page.person.gender|downcase %}
@@ -37,6 +42,7 @@
     <meta property="og:image" content="{{ 'logo.png' | asset_path | prepend: site.url }}" />
 {% endif %}
 
+    <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:image:height" content="80" />
     <meta property="og:image:width" content="80" />
     <meta property="og:site_name" content="YourNextMP" />
@@ -46,7 +52,6 @@
     <!-- Twitter card data -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@yournextmp" />
-    <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
 {% if page.person %}
     {% assign gender_down = page.person.gender|downcase %}
@@ -64,11 +69,12 @@
     <meta property="twitter:image:height" content="160" />
     <meta property="twitter:image:width" content="160" />
     <meta name="twitter:description" content="{{ page.description }}"  />
+    <meta name="twitter:url" content="{{ canonical_url }}" />
 
     <link rel="shortcut icon" href="{% asset_path favicon.ico %}"/>
     <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon.png %}"/>
 
     {% stylesheet main %}
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
