@@ -15,14 +15,14 @@ module Jekyll
 
     end
   end
-  
+
   class ConstituencySlugPage < Page
-    
+
     def initialize(site, base, dir, constituency)
       @site = site
       @base = base
       @dir = dir
-      
+
       @name = 'index.html'
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'constituency.html')
@@ -31,8 +31,8 @@ module Jekyll
       self.data['hero'] = "Candidates to be MP for #{constituency['mapit']['name']}"
     end
   end
-  
-  
+
+
   class ConstituencyPageGenerator < Generator
     safe true
 
