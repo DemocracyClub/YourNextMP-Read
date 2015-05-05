@@ -12,11 +12,6 @@
       {% else %}
         {% if page.title %}
           {{ page.title }} –
-        {% elsif page.person.name %}
-          {{ page.person.name }}{% if page.person.candidacies.ge2015 %},
-            {{page.person.candidacies.ge2015.party.name}}
-            candidate to be MP for {{ page.person.candidacies.ge2015.constituency.name }}
-          {% endif %} –
         {% endif %}
         {{ site.title }}
       {% endif %}
