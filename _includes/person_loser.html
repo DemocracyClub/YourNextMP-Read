@@ -1,0 +1,15 @@
+{% assign person=site.data.people.id[include.person.id] %}
+<div class="election-result">
+  <div class="election-result__person">
+      <p class="election-result__title">
+        {{ person.name }} stood for election in
+        <a href="/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/">{{ page.person.candidacies.ge2015.constituency.name }}</a>
+        for {{ page.person.candidacies.ge2015.party.name }}, but wasn’t elected.
+      </p>
+      <div class="election-result__links">
+          <a href="/constituency/{{ page.person.candidacies.ge2015.constituency.post_id }}/">
+            See who won in {{ page.person.candidacies.ge2015.constituency.name }} &rarr;
+          </a>
+      </div>
+  </div>
+</div>

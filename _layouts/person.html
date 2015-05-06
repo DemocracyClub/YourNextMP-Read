@@ -3,6 +3,21 @@ layout: default
 ---
 {% assign last_letter_of_name=page.person.name|split:''|last %}
 
+{% if page.person.candidacies.ge2015.constituency contains 'elected' %}
+  <!-- We have results for this constituency -->
+
+  {% if page.person.candidacies.ge2015.constituency.elected %}
+    <!-- This person was elected -->
+    {% include person_winner.html person=page.person %}
+  {% else %}
+    <!-- This person was NOT elected -->
+    {% include person_loser.html person=page.person %}
+  {% endif %}
+
+{% else %}
+  <!-- No results yet -->
+{% endif %}
+
 <div class='person__details'>
   <p>
     {% if page.person.candidacies.ge2015 %}
@@ -88,8 +103,8 @@ layout: default
 </div>
 
 <div class="person__details">
- 
-  {% if page.person.biography %} 
+
+  {% if page.person.biography %}
   <div class='person__bio'>
     <span class='person__box__byline'>from <a href='{{ page.person.links.wikipedia.url }}'>Wikipedia</a> <small><a href='http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License'>CC BY-SA 3.0</a></small></span>
     <h2><i class='fa fa-book'></i> Biography</h2>
@@ -118,7 +133,7 @@ layout: default
     <a class='button' href='http://cv.democracyclub.org.uk/upload_cv/{{ page.person.id }}'>Ask {{ pronoun|downcase }} now</a>
   {% endif %}
   </div>
-  
+
   <div class='person__leaflets'>
   <span class='person__box__byline'>by <a href='https://www.electionleaflets.org/'>ElectionLeaflets.org</a></span>
   <h2 id="leaflets"><i class='fa fa-paper-plane-o'></i> Leaflets</h2>
@@ -142,7 +157,7 @@ layout: default
   {% endif %}
   <a class='button' href='https://electionleaflets.org/leaflets/add/'>Upload a leaflet now</a>
   </div>
-  
+
   <div class='person__quotes'>
   <span class='person__box__byline'>by <a href='https://www.electionmentions.com/'>ElectionMentions.com</a></span>
   <h2 id="quotes"><i class='fa fa-quote-left'></i> Mentions</h2>

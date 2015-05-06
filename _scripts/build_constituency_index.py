@@ -20,7 +20,8 @@ PERSON_CONSTITUENCIES = {}
 
 # Build constituency data, starting with mapit
 constituency_data = {constituency_id: {'mapit': mapit_data,
-                                       'ynmp': [],}
+                                       'ynmp': [],
+                                       'result': {}}
                      for constituency_id, mapit_data in mapit_export_path.items()}
 
 # Build YNMP data
@@ -91,6 +92,12 @@ for person in ynmp_export['persons']:
         last_name = person['name'].split(' ')[-1]
         constituency_data[constituency_id]['ynmp'].append(
             (person['id'], last_name))
+
+        if 'elected' in candidacies['ge2015']['constituency']:
+            if candidacies['ge2015']['constituency']['elected']:
+                constituency_data[constituency_id]['results'] = {
+                    'winner': person
+                }
         PERSON_CONSTITUENCIES[person['id']] = constituency_id
 
 # Build EM data
@@ -105,10 +112,11 @@ cv_export = json.load(open(cv_export_path))
 
 for cv in cv_export:
     cv['person_id'] = str(cv['person_id'])
-    constituency_id = PERSON_CONSTITUENCIES[str(cv['person_id'])]
-    cv_list = constituency_data[constituency_id].get('cv', [])
-    cv_list.append(cv)
-    constituency_data[constituency_id]['cv'] = cv_list
+    constituency_id = PERSON_CONSTITUENCIES.get(str(cv['person_id']))
+    if constituency_id:
+        cv_list = constituency_data[constituency_id].get('cv', [])
+        cv_list.append(cv)
+        constituency_data[constituency_id]['cv'] = cv_list
 
 
 # Build Meet data
