@@ -64,6 +64,33 @@ def find_wiki_title(person):
 
         return wiki_title
 
+
+def party_to_rosette(person):
+    DEFAULT_ROSETTE = "rosette-independent.png"
+    ROSETTE_MAPPING = {
+        'party:103': "rosette-alliance.png",
+        'party:53': "rosette-labour.png",
+        'joint-party:53-119': "rosette-labour.png",
+        'party:52': "rosette-conservative.png",
+        'party:70': "rosette-dup.png",
+        'party:63': "rosette-green.png",
+        'party:90': "rosette-libdem.png",
+        'party:77': "rosette-plaid-cymru.png",
+        'party:362': "rosette-respect.png",
+        'party:55': "rosette-sdlp.png",
+        'party:39': "rosette-sinn-fein.png",
+        'party:102': "rosette-snp.png",
+        'party:85': "rosette-ukip.png",
+    }
+    if 'ge2015' in person['candidacies']:
+        if 'elected' in person['candidacies']['ge2015']['constituency']:
+            if person['candidacies']['ge2015']['constituency']['elected']:
+                party_id = person['candidacies']['ge2015']['party']['id']
+                if party_id in ROSETTE_MAPPING.keys():
+                    return ROSETTE_MAPPING[party_id]
+                return DEFAULT_ROSETTE
+
+
 party_dict = {}
 for party in ynmp_export['organizations']:
     if party['classification'] == "Party":
@@ -165,6 +192,9 @@ for person in ynmp_export['persons']:
                 wiki_person = json.load(f)
             person['biography'] = wiki_person['first_para']
 
+    person_rosette = party_to_rosette(person)
+    if person_rosette:
+        person['winner_rosette'] = person_rosette
 
     #constituency_id = person['candidacies']['ge2015']['constituency']['post_id']
 
