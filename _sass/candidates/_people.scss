@@ -393,6 +393,25 @@ i.wikipedia-icon {
     background: #eee;
 }
 
+.polling-stations {
+  border-bottom: 1px solid #eee;
+  overflow: auto;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  // Special styling for constituency result,
+  // which doesn't need as much padding since
+  // it's in its own yellow page section
+  .pre-content & {
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: none;
+  }
+}
+
 .election-result {
   padding: 0 0 2em 0;
   border-bottom: 1px solid #eee;
