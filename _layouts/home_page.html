@@ -19,8 +19,31 @@
 
 <div class="finder__forms">
 
+  <script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser. Please enter your postcode.");
+        }
+    }
+    function showPosition(position) {
+        console.log(position.coords.longitude);
+        console.log(position.coords.latitude);
+        $("#form-lonlat__lon").val(position.coords.longitude);
+        $("#form-lonlat__lat").val(position.coords.latitude);
+        $("#form-lonlat").submit();
+    }
+  </script>
+
+  <form id="form-lonlat" action="/lonlat/" method="get" >
+    <input type="hidden" name="lon" id="form-lonlat__lon"/>
+    <input type="hidden" name="lat" id="form-lonlat__lat"/>
+  </form>
+
   <form id="form-postcode" action="/postcode/" method="get" >
     <p><label for="id_postcode">Enter your postcode:</label> <input id="id_postcode" maxlength="20" name="postcode" type="text" /></p>
+    <p><a onclick='getLocation();'>use my current location</a></p>
     <input type="submit" class="button" value="Show candidates" />
     <a class="show-other-form" href="/constituencies/">Or select a constituency</a>
   </form>

@@ -1,4 +1,5 @@
 import re
+import json
 from unidecode import unidecode
 
 import requests
@@ -36,6 +37,41 @@ def postcode():
     slug = slugify(data['areas'][WMC]['name'])
     URL = "/constituency/{0}/{1}".format(
         WMC, slug
+    )
+
+    return redirect(URL, code=302)
+
+@app.route("/lonlat/", methods=['GET',])
+def lonlat():
+    ERROR_URL = "/"
+    lat = float(request.args.get('lat', None))
+    lon = float(request.args.get('lon', None))
+
+    print lat, lon
+
+    if not lat or not lon:
+        return redirect(ERROR_URL, code=302)
+
+    url = "http://mapit.mysociety.org/point/4326/{},{}".format(lon,lat)
+
+    print url
+
+    resp = requests.get(url)
+
+    print resp.status_code
+
+    if resp.status_code != 200:
+        return redirect(ERROR_URL, code=302)
+
+    data = resp.json()
+
+    print json.dumps(data, indent=4)
+
+    shortcuts = {x['type']: x for x in data.values()}
+
+    WMC = shortcuts['WMC']
+    URL = "/constituency/{0}/{1}".format(
+        WMC['id'], slugify(WMC['name'])
     )
 
     return redirect(URL, code=302)
