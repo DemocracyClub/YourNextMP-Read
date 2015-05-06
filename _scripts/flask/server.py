@@ -47,25 +47,17 @@ def lonlat():
     lat = float(request.args.get('lat', None))
     lon = float(request.args.get('lon', None))
 
-    print lat, lon
-
     if not lat or not lon:
         return redirect(ERROR_URL, code=302)
 
     url = "http://mapit.mysociety.org/point/4326/{},{}".format(lon,lat)
 
-    print url
-
     resp = requests.get(url)
-
-    print resp.status_code
 
     if resp.status_code != 200:
         return redirect(ERROR_URL, code=302)
 
     data = resp.json()
-
-    print json.dumps(data, indent=4)
 
     shortcuts = {x['type']: x for x in data.values()}
 
