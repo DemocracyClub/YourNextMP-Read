@@ -171,6 +171,29 @@ layout: default
   </div>
 </div>
 
+
+<div class="small-12 large-12 columns">
+  <div class="mentions-block data-block">
+    <h3 id="press">Press mentions for {{ page.constituency.mapit.name }}</h3>
+
+    <p class="info">The national and local press say lots of interesting things about your constituency and candidates, so <a href="https://www.electionmentions.com">Election Mentions</a> is collecting news articles about the {{ page.constituency.mapit.name }} constituency or the candidates standing here. There may be errors.</p>
+
+    <ul class="mentions-list">
+      {% for mention in page.constituency.em %}
+      <li class="mentions-list__mention">
+        <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
+        <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
+        <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p>
+      <a href='https://www.electionmentions.com/constituency/{{page.constituency.mapit.id}}' class="button success">Read more on ElectionMentions.com</a>
+    </p>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="small-12 large-12 columns">
     <div class="meet-block data-block">
@@ -196,44 +219,18 @@ layout: default
     </ul>
     {% else %}
   <p class="info">
-    <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a> lists independent events in your area. Go and question your candidates!
+    <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}">MeetYourNextMP.com</a>
+     lists independent events that happened in your area.
   </p>
     <p>
     {% if page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount == 1 %}
-    Sorry, one event has already happened here and we don't know about any more.
+    One event happened here.
     {% elsif page.constituency contains 'meetPastEventsCount' and page.constituency.meetPastEventsCount > 1 %}
-    Sorry, {{ page.constituency.meetPastEventsCount }} events have already happened here and we don't know about any more.
+    {{ page.constituency.meetPastEventsCount }} events happened here.
     {% else %}
-    Sorry, we don't know about any events here.
+    We didn't know about any events here.
     {% endif %}
     {% endif %}
-    <p>
-      <a href="http://meetyournextmp.com/linktoseat.html?mapitid={{ page.constituency.mapit.id }}" class="button success">
-        Add events you know about
-      </a>
-    </p>
-  </div>
-</div>
-
-<div class="small-12 large-12 columns">
-  <div class="mentions-block data-block">
-    <h3 id="press">Press mentions for {{ page.constituency.mapit.name }}</h3>
-
-    <p class="info">The national and local press say lots of interesting things about your constituency and candidates, so <a href="https://www.electionmentions.com">Election Mentions</a> is collecting news articles about the {{ page.constituency.mapit.name }} constituency or the candidates standing here. There may be errors.</p>
-
-    <ul class="mentions-list">
-      {% for mention in page.constituency.em %}
-      <li class="mentions-list__mention">
-        <time class='mention-time'>{{ mention.date|date: "%d/%m/%Y" }}</time>
-        <a class='mention-title' href="{{ mention.url }}">{{ mention.title }}</a>
-        <a class='mention-source' href="{{ mention.url }}">{{ mention.source }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    <p>
-      <a href='https://www.electionmentions.com/constituency/{{page.constituency.mapit.id}}' class="button success">Read more on ElectionMentions.com</a>
-    </p>
-    </div>
   </div>
 </div>
 
