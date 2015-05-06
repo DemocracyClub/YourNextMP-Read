@@ -154,6 +154,9 @@ layout: default
         <div class='quote-text'>
             {{ quote.html }}
         </div>
+        <p style='float: left; margin-left: 0.5em; font-size: 0.9em;'>
+            <a href='https://www.electionmentions.com/article/{{ quote.article.id }}/report'>report problem</a>
+        </p>
         <div class='quote-source'>
             seen {{ quote.article.date|date: "%d/%m/%Y" }} in <a href="{{ quote.article.url }}">{{ quote.article.domain }}</a>
         </div>
