@@ -32,6 +32,8 @@
   {% if page.constituency %}
     {% if page.constituency.results contains 'winner' %}
       {% include constituency_winner.html person=page.constituency.results.winner %}
+    {% else %}
+      {% include constituency_polling_stations.html %}
     {% endif %}
 
     <div class='magellan_container'>
@@ -49,6 +51,7 @@
         </div>
       </div>
     </div>
+
   {% endif %}
 
     <div class="content">
