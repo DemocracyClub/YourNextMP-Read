@@ -72,6 +72,7 @@ def party_to_rosette(person):
         'party:53': "rosette-labour.png",
         'joint-party:53-119': "rosette-labour.png",
         'party:52': "rosette-conservative.png",
+        'joint-party:51-83': "rosette-conservative.png",
         'party:70': "rosette-dup.png",
         'party:63': "rosette-green.png",
         'party:90': "rosette-libdem.png",
