@@ -10,7 +10,7 @@ module Jekyll
       @item = item
       @name = "index.html"
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'rss_item.html')
+      self.read_yaml(File.join(base, '_includes'), 'rss_item.html')
       if @item.class == String
         self.data['is_placeholder'] = true
       else

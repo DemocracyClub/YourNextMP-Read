@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ "$1" == "staging" ]; then
     echo "BUILDING FROM STAGING DATABASE"
     ./_scripts/get_ynmp_staging.sh
@@ -7,12 +8,16 @@ else
     ./_scripts/get_ynmp.sh
 fi
 
+./_scripts/get_results.sh
+
+if [ "$1" != "quick" ]; then
 ./_scripts/get_cv.sh
 ./_scripts/get_el.sh
 ./_scripts/get_em.sh
 ./_scripts/get_meet.sh
-
 ./_scripts/get_ynmp_numbers.sh
+fi
+
 
 data_files=(
     _downloads/ynmp.popit.mysociety.org.export.json
@@ -26,7 +31,9 @@ data_files=(
     _downloads/electionmentions.export.people.quotes.json
 )
 
+if [ "$1" != "quick" ]; then
 python ./_scripts/get_wikipedia_extracts.py "${data_files[@]}"
+fi
 
 python _scripts/build_person_index.py "${data_files[@]}"
 python _scripts/build_constituency_index.py "${data_files[@]}"
