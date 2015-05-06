@@ -97,7 +97,7 @@
     margin-right: 1.5em;
     background-color: #ddd;
   }
-  
+
   .person-emblem {
      margin-top: 1em;
      clear: left;
@@ -148,6 +148,11 @@ i.wikipedia-icon {
 }
 
 .person__hero {
+  strong {
+    a {
+      color:#FFF;
+    }
+  }
   .person-avatar {
     float: left;
     width: auto;
