@@ -148,6 +148,11 @@ i.wikipedia-icon {
 }
 
 .person__hero {
+  strong {
+    a {
+      color:#FFF;
+    }
+  }
   .person-avatar {
     float: left;
     width: auto;

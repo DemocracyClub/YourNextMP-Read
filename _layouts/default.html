@@ -16,9 +16,11 @@
             <h1>{{ page.person.name }}</h1>
               {% if page.person.candidacies.ge2015 %}
               <p>Candidate for
-                <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">
-                  {{page.person.candidacies.ge2015.constituency.name}}
-                </a> in 2015
+                <strong>
+                  <a href="/constituency/{{page.person.candidacies.ge2015.constituency.post_id}}/{{page.person.candidacies.ge2015.constituency.name|slugify}}">
+                    {{page.person.candidacies.ge2015.constituency.name}}
+                  </a>
+                </strong> in 2015
               </p>
               {% endif %}
           </div>
