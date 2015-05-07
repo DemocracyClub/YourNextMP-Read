@@ -33,7 +33,7 @@
     {% if page.constituency.results contains 'winner' %}
       {% include constituency_winner.html person=page.constituency.results.winner %}
     {% else %}
-      {% include constituency_polling_stations.html %}
+      {% include constituency_game_over.html %}
     {% endif %}
 
     <div class='magellan_container'>
