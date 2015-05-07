@@ -1,0 +1,27 @@
+{% if include.item %}
+{% assign person=site.data.people.id[include.item.winner_popit_person_id] %}
+<div class="election-result">
+  <div class="election-result__person">
+      <img class="party-rosette" src="/images/{{person.winner_rosette}}" alt="Winner!">
+      <p class="election-result__title">
+        {{ person.name }} was elected in
+        <a href='/constituency/{{ person.candidacies.ge2015.constituency.post_id }}/'>{{ person.candidacies.ge2015.constituency.name }}</a>
+        for {{ person.candidacies.ge2015.party.name }}
+      </p>
+      <div class="election-result__links">
+        {% if person.identifiers contains 'uk-org-publicwhip' %}
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+          </a>
+          <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+            Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
+          </a>
+        {% else %}
+          <a href="http://www.theyworkforyou.com/search/?q={{ person.name }}">
+            {{ person.name }} on<br>TheyWorkForYou.com &rarr;
+          </a>
+        {% endif %}
+      </div>
+  </div>
+</div>
+{% endif %}
