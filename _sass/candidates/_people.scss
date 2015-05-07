@@ -442,6 +442,11 @@ i.wikipedia-icon {
       line-height: 1.2em;
     }
   }
+
+  // Remove bottom margin for front page results
+  section#result_items & {
+    margin-bottom: 0;
+  }
 }
 
 .election-result__title {
