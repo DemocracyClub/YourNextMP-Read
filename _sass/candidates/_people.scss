@@ -148,6 +148,11 @@ i.wikipedia-icon {
 }
 
 .person__hero {
+  strong {
+    a {
+      color:#FFF;
+    }
+  }
   .person-avatar {
     float: left;
     width: auto;
@@ -441,6 +446,11 @@ i.wikipedia-icon {
       font-size: 1.3em;
       line-height: 1.2em;
     }
+  }
+
+  // Remove bottom margin for front page results
+  section#result_items & {
+    margin-bottom: 0;
   }
 }
 
