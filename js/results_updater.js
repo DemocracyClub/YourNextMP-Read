@@ -22,4 +22,4 @@ function tryNextPage(next_id) {
 
 setInterval(function() {
   tryNextPage();
-}, 3000);
+}, 300000);
