@@ -23,7 +23,7 @@
                 <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
                   {{ person.name }} on<br>TheyWorkForYou.com &rarr;
                 </a>
-                <a href="http://www.theyworkforyou.com/mp/{{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
+                <a href="http://www.theyworkforyou.com/alert/?pid={{ person.identifiers.uk-org-publicwhip.identifier|split:"/"|last }}">
                   Get an email when {{ person.name }}<br>speaks in Parliament &rarr;
                 </a>
               {% else %}
